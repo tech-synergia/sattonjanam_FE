@@ -3,6 +3,7 @@ import { Form, Input, Select, Radio, Button, Steps, Alert } from "antd";
 import "../scss/RegisterPage.scss";
 import TextArea from "antd/es/input/TextArea";
 import axios from "axios";
+import UserApi from './API/UserApi'
 
 const { Step } = Steps;
 const { Option } = Select;
@@ -101,17 +102,20 @@ const RegisterPage = () => {
 
   const handleOnSubmit = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:4500/api/v1/register",
-        profileDetails,
-        careerDetails,
-        familyDetails
-      );
-      setAlertData({
-        type: "success",
-        message: "Registration successful!",
-        show: true,
-      });
+      const response = await UserApi.create(profileDetails,careerDetails,familyDetails)
+      .then(res => {
+        setAlertData({
+          type: "success",
+          message: "Registration successful!",
+          show: true,
+        });
+      }).catch(err => {
+        setAlertData({
+          type: "error",
+          message: err.response.data.msg,
+          show: true,
+        });
+      })
     } catch (error) {
       setAlertData({
         type: "error",
@@ -715,9 +719,7 @@ const RegisterPage = () => {
         ))}
       </Steps>
       <div className="steps-content">{steps[currentStep].content}</div>
-      <p>
-        Already have an account? <a href="/login">Sign In Here</a>
-      </p>
+      
     </div>
   );
 };
