@@ -1,0 +1,139 @@
+@use "./modules/vrs";
+
+.connectUs{
+    text-align: center;
+    padding: 30px 0px;
+    background-image:linear-gradient(to bottom,(rgba(227, 226, 226,2)),rgba(227, 226, 226,0.7),rgba(0,0,0,0.3)), url("https://images.pexels.com/photos/3865895/pexels-photo-3865895.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    h1{
+        color: vrs.$secon-color;
+        font-size: 50px;
+       
+    }
+    .formContainer{
+        margin: auto;
+        width: 700px;
+        input{
+            background-color: vrs.$prim-color;
+            padding: 15px;
+            border-radius: 0px;
+            border: 1px solid #fff;
+            &::placeholder{
+                color: #fff;
+
+            }
+        }
+        .gender{
+            width: 300px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        .name-container {
+            display: flex;
+            gap: 26px;
+            width: 100%;
+            input{
+                width: 335px;
+            }
+        }
+        .btn {
+            background-color: #000;
+            color: #fff;
+            font-size: 22px;
+            padding: 5px 20px;
+            height: 50px;
+        }
+    }
+    .contactAddress{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        justify-content: space-between;
+        padding: 40px 200px;
+      
+        .address{
+            background-color: vrs.$secon-color;
+            color: #fff;
+            width: 350px;
+            border: 2px solid grey;
+            height: 100px;
+            padding: 5px;
+            padding: auto;
+            text-align: center;
+            p{
+                font-weight: lighter;
+            }
+
+        }
+      
+       
+    }
+}
+
+@media screen and (max-width: 768px){
+    .connectUs{
+        padding: 0px;
+        h1{
+            font-size: 26px;
+        }
+        .formContainer{
+            margin: 10px;
+            width: 350px;
+            input{
+                padding: 15px;
+                border-radius: 0px;
+                border: 1px solid #fff;
+                &::placeholder{
+                    color: #fff;
+                    font-size: 18px;
+    
+                }
+            }
+            .gender{
+                width: 400px;
+                margin: 10px;
+                margin-bottom: 20px;
+            }
+            .name-container {
+                display: block;
+                gap: 0px;
+                width: 100%;
+                input{
+                    width: 350px;
+                }
+            }
+            .btn {
+                background-color: #000;
+                color: #fff;
+                font-size: 22px;
+                padding: 5px 20px;
+                height: 50px;
+            }
+        }
+        .contactAddress{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: space-between;
+            padding: 20px;
+          
+            .address{
+                color: #fff;
+                width: 350px;
+                border: 2px solid grey;
+                height: 100px;
+                padding: 5px;
+                padding: auto;
+                text-align: center;
+                p{
+                    font-weight: lighter;
+                }
+    
+            }
+          
+           
+        }
+    }
+}

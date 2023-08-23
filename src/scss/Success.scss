@@ -1,0 +1,75 @@
+@use "./modules/vrs";
+
+.success{
+    padding: 50px 250px;
+    position: relative;
+    .custom-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 20px;
+      }
+      
+      .content {
+        position: absolute;
+        background-color: vrs.$prim-color;
+        border-radius: 20px;
+        top: -15%;
+        right: -10%;
+        bottom: 0%;
+        color: #fff;
+        padding: 20px;
+        width: 550px;
+        height: max-content;
+        z-index: 3;
+      }
+      
+      .title {
+        background-color: rgb(100, 15, 15);
+        position: absolute;
+        font-size: 20px;
+        border-radius: 10px;
+        padding: 10px;
+        left: 40%;
+        top: -14%;
+       
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      
+      .text {
+        font-size: 17px;
+        line-height: 1.6;
+      }
+      
+}
+
+@media screen and (max-width: 768px){
+
+.success {
+  padding: 20px;
+  position: relative;
+
+  .custom-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .content {
+    position: static;
+    padding: 20px;
+    width: auto; 
+    height: auto; 
+  }
+
+  .title {
+    position: absolute; 
+    top: -7%;
+    left: 2%;
+    width: 90%;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+}
+
+}

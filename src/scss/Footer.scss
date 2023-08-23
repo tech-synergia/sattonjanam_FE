@@ -1,0 +1,61 @@
+footer{
+    background-color: #222;
+    color: grey;
+    .footerColumns{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        padding: 50px 130px;
+        @media screen and (max-width: 768px){
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+        }
+        .footerLogoInfo{
+            img{
+                margin: 0px 30px;
+            }
+            p{
+                font-size: 12px;
+                font-weight: lighter;
+                width: 250px;
+                line-height: 20px;
+                text-align: center;
+            }
+            @media screen and (max-width: 768px){
+                text-align: center;
+                p{
+                    width: 300px;
+                    margin: 0px 20px;
+                }
+            }
+        }
+        .impLinks{
+            width: 260px;
+            h3{
+                color: #fff;
+                font-weight: 100;
+            }
+            .Links{
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                span, .location{
+                    font-size: 15px;
+                    font-weight: lighter;
+                }
+                .location{
+                    line-height: 30px;
+                    margin: 5px 0px;
+                }
+            }
+            
+        }
+    }
+    .footerEnd{
+        text-align: center;
+        background-color: #333333;
+        padding: 10px 0px;
+    }
+}
