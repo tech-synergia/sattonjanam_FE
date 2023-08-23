@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Form, Input, Select, Radio, Button, Steps, Alert } from "antd";
 import '../scss/RegisterPage.scss'
 import TextArea from "antd/es/input/TextArea";
+import axios from "axios";
+import UserApi from './API/UserApi'
 
 const { Step } = Steps;
 const { Option } = Select;
@@ -92,6 +94,37 @@ const RegisterPage = () => {
     "West Bengal"
   ];
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setProfileDetails((prevData) => ({ ...prevData, [name]: value }));
+    setCareerDetails((prevData) => ({ ...prevData, [name]: value }));
+    setFamilyDetails((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleOnSubmit = async () => {
+    try {
+      const response = await UserApi.create(profileDetails,careerDetails,familyDetails)
+      .then(res => {
+        setAlertData({
+          type: "success",
+          message: "Registration successful!",
+          show: true,
+        });
+      }).catch(err => {
+        setAlertData({
+          type: "error",
+          message: err.response.data.msg,
+          show: true,
+        });
+      })
+    } catch (error) {
+      setAlertData({
+        type: "error",
+        message: error.response.data.msg,
+        show: true,
+      });
+    }
+  };
   const handlePrev = () => {
     setCurrentStep(currentStep - 1);
   };
@@ -608,9 +641,7 @@ const RegisterPage = () => {
         ))}
       </Steps>
       <div className="steps-content">{steps[currentStep].content}</div>
-      <p>
-        Already have an account? <a href="/login">Sign In Here</a>
-      </p>
+      
     </div>
   );
 };
