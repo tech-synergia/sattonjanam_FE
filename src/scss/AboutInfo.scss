@@ -1,0 +1,15 @@
+.aboutInfo{
+    background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRGdAh1S2Ly5DIh5KL76ufVhu3YYeXonwQBlTD_x_h17zM_1qxL");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 40px 200px;
+    @media screen and (max-width: 768px){
+        padding: 20px;
+    }
+    h1{
+        text-align: center;
+        font-family: cursive;
+    }
+}
