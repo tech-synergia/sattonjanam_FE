@@ -26,9 +26,11 @@
             }
         }
         .gender{
-            width: 300px;
-            margin: auto;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
             margin-bottom: 20px;
+            width: 100%;
         }
         .name-container {
             display: flex;
@@ -75,26 +77,22 @@
 @media screen and (max-width: 768px){
     .connectUs{
         padding: 0px;
+        text-align: center;
         h1{
             font-size: 26px;
         }
         .formContainer{
-            margin: 10px;
-            width: 350px;
+            margin: 20px;
+            width: 300px;
             input{
+                width: 350px;
                 padding: 15px;
-                border-radius: 0px;
-                border: 1px solid #fff;
-                &::placeholder{
-                    color: #fff;
-                    font-size: 18px;
-    
-                }
             }
+          
             .gender{
-                width: 400px;
+                width: 100%;
                 margin: 10px;
-                margin-bottom: 20px;
+               
             }
             .name-container {
                 display: block;
@@ -105,11 +103,7 @@
                 }
             }
             .btn {
-                background-color: #000;
-                color: #fff;
-                font-size: 22px;
-                padding: 5px 20px;
-                height: 50px;
+                margin-left: 60px;
             }
         }
         .contactAddress{
@@ -121,7 +115,7 @@
           
             .address{
                 color: #fff;
-                width: 350px;
+                width: 340px;
                 border: 2px solid grey;
                 height: 100px;
                 padding: 5px;

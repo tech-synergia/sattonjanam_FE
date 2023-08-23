@@ -1,0 +1,24 @@
+.common-background {
+    background-image: url('https://www.wedgatematrimony.com/wp-content/themes/weddingmate/assets/images/default.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    @media screen and (max-width: 768px){
+      display: none;
+    }
+    .content {
+      h1 {
+        color: #fff;
+        font-family:'Trebuchet MS';
+        text-align: center;
+        font-size: 60px;
+        margin-top: 50px;
+      }
+    }
+  }
+
+
+  
