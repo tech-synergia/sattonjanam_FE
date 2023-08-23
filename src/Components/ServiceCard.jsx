@@ -1,9 +1,7 @@
-import React from "react";
 import { Card, Typography } from "antd";
 import "../scss/ServiceCard.scss";
 
 const { Title, Text } = Typography;
-const { Meta } = Card;
 
 const weddingData = [
   {
