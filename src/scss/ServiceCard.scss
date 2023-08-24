@@ -1,6 +1,17 @@
 @use "./modules/vrs";
 
 .details{
+    background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRGdAh1S2Ly5DIh5KL76ufVhu3YYeXonwQBlTD_x_h17zM_1qxL");
+    background-position: center;
+    padding: 50px 200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    justify-content: space-evenly;
+    gap: 30px;
+    grid-auto-rows: 430px;
+    @media screen and (max-width: 768px){
+      padding: 20px;
+    }
    .card{
     background-color: vrs.$prim-color;
     width: 330px;
@@ -10,7 +21,7 @@
     color: #fff;
     @media screen and (max-width: 768px){
       width: 350px;
-      margin: 20px;
+      margin: 0px;
     }
     img{
         width: 330px;

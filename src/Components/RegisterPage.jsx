@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Input, Select, Radio, Button, Steps, Alert } from "antd";
+import { Form, Input, Select, Radio, Button, Steps, Alert, Upload } from "antd";
 import "../scss/RegisterPage.scss";
 import TextArea from "antd/es/input/TextArea";
 import UserApi from './API/UserApi'
@@ -191,6 +191,15 @@ const RegisterPage = () => {
               <Radio value="female">Female</Radio>
               <Radio value="other">Other</Radio>
             </Radio.Group>
+          </Form.Item>
+          <Form.Item label="Upload Profile Pic">
+            <Upload>
+              <Button
+                icon={<i className="bi bi-upload" style={{ fontSize: "14px" }} />}
+              >
+                Upload
+              </Button>
+            </Upload>
           </Form.Item>
           <Form.Item label="Email" htmlFor="email">
             <Input

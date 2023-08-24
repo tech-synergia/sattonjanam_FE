@@ -12,6 +12,46 @@ const weddingData = [
     imageUrl:
       "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/punjabi-marriage-bureau-matrimonial-services-delhi.jpg",
   },
+  {
+    _id: 2,
+    title: "Punjabi Matrimonial Service",
+    content:
+      "Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...",
+    imageUrl:
+      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/punjabi-marriage-bureau-matrimonial-services-delhi.jpg",
+  },
+  {
+    _id: 3,
+    title: "Punjabi Matrimonial Service",
+    content:
+      "Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...",
+    imageUrl:
+      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/punjabi-marriage-bureau-matrimonial-services-delhi.jpg",
+  },
+  {
+    _id: 3,
+    title: "Punjabi Matrimonial Service",
+    content:
+      "Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...",
+    imageUrl:
+      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/punjabi-marriage-bureau-matrimonial-services-delhi.jpg",
+  },
+  {
+    _id: 3,
+    title: "Punjabi Matrimonial Service",
+    content:
+      "Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...",
+    imageUrl:
+      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/punjabi-marriage-bureau-matrimonial-services-delhi.jpg",
+  },
+  {
+    _id: 3,
+    title: "Punjabi Matrimonial Service",
+    content:
+      "Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...",
+    imageUrl:
+      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/punjabi-marriage-bureau-matrimonial-services-delhi.jpg",
+  },
 ];
 
 const WeddingImage = () => {
