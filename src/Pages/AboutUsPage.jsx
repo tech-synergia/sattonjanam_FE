@@ -3,6 +3,9 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import CommonBanner from '../Components/CommonBanner';
 import BreadCrumb from '../Components/BreadCrumb';
+import Matrimony from '../Components/Matrimony';
+import WhyUs from '../Components/WhyUs';
+import ConnectWithUs from '../Components/ConnectWithUs'
 
 function AboutUsPage() {
     const breadcrumbPaths = [
@@ -16,6 +19,9 @@ function AboutUsPage() {
         <div>
             <BreadCrumb paths={breadcrumbPaths} />
         </div>
+        <Matrimony/>
+        <WhyUs/>
+        <ConnectWithUs/>
       <Footer/>
     </>
   )

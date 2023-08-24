@@ -1,0 +1,59 @@
+@use './modules//vrs';
+
+.matrimony{
+    background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScSPPUCIswv3cry9qdFpNWXKr43RVVkJcSxJgmwbEra_ds0kk8");
+    background-position: center;
+    padding: 80px 200px;
+    p{
+        font-size: 19px;
+    }
+    .wedGate{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        .wedGateContent{
+            font-size: 18px;
+           .titleStyle{
+                color: vrs.$prim-color;
+           }
+         
+        }
+        .wedgateImage{
+            img{
+                width: 450px;
+                height: 450px;
+            }
+        }
+    }
+    .wedgateAbout{
+        .titleStyle{
+            color: vrs.$prim-color;
+            background-color: lightgrey;
+            border-radius: 5px;
+            margin-top: 0px;
+       }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .matrimony{
+        padding: 20px;
+        p{
+            font-size: 15px;
+        }
+        .wedGate{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            .wedGateContent{
+                font-size: 16px;
+            }
+            .wedgateImage{
+                img{
+                    width: 350px;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}

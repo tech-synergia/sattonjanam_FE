@@ -1,0 +1,74 @@
+.homeSuccess{
+    padding: 40px 200px;
+    background-image:linear-gradient(rgba(177, 110, 145,0.8),rgba(177, 110, 145,0.8),rgba(177, 110, 145,0.8)), url("https://www.k4fashion.com/wp-content/uploads/2022/09/The-Picture-Perfect-Family-Portrait-wedding-photos.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h1{
+        text-align: center;
+        color: #fff;
+    }
+    .successCards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .cards{
+            width: 260px;
+            border: 2px solid #fff;
+            height: 240px;
+            .name{
+                text-align: center;
+                font-size: 22px;
+            }
+        }
+    }
+    .buttonSuccess{
+        margin: 50px auto;
+        background-color: gray;
+        color: #fff;
+        height: 50px;
+        padding: 0px 30px;
+        border: none;
+        font-size: 18px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .homeSuccess{
+        padding: 70px;
+        h1{
+            text-align: center;
+            color: #fff;
+        }
+        .successCards{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+            .cards{
+                width: 260px;
+                border: 2px solid #fff;
+                height: 240px;
+                .name{
+                    text-align: center;
+                    font-size: 22px;
+                }
+            }
+        }
+        .buttonSuccess{
+            margin: 50px auto;
+            background-color: gray;
+            color: #fff;
+            height: 50px;
+            padding: 0px 30px;
+            border: none;
+            font-size: 18px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+}

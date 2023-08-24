@@ -54,7 +54,7 @@ const weddingData = [
   },
 ];
 
-const WeddingImage = () => {
+export const WeddingImage = () => {
   return (
     <div className="details">
       {weddingData.map((dataItem) => (

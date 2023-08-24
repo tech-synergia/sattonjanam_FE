@@ -6,10 +6,8 @@ import { MenuOutlined } from "@ant-design/icons";
 
 
 function Navbar() {
-  // Initialize state for the dropdown menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to toggle the dropdown menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -27,7 +25,7 @@ function Navbar() {
                 <p><i className="bi bi-envelope-fill"></i> contact@wedgatematrimony.com</p>
             </div>
         </div>
-        <div className="content">
+        <div className='content'>
           <ul className={`links ${isMenuOpen ? "open" : ""}`} style={{zIndex: "3"}}>
             <li>
               <NavLink to={"/"} onClick={toggleMenu}>

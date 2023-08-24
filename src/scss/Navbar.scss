@@ -21,6 +21,7 @@
             flex-direction: row;
             align-items: center;
             font-size: 20px;
+            
             p{
                 padding: 0px 10px;
             }
@@ -37,11 +38,13 @@
         display: none;
       }
     .content {
+       
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         background-color: vrs.$prim-color;
+      
         .links {
             display: flex;
             font-size: 13px;
@@ -55,6 +58,11 @@
               transition: all 0.3s ease-out;
         
              
+            }
+            &.sticky {
+              position: -webkit-sticky;
+              position: sticky;
+              top: 0;
             }
         }
     }

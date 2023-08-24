@@ -1,0 +1,90 @@
+@use './modules/vrs';
+
+.carouselService{
+    background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScSPPUCIswv3cry9qdFpNWXKr43RVVkJcSxJgmwbEra_ds0kk8");
+    background-position: center;
+    padding: 30px 200px;
+    .carouselSlide{
+       .cardRow{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        .cardItem{
+            flex: 1;
+            img{
+                margin: auto;
+                width: 100px;
+                height: 100px;
+            }
+            h3{
+                font-size: 20px;
+                margin-bottom: 0px;
+            }
+            p{
+                font-size: 15px;
+            }
+            background-color: vrs.$prim-color;
+            width: 280px;
+            height: 350px;
+            color: #fff;
+            text-align: center;
+        }
+       }
+    }
+    .buttonService{
+        margin: 50px auto;
+        background-color: gray;
+        color: #fff;
+        height: 50px;
+        padding: 0px 30px;
+        border: none;
+        font-size: 18px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .carouselService{
+        padding: 20px;
+        .carouselSlide{
+           .cardRow{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            .cardItem{
+                img{
+                    margin: auto;
+                    width: 100px;
+                    height: 100px;
+                }
+                h3{
+                    font-size: 20px;
+                    margin-bottom: 0px;
+                }
+                p{
+                    font-size: 15px;
+                }
+                background-color: vrs.$prim-color;
+                width: 280px;
+                height: 350px;
+                color: #fff;
+                text-align: center;
+            }
+           }
+        }
+        .buttonService{
+            margin: 50px auto;
+            background-color: gray;
+            color: #fff;
+            height: 50px;
+            padding: 0px 30px;
+            border: none;
+            font-size: 18px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+}

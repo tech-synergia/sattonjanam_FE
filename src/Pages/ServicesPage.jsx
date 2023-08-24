@@ -4,6 +4,7 @@ import Footer from '../Components/Footer'
 import CommonBanner from '../Components/CommonBanner'
 import BreadCrumb from '../Components/BreadCrumb'
 import ServiceCard from '../Components/ServiceCard'
+import ConnectWithUs from '../Components/ConnectWithUs'
 
 function ServicesPage() {
     const breadcrumbPaths = [
@@ -18,6 +19,7 @@ function ServicesPage() {
             <BreadCrumb paths={breadcrumbPaths} />
         </div>
         <ServiceCard/>
+        <ConnectWithUs/>
         <Footer/>
     </>
   )
