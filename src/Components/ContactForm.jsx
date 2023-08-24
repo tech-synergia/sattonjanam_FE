@@ -41,16 +41,16 @@ function ContactForm() {
       <div className="rightForm">
             <Form className="form" >
                 <Form.Item htmlFor="name">
-                    <Input type="text" name="name" id="name" placeholder="Your Name"/>
+                    <Input type="text" name="name" id="name" placeholder="Your Name" className="input"/>
                 </Form.Item>
                 <Form.Item htmlFor="phone" className="name">
-                    <Input type="number" name="phone" id="phone" placeholder="Phone"/>
+                    <Input type="number" name="phone" id="phone" placeholder="Phone" className="input"/>
                 </Form.Item>
                 <Form.Item htmlFor="email">
-                    <Input type="email" name="email" id="email" placeholder="Email Id"/>
+                    <Input type="email" name="email" id="email" placeholder="Email Id" className="input"/>
                 </Form.Item>
                 <Form.Item htmlFor="location" className="name">
-                    <Input type="text" name="location" id="location" placeholder="Seeking Alliance For"/>
+                    <Input type="text" name="location" id="location" placeholder="Seeking Alliance For" className="input"/>
                 </Form.Item>
                 <Button className="btn">Send Message</Button>
             </Form>

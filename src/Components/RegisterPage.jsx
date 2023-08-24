@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Form, Input, Select, Radio, Button, Steps, Alert } from "antd";
 import "../scss/RegisterPage.scss";
 import TextArea from "antd/es/input/TextArea";
-import axios from "axios";
 import UserApi from './API/UserApi'
 
 const { Step } = Steps;
@@ -18,7 +17,7 @@ const RegisterPage = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [profileDetails, setProfileDetails] = useState({
     registeredFor: "",
-    name: "",
+    userName: "",
     religion: "",
     gender: "",
     email: "",
@@ -156,11 +155,11 @@ const RegisterPage = () => {
               <Option value="friend">Friend</Option>
             </Select>
           </Form.Item>
-          <Form.Item label="Name" htmlFor="name">
+          <Form.Item label="User Name" htmlFor="userName">
             <Input
               type="text"
-              name="name"
-              id="name"
+              name="userName"
+              id="userName"
               required
               onChange={handleInputChange}
             />
@@ -399,6 +398,9 @@ const RegisterPage = () => {
           <Button type="primary" onClick={handleNext}>
             Next
           </Button>
+          <p style={{textAlign: "center"}}>
+            Already Have an Account? <a href="/login">Login</a>
+          </p>
         </Form>
       ),
     },
