@@ -1,6 +1,6 @@
 import axios from 'axios'
 const axiosIns = axios.create({
-    baseURL: 'https://sattonjanamm.onrender.com/'
+    baseURL: 'https://sattonjanam.onrender.com/'
 })
 const UserApi = {
     create: (user) => {
