@@ -47,11 +47,11 @@
 
 @media screen and (max-width: 768px){
     .carouselService{
-        padding: 20px;
+        padding: 40px;
         .carouselSlide{
            .cardRow{
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             gap: 20px;
             .cardItem{
                 img{
@@ -66,11 +66,9 @@
                 p{
                     font-size: 15px;
                 }
-                background-color: vrs.$prim-color;
+               
                 width: 280px;
                 height: 350px;
-                color: #fff;
-                text-align: center;
             }
            }
         }

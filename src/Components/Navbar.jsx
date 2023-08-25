@@ -44,14 +44,13 @@ function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/contact"} onClick={toggleMenu}>
-                Contact us
-              </NavLink>
-            </li>
-           
-            <li>
               <NavLink to={"/about"} onClick={toggleMenu}>
                 About Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"/contact"} onClick={toggleMenu}>
+                Contact us
               </NavLink>
             </li>
           </ul>
