@@ -10,7 +10,7 @@ function AuthApi() {
 
     const initData = useCallback(() => {
         const getUser = async () => {
-          const token = localStorage.getItem("accessToken") || false;
+          // const token = localStorage.getItem("accessToken") || false;
           console.log("token =", token);
           if (token) {
             const res = await axios.get(`https://sattonjanam.onrender.com/api/v1/auth/currentUser`, {

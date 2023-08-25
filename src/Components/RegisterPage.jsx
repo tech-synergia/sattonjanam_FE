@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Form, Input, Select, Radio, Button, Steps, Alert, Upload } from "antd";
 import "../scss/RegisterPage.scss";
 import TextArea from "antd/es/input/TextArea";
 import UserApi from './API/UserApi'
+import { GlobalContext } from '../GlobalContext'
+import axios from 'axios'
+import { useEffect } from "react";
 
 const { Step } = Steps;
 const { Option } = Select;
 
-const RegisterPage = () => {
+const RegisterPage = (props) => {
   const [alertData, setAlertData] = useState({
     type: "",
     message: "",
@@ -21,6 +24,7 @@ const RegisterPage = () => {
     religion: "",
     gender: "",
     email: "",
+   image:{},
     phoneNumber: "",
     password: "",
     age: "",
@@ -92,6 +96,52 @@ const RegisterPage = () => {
     "West Bengal",
   ];
 
+  let [images, setImages] = useState()
+  // const context = useContext(GlobalContext)
+  // const token = context.token
+  
+
+  const uploadHandler = async (e) => {
+    // to upload image
+    // e.preventDefault();
+    try {
+        const file = e.target.files[0];
+        console.log('image data =', file);
+
+        if(!file)
+            return console.log('image not exists.. choose image to upload.')
+        
+        if(file.size > 5 * 1024 * 1024)
+                return console.log('File size must be less than 5Mb')
+
+            let formData = new FormData()
+            formData.append('profile', file)
+            // setLoading(true)
+
+            // post the file content to server
+            const res = await axios.post(`https://sattonjanam.onrender.com/api/v1/image/upload`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            setImages(res.data.result)
+            console.log(res.data.msg)
+            // const newImage = {
+            //   ...profileDetails,
+            //   image: {
+                  
+            //       url: images.url
+            //   }
+            // }
+            // console.log(newImage.image.url)
+    } catch (err) {
+        console.log(err.response.data.msg)
+    }
+
+  
+}
+
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setProfileDetails((prevData) => ({ ...prevData, [name]: value }));
@@ -99,8 +149,10 @@ const RegisterPage = () => {
     setFamilyDetails((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  
   const handleOnSubmit = async () => {
     try {
+      
       const response = await UserApi.create(profileDetails,careerDetails,familyDetails)
       .then(res => {
         setAlertData({
@@ -123,6 +175,7 @@ const RegisterPage = () => {
       });
     }
   };
+     
 
   const handlePrev = () => {
     setCurrentStep(currentStep - 1);
@@ -193,13 +246,19 @@ const RegisterPage = () => {
             </Radio.Group>
           </Form.Item>
           <Form.Item label="Upload Profile Pic">
-            <Upload>
+            {/* <Upload onChange={uploadHandler}>
               <Button
-                icon={<i className="bi bi-upload" style={{ fontSize: "14px" }} />}
+                icon={<i className="bi bi-upload" style={{ fontSize: "14px" }}  name="profile" id="profile"/>}
               >
                 Upload
               </Button>
-            </Upload>
+            </Upload> */}
+            <Input
+              type="file"
+              name="image"
+              id="profile"
+              onChange={uploadHandler} 
+            />
           </Form.Item>
           <Form.Item label="Email" htmlFor="email">
             <Input
