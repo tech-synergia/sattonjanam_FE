@@ -1,5 +1,5 @@
 import React from 'react';
-import BreadcrumbComponent from '../Components/BreadCrumb';
+import Breadcrumb from '../Components/BreadCrumb';
 import ContactForm from '../Components/ContactForm';
 import ConnectWithUs from '../Components/ConnectWithUs';
 import CommonBanner from '../Components/CommonBanner';
@@ -15,9 +15,9 @@ const ContactUsPage = () => {
   return (
     <>
       <Navbar/>
-      <CommonBanner/>
+      <CommonBanner title="Contact Us"/>
       <div>
-        <BreadcrumbComponent paths={breadcrumbPaths} />
+        <Breadcrumb paths={breadcrumbPaths} />
       </div>
       <ContactForm/>
       <ConnectWithUs/>

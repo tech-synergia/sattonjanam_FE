@@ -78,7 +78,7 @@ const AdminPanel = () => {
       <Table
         dataSource={profileData}
         columns={columns}
-        style={{width: "30%", margin:"auto"}} 
+        style={{width: "40%", margin: "auto"}}
       />
       <Modal
         title="Profile Details"

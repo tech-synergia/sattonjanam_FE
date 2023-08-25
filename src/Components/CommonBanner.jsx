@@ -9,7 +9,7 @@ const CommonBanner = ({ title, children }) => {
     <Layout className="common-background">
       <Content>
         <div className="content">
-          <h1>Contact</h1>
+          <h1>{title}</h1>
         </div>
       </Content>
       {children}
