@@ -23,6 +23,8 @@ function Navbar() {
                 <p className="phone"><i className="bi bi-telephone-fill"></i> +91-11-47094491</p>
                 <p className="phone"><i className="bi bi-phone"></i> +91-9599991982</p>
                 <p><i className="bi bi-envelope-fill"></i> contact@wedgatematrimony.com</p>
+                <NavLink to={`/register`}><button>Register</button></NavLink>
+                <NavLink to={`/login`}><button>Login</button></NavLink>
             </div>
         </div>
         <div className='content'>

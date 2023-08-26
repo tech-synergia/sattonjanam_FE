@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Button, Form, Input, Alert, Typography } from "antd";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const {Title} = Typography;
@@ -15,6 +16,8 @@ const LoginPage = () => {
     email : "",
     password : ""
   })
+
+  const navigate = useNavigate()
 
   const readValue = (e)=>{
     const { name , value } = e.target;
@@ -32,6 +35,9 @@ const LoginPage = () => {
             message: "Login successful!",
             show: true,
           });
+          // localStorage.setItem("accessToken", res.data.token)
+          navigate(`/`)
+          // window.location.href ="/"
         }).catch(err => {
             setAlertData({
               type: "error",
@@ -127,7 +133,7 @@ const LoginPage = () => {
       </p>
 
       <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
-        <Button type="primary" htmlType="submit" onClick={submitHandler}>
+       <Button type="primary" htmlType="submit" onClick={submitHandler}>
           Sign In
         </Button>
       </Form.Item>

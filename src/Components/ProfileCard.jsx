@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, {useContext, useEffect, useState } from "react";
 import { Carousel } from "antd";
 import male_avatar from '../assets/male_avatar.jpg';
 import female_avatar from '../assets/female_avatar.jpg';
 import '../scss/ProfileCard.scss';
 import UserApi from './API/UserApi';
+import { GlobalContext } from "../GlobalContext";
 
 function ProfileCard() {
   const [profile, setProfile] = useState([]);
+  // const context = useContext(GlobalContext)
+  // const [user] = context.useAuth.user
 
   const fetchProfile = async () => {
     try {
@@ -31,10 +34,10 @@ function ProfileCard() {
             {/* <Carousel className="slider"> */}
               {profile.map((profileData) => (
                 <div className="profile" key={profileData._id}>
-                  <img
-                    src={
-                      profileData.gender === "male" ? male_avatar : female_avatar
-                    }
+                  <img src={profileData.image}
+                    // src={
+                    //   profileData.gender === "male" ? male_avatar : female_avatar
+                    // }
                     alt=""
                   />
                   <h3 className="text-center">{profileData.userName}</h3>

@@ -10,6 +10,7 @@ import { useEffect } from "react";
 const { Step } = Steps;
 const { Option } = Select;
 
+
 const RegisterPage = (props) => {
   const [alertData, setAlertData] = useState({
     type: "",
@@ -96,7 +97,7 @@ const RegisterPage = (props) => {
     "West Bengal",
   ];
 
-  let [images, setImages] = useState()
+  const [images, setImages] = useState({})
   // const context = useContext(GlobalContext)
   // const token = context.token
   
@@ -125,15 +126,9 @@ const RegisterPage = (props) => {
                 }
             });
             setImages(res.data.result)
-            console.log(res.data.msg)
-            // const newImage = {
-            //   ...profileDetails,
-            //   image: {
-                  
-            //       url: images.url
-            //   }
-            // }
-            // console.log(newImage.image.url)
+            console.log(res.data.result)
+
+            
     } catch (err) {
         console.log(err.response.data.msg)
     }
@@ -143,17 +138,31 @@ const RegisterPage = (props) => {
 
 
   const handleInputChange = (e) => {
+    // uploadHandler()
     const { name, value } = e.target;
+    // setImages({ images, [name]: value})
     setProfileDetails((prevData) => ({ ...prevData, [name]: value }));
     setCareerDetails((prevData) => ({ ...prevData, [name]: value }));
     setFamilyDetails((prevData) => ({ ...prevData, [name]: value }));
   };
 
   
-  const handleOnSubmit = async () => {
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
     try {
-      
-      const response = await UserApi.create(profileDetails,careerDetails,familyDetails)
+      const newImage = {
+          ...profileDetails,
+          image: {
+              
+              url: images.url
+          }
+        }
+        console.log(newImage.image.url)
+      const response = await UserApi.create(profileDetails,careerDetails,familyDetails,profileDetails.image= images.url, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
       .then(res => {
         setAlertData({
           type: "success",
@@ -246,18 +255,13 @@ const RegisterPage = (props) => {
             </Radio.Group>
           </Form.Item>
           <Form.Item label="Upload Profile Pic">
-            {/* <Upload onChange={uploadHandler}>
-              <Button
-                icon={<i className="bi bi-upload" style={{ fontSize: "14px" }}  name="profile" id="profile"/>}
-              >
-                Upload
-              </Button>
-            </Upload> */}
+            
             <Input
               type="file"
               name="image"
-              id="profile"
-              onChange={uploadHandler} 
+              id="image"
+              required
+              onChange= {uploadHandler}
             />
           </Form.Item>
           <Form.Item label="Email" htmlFor="email">
@@ -463,7 +467,7 @@ const RegisterPage = (props) => {
             </Select>
           </Form.Item>
 
-          <Button type="primary" onClick={handleNext}>
+          <Button type="primary" onClick={handleNext} >
             Next
           </Button>
           <p style={{textAlign: "center"}}>
