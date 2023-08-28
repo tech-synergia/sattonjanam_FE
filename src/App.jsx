@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import RegisterPage from './Components/RegisterPage'
 import ContactUsPage from './Pages/ContactUsPage'
@@ -8,9 +8,12 @@ import LoginPage from './Components/LoginPage'
 import ServicesPage from './Pages/ServicesPage'
 import SuccessStoryPage from './Pages/SuccessStoryPage'
 import AboutUsPage from './Pages/AboutUsPage'
+import ProfileCard from './Components/ProfileCard'
+
 
 
 function App() {
+  
   return (
     <BrowserRouter>
 
@@ -23,7 +26,7 @@ function App() {
             <Route path='/about' element={<AboutUsPage/>} />
             <Route path='/contact' element={<ContactUsPage/>} />
             <Route path='/adminpanel' element={<AdminPanel/>} />
-
+            <Route path='/profileCard' element={<ProfileCard/>}/>
         </Routes>
         
     </BrowserRouter>

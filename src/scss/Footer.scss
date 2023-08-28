@@ -53,6 +53,21 @@ footer{
             
         }
     }
+    .logos{
+        margin-left: 40%;
+  
+    }
+    .logos span a{
+        height: 45px;
+        width: 45px;
+        color: grey;
+        font-size: 22px;
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        
+    }
     .footerEnd{
         text-align: center;
         background-color: #333333;

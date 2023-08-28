@@ -5,6 +5,8 @@ import CommonBanner from '../Components/CommonBanner'
 import BreadCrumb from '../Components/BreadCrumb'
 import ServiceCard from '../Components/ServiceCard'
 import ConnectWithUs from '../Components/ConnectWithUs'
+import EnquireNow from '../Components/EnquireNow';
+import EnquireForm from '../Components/EnquireForm';
 
 function ServicesPage() {
     const breadcrumbPaths = [
@@ -18,6 +20,9 @@ function ServicesPage() {
         <div>
             <BreadCrumb paths={breadcrumbPaths} />
         </div>
+        <EnquireNow>
+          <EnquireForm/>
+        </EnquireNow>
         <ServiceCard/>
         <ConnectWithUs/>
         <Footer/>
