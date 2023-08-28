@@ -1,0 +1,13 @@
+div{
+    .enquire{
+        position: fixed;
+        right: 0px;
+        top:50%;
+        z-index: 999;
+    }
+    .enqImg{
+        position: static;
+        vertical-align: middle; 
+        overflow: clip;
+    }
+}

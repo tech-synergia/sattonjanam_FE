@@ -8,6 +8,8 @@ import Footer from '../Components/Footer'
 import HomeServices from '../Components/HomeServices';
 import HomeSuccess from '../Components/HomeSuccess';
 import ConnectWithUs from '../Components/ConnectWithUs';
+import EnquireNow from '../Components/EnquireNow';
+import EnquireForm from '../Components/EnquireForm';
 import { GlobalContext } from '../GlobalContext';
 
 const HomePage = () => {
@@ -27,19 +29,17 @@ const HomePage = () => {
         <BreadcrumbComponent paths={breadcrumbPaths} />
       </div>
       <CarouselBanner/>
+      <EnquireNow>
+        <EnquireForm/>
+      </EnquireNow>
       <ProfileCard/>
-      {/* {
-                isLogged && isUser ? (
-                    <Route element={<ProtectedRoute/>} >
-                        <Route path={`/profileCard`} element={<ProfileCard/>} />
-                    </Route>
-                ) : null
-            }  */}
+      
       <HomeServices/>
       <AboutInfo/>
       <HomeSuccess/>
       <ConnectWithUs/>
       <Footer/>
+      
     </>
   );
 };

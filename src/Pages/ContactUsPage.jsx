@@ -5,6 +5,8 @@ import ConnectWithUs from '../Components/ConnectWithUs';
 import CommonBanner from '../Components/CommonBanner';
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
+import EnquireNow from '../Components/EnquireNow';
+import EnquireForm from '../Components/EnquireForm';
 
 const ContactUsPage = () => {
   const breadcrumbPaths = [
@@ -19,6 +21,9 @@ const ContactUsPage = () => {
       <div>
         <Breadcrumb paths={breadcrumbPaths} />
       </div>
+      <EnquireNow>
+          <EnquireForm/>
+      </EnquireNow>
       <ContactForm/>
       <ConnectWithUs/>
       <Footer/>

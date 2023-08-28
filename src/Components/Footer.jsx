@@ -44,6 +44,20 @@ function Footer() {
                 </div>
             </div>
         </div>
+        {/* <div className="footerColumns"> */}
+            <div className="impLinks">
+                
+                <div className="Links logos">
+                    
+                    <span><a href="whatsapp://send?text=Hi!&phone=+91+91-9599991982" className="bi bi-whatsapp" > </a></span>
+                    <span><a href="mailto:contact@wedgatematrimony.com" className="bi bi-envelope-fill" > </a></span>
+                    <span><a href="https://www.linkedin.com/in/wedgatematrimony/" className='bi bi-linkedin'></a></span>
+                    <span><a href="https://www.facebook.com/Wedgatematrimonydelhi" className='bi bi-facebook'></a></span>
+                    <span><a href="https://www.instagram.com/wedgate_matrimony/" className='bi bi-instagram'></a></span>
+                    <span><a href="https://twitter.com/wedgate" className='bi bi-twitter'></a></span>
+                </div>
+            </div>
+        {/* </div> */}
 
         <div className="footerEnd">
             <p>© 2008 - 2023 Wedgate Matrimony and Event Services | All Rights Reserved.</p>
