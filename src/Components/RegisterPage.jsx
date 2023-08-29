@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
-import { Form, Input, Select, Radio, Button, Steps, Alert, Upload } from "antd";
+import { Form, Input, Select, Radio, Button, Steps, Alert, Upload, Checkbox } from "antd";
 import "../scss/RegisterPage.scss";
 import TextArea from "antd/es/input/TextArea";
 import UserApi from './API/UserApi'
+import { useNavigate, NavLink } from 'react-router-dom';
 import { GlobalContext } from '../GlobalContext'
 import axios from 'axios'
 import { useEffect } from "react";
@@ -98,9 +99,9 @@ const RegisterPage = (props) => {
   ];
 
   const [images, setImages] = useState({})
-  // const context = useContext(GlobalContext)
+  const navigate = useNavigate()
+  const context = useContext(GlobalContext)
   // const token = context.token
-  
 
   const uploadHandler = async (e) => {
     // to upload image
@@ -163,6 +164,8 @@ const RegisterPage = (props) => {
             'Content-Type': 'application/json'
         }
     })
+
+    axios.post(`https://sattonjanam.onrender.com/api/v1/sendmail`, {email: profileDetails.email, userName: profileDetails.userName})
       .then(res => {
         setAlertData({
           type: "success",
@@ -761,6 +764,9 @@ const RegisterPage = (props) => {
               cols={10}
               onChange={handleInputChange}
             />
+          </Form.Item>
+          <Form.Item  htmlFor="termsCondition">
+            <Checkbox>Terms & Condition</Checkbox>
           </Form.Item>
 
           <Button type="primary" onClick={handleOnSubmit}>

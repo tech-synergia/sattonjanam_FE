@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../scss/Navbar.scss";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo2.svg";
 import { useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 
@@ -17,7 +17,7 @@ function Navbar() {
       <div className="content-container">
         <div className="logoContent">
             <div className="logo-title">
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="logo"/>
             </div>
             <div className="contact">
                 <p className="phone"><i className="bi bi-telephone-fill"></i> +91-11-47094491</p>

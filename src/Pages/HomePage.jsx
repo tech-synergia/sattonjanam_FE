@@ -32,7 +32,7 @@ const HomePage = () => {
       <EnquireNow>
         <EnquireForm/>
       </EnquireNow>
-      <ProfileCard/>
+      {/* <ProfileCard/> */}
       
       <HomeServices/>
       <AboutInfo/>

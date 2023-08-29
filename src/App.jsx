@@ -10,11 +10,10 @@ import SuccessStoryPage from './Pages/SuccessStoryPage'
 import AboutUsPage from './Pages/AboutUsPage'
 import ProfileCard from './Components/ProfileCard'
 
-
-
 function App() {
   
   return (
+   
     <BrowserRouter>
 
         <Routes>
@@ -26,10 +25,13 @@ function App() {
             <Route path='/about' element={<AboutUsPage/>} />
             <Route path='/contact' element={<ContactUsPage/>} />
             <Route path='/adminpanel' element={<AdminPanel/>} />
+            
             <Route path='/profileCard' element={<ProfileCard/>}/>
+                      
         </Routes>
         
     </BrowserRouter>
+    
   )
 }
 

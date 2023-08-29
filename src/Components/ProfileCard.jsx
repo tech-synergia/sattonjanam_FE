@@ -16,6 +16,7 @@ function ProfileCard() {
       const response = await UserApi.getAll("profileDetailsValue", "careerDetailsValue", "familyDetailsValue");
       const verifiedProfile = response.data.users;
       setProfile(verifiedProfile);
+
     } catch (error) {
       console.log(error);
     }
@@ -32,7 +33,7 @@ function ProfileCard() {
           <h2>Premium Members</h2>
           <div className="carousel-container">
             {/* <Carousel className="slider"> */}
-              {profile.map((profileData) => (
+              {profile && profile.map((profileData) => (
                 <div className="profile" key={profileData._id}>
                   <img src={profileData.image}
                     // src={
@@ -40,7 +41,7 @@ function ProfileCard() {
                     // }
                     alt=""
                   />
-                  <h3 className="text-center">{profileData.userName}</h3>
+                  <h3 className="text-center">{profileData._id}</h3>
                 </div>
               ))}
             {/* </Carousel> */}
