@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Table, Button, Modal, Form, Input } from "antd";
 import { Typography } from 'antd';
 import UserApi from "./API/UserApi";
+import { useNavigate, NavLink } from 'react-router-dom';
 import '../scss/AdminPanel.scss'
+import axios from "axios";
 
 const { Title } = Typography;
 
@@ -43,6 +45,7 @@ const AdminPanel = () => {
       key: "actions",
       render: (text, record) => (
         <span>
+          <Button className="btn3" onClick={() => handleUser(record)}>Accept</Button>
           <Button className="btn3" onClick={() => handleDelete(record)}>
             Delete
           </Button>
@@ -56,6 +59,8 @@ const AdminPanel = () => {
     setModalVisible(true);
   };
 
+  const navigate = useNavigate()
+
   const handleDelete = async (record) => {
     try {
       const response = await UserApi.delete(record._id);
@@ -66,6 +71,22 @@ const AdminPanel = () => {
       }
     } catch (error) {
       console.error("Error deleting profile:", error);
+    }
+  };
+  const handleUser = async (record) => {
+    try {
+      const response = await UserApi.getSingle(record._id);
+      if (response.status === 200) {
+        console.log("Profile data :", record);
+        setProfileData(record)
+        // const res = await UserApi.create(profileData,{
+        //   headers: {
+        //       'Content-Type': 'application/json'
+        //   }})
+        navigate(`/profileCard`,record)
+      }
+    } catch (error) {
+      console.error("Error Fetching profile:", error);
     }
   };
 

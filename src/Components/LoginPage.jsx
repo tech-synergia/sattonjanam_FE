@@ -35,7 +35,7 @@ const LoginPage = () => {
             message: "Login successful!",
             show: true,
           });
-          // localStorage.setItem("accessToken", res.data.token)
+          localStorage.setItem("accessToken", res.data.token)
           navigate(`/`)
           // window.location.href ="/"
         }).catch(err => {

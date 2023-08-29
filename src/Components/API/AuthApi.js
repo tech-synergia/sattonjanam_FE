@@ -3,8 +3,8 @@ import axios from 'axios'
 
 function AuthApi() {
     const [isLogged, setIsLogged] = useState(false)
-    
-
+    const token = localStorage.getItem("accessToken") || false;
+    const [isAdmin, setIsAdmin] = useState(false);
     const [user,setUser] = useState(false)
     const [isUser,setIsUser] = useState(false)
 
@@ -21,20 +21,26 @@ function AuthApi() {
             console.log("current user =", res.data);
             setUser(res.data.user);
             setIsLogged(true);
-            
+            if (res.data.user.role === "superadmin") {
+              setIsAdmin(true);
+            } else if (res.data.user.role === "user") {
+              // setIsUser(true);
+              setIsAdmin(true);
+            }
           }
         };
     
         getUser();
-      }, [isLogged, isUser, user]);
+      }, [isAdmin,isLogged, isUser, user]);
 
       useEffect(() => {
         initData();
-      }, []);
+      }, [initData]);
 
       return {
         isLogged: [isLogged, setIsLogged],
         isUser: [isUser, setIsUser],
+        isAdmin: [isAdmin, setIsAdmin],
          user: [user, setUser] 
       };
 
