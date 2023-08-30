@@ -10,22 +10,22 @@ function AuthApi() {
 
     const initData = useCallback(() => {
         const getUser = async () => {
-          const token = localStorage.getItem("accessToken") || false;
-          console.log("token =", token);
+          // const token = localStorage.getItem("accessToken") || false;
+          // console.log("token =", token);
           if (token) {
             const res = await axios.get(`https://sattonjanam.onrender.com/api/v1/auth/currentUser`, {
               headers: {
                 Authorization: token,
               },
             });
-            console.log("current user =", res.data);
+            // console.log("current user =", res.data);
             setUser(res.data.user);
             setIsLogged(true);
             if (res.data.user.role === "superadmin") {
               setIsAdmin(true);
             } else if (res.data.user.role === "user") {
               // setIsUser(true);
-              setIsAdmin(true);
+              setIsUser(true)
             }
           }
         };
@@ -34,8 +34,8 @@ function AuthApi() {
       }, [isAdmin,isLogged, isUser, user]);
 
       useEffect(() => {
-        initData();
-      }, [initData]);
+        initData()
+      }, [initData])
 
       return {
         isLogged: [isLogged, setIsLogged],

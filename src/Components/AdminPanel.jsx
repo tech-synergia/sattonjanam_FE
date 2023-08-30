@@ -45,7 +45,8 @@ const AdminPanel = () => {
       key: "actions",
       render: (text, record) => (
         <span>
-          <Button className="btn3" onClick={() => handleUser(record)}>Accept</Button>
+          <NavLink to={`/profileCard`}><Button className="btn3" onClick={() => handleUser(record)}>Accept</Button></NavLink>
+          
           <Button className="btn3" onClick={() => handleDelete(record)}>
             Delete
           </Button>
