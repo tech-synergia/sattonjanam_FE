@@ -101,7 +101,7 @@ const RegisterPage = (props) => {
   const [images, setImages] = useState({})
   const navigate = useNavigate()
   const context = useContext(GlobalContext)
-  // const token = context.token
+  const token = context.token
 
   const uploadHandler = async (e) => {
     // to upload image
@@ -161,7 +161,8 @@ const RegisterPage = (props) => {
         console.log(newImage.image.url)
       const response = await UserApi.create(profileDetails,careerDetails,familyDetails,profileDetails.image= images.url, {
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': token
         }
     })
 

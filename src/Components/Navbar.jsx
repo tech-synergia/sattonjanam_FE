@@ -1,11 +1,80 @@
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import "../scss/Navbar.scss";
 import logo from "../assets/logo2.svg";
-import { useState } from "react";
+import React, { useState, useContext } from "react";
 import { MenuOutlined } from "@ant-design/icons";
+import { GlobalContext } from '../GlobalContext';
+import { NavLink, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 
 function Navbar() {
+  const context = useContext(GlobalContext)
+  const [isAdmin] = context.useAuth.isAdmin ? context.useAuth.isAdmin : false;
+  const [isLogged] = context.useAuth.isLogged ? context.useAuth.isLogged : false;
+  const [isUser] = context.useAuth.isUser ? context.useAuth.isUser : false;
+  const [user] = context.useAuth.user ? context.useAuth.user : false;
+  const navigate = useNavigate()
+
+  const adminRoute = () => {
+    return (
+        <ul className="navbar-nav">
+        
+         
+              <NavLink to={`/adminpanel`} className="dropdown-item"><button>Admin Panel</button></NavLink>
+              <NavLink to={`/`} onClick={logoutUser} className="dropdown-item"><button>Logout</button></NavLink>
+          
+   </ul>
+    )
+  }
+
+  const userRoute = () => {
+    return (
+        <ul className="navbar-nav">
+             
+             
+              <NavLink to={`/profileCard`} className="dropdown-item"><button>User Profile</button></NavLink>
+                    
+              <NavLink to={`/`} onClick={logoutUser} className="dropdown-item"><button>Logout</button></NavLink>
+                
+            
+        </ul>
+    )
+  }
+
+  const commonRoute = () => {
+    return (
+        <ul className="navbar-nav">
+            
+                <NavLink to={`/login`} className="nav-link"><button>Login</button></NavLink>
+            
+                <NavLink to={`/register`} className="nav-link"><button>Register</button></NavLink>
+            
+        </ul>
+    )
+  }
+
+  const logoutUser = async () => {
+    if(window.confirm(`Are you sure to logout?`)) {
+      try {
+        const res = await axios.get(`https://sattonjanam.onrender.com/api/v1/logout`)
+        localStorage.clear()
+        // toast.success(res.data.msg)
+        console.log(res.data.msg)
+        setIsAdmin(false)
+        setUser(false)
+        setIsLogged(false)
+        setIsUser(false)
+        navigate(`/`)
+        window.location.reload()
+      } catch (err) {
+            console.log(err.response.data.msg)
+      }
+    } else {
+        console.log('logout terminated')
+    }
+  }
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -23,8 +92,21 @@ function Navbar() {
                 <p className="phone"><i className="bi bi-telephone-fill"></i> +91-11-47094491</p>
                 <p className="phone"><i className="bi bi-phone"></i> +91-9599991982</p>
                 <p><i className="bi bi-envelope-fill"></i> contact@wedgatematrimony.com</p>
-                <NavLink to={`/register`}><button>Register</button></NavLink>
-                <NavLink to={`/login`}><button>Login</button></NavLink>
+                {/* <NavLink to={`/register`}><button>Register</button></NavLink>
+                <NavLink to={`/login`}><button>Login</button></NavLink> */}
+
+                  {
+                    isLogged ? (
+                        <React.Fragment>
+                                {
+                                    isAdmin ? adminRoute() : null
+                                }
+                                {
+                                    isUser ? userRoute() : null
+                                }
+                        </React.Fragment>
+                    ) : commonRoute()
+                }
             </div>
         </div>
         <div className='content'>

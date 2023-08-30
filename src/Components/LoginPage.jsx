@@ -28,8 +28,10 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       console.log('login=', user);
-      const response = await axios.post(`https://sattonjanam.onrender.com/api/v1/login`, user)
+      const res = await axios.post(`https://sattonjanam.onrender.com/api/v1/login`, user)
+      
       .then(res => {
+        // localStorage.setItem("accessToken", res.data.token)
           setAlertData({
             type: "success",
             message: "Login successful!",
@@ -37,7 +39,7 @@ const LoginPage = () => {
           });
           localStorage.setItem("accessToken", res.data.token)
           navigate(`/`)
-          // window.location.href ="/"
+          window.location.href ="/"
         }).catch(err => {
             setAlertData({
               type: "error",
