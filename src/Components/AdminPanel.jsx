@@ -13,10 +13,6 @@ const AdminPanel = () => {
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
 
-  useEffect(() => {
-    fetchProfile();
-  }, []);
-
   const fetchProfile = async () => {
     try {
       const response = await UserApi.getAll();
@@ -25,6 +21,10 @@ const AdminPanel = () => {
       console.error("Error fetching professionals:", error);
     }
   };
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
 
   const columns = [
     {
