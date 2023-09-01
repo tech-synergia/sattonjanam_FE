@@ -68,6 +68,7 @@ function Navbar() {
         navigate(`/`)
         window.location.reload()
       } catch (err) {
+        window.location.reload()
             console.log(err.response.data.msg)
       }
     } else {

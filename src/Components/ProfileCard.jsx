@@ -14,7 +14,10 @@ function ProfileCard() {
   const fetchProfile = async () => {
     try {
       const response = await UserApi.getAll("profileDetailsValue", "careerDetailsValue", "familyDetailsValue");
-      const verifiedProfile = response.data.users;
+      const verifiedProfile = response.data.users.filter(
+        (profileData) => profileData.isVerified
+      )
+      
       setProfile(verifiedProfile);
 
     } catch (error) {

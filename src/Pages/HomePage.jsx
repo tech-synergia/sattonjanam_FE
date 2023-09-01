@@ -45,11 +45,11 @@ const HomePage = () => {
                     
                 ) : null
             }
-            {
+            {/* {
                 isLogged && isAdmin ? (
                   <AdminPanel/>
                 ) : null
-            }
+            } */}
       
       <HomeServices/>
       <AboutInfo/>
