@@ -7,25 +7,31 @@
     p{
         font-size: 19px;
     }
-    .wedGate{
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-        .wedGateContent{
-            font-size: 18px;
-           .titleStyle{
-                color: vrs.$prim-color;
-           }
+    // .wedGate{
+    //     display: flex;
+    //     flex-direction: row;
+    //     gap: 30px;
+    //     .wedGateContent{
+    //         font-size: 18px;
+    //        .titleStyle{
+    //             color: vrs.$prim-color;
+    //        }
          
+    //     }
+    //     .wedgateImage{
+    //         img{
+    //             width: 450px;
+    //             height: 450px;
+    //         }
+    //     }
+    // }
+    .sattojanamAbout{
+        img{
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
         }
-        .wedgateImage{
-            img{
-                width: 450px;
-                height: 450px;
-            }
-        }
-    }
-    .wedgateAbout{
         .titleStyle{
             color: vrs.$prim-color;
             background-color: lightgrey;

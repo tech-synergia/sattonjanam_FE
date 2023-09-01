@@ -21,10 +21,10 @@ function WhyUs() {
                     <li>Secure Family Friendly</li>
                     <li>Strict Privacy Control</li>
                 </ul>
-                <p>Marriage is an eternal bond. It isn’t just a celebration, but a decision that will complement your entire life to come. Since ancient times, marriages have been consummated in India by involving each and every member of a family. A very valued Indian trend which shall remain for centuries to come!</p>
+                {/* <p>Marriage is an eternal bond. It isn’t just a celebration, but a decision that will complement your entire life to come. Since ancient times, marriages have been consummated in India by involving each and every member of a family. A very valued Indian trend which shall remain for centuries to come!</p>
                 <p>At Wedgate Matrimony, we try to make ourselves a helping associate to you and your family, so we can acquire your moral and intellectual permission to find the ideal partner for you. Our attachment with our prospects is not just limited to monetary and experiential conjunction. Rather, we ensure that the bonds we help create last happily forever. Following our Indian values, we strongly believe that culminating wedding bonds is an act of sanctity.
                 </p>
-                <p>Even though we have been serving the matrimonial requirements of elites, upper class and service class families for more than a decade now, we make sure that nobody leaves our door unattended. We work with people belonging to almost every strata of the society, and have dedicated procedures and packages for each one of them.</p>
+                <p>Even though we have been serving the matrimonial requirements of elites, upper class and service class families for more than a decade now, we make sure that nobody leaves our door unattended. We work with people belonging to almost every strata of the society, and have dedicated procedures and packages for each one of them.</p> */}
             
             </div>
 

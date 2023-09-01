@@ -11,6 +11,11 @@ import SuccessStoryPage from '../Pages/SuccessStoryPage'
 import AboutUsPage from '../Pages/AboutUsPage'
 import ProfileCard from '../Components/ProfileCard'
 import ProtectedRoute from './ProtectedRoute'
+import TermsAndPrivacyPage from '../Pages/TermsAndPrivacyPage'
+import RefundPolicy from '../Pages/RefundPolicy'
+import DisclaimerPage from '../Pages/DisclaimerPage'
+import WeddingEvent from '../Pages/WeddingEvent'
+import Astrologer from '../Pages/Astrologer'
 
 
 function MainRoute() {
@@ -29,10 +34,14 @@ function MainRoute() {
             <Route path={'/service'} element={<ServicesPage/>} />
             <Route path={'/successStories'} element={<SuccessStoryPage/>} />
             <Route path={'/about'} element={<AboutUsPage/>} />
+            <Route path={'/terms&privacy'} element={<TermsAndPrivacyPage/>} />
+            <Route path={'/refund'} element={<RefundPolicy/>} />
             <Route path={'/contact'} element={<ContactUsPage/>} />
             <Route path={'/profileCard'} element={<ProfileCard/>}/>
             <Route path={'/adminpanel'} element={<AdminPanel/>} />
-
+            <Route path={'/disclaimer'} element={<DisclaimerPage/>} />
+            <Route path={'/wedding'} element={<WeddingEvent/>} />
+            <Route path={'/astrologer'} element={<Astrologer/>} />
             {
                 isLogged && isUser ? (
                     <Route element={<ProtectedRoute/>}>

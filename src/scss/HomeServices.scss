@@ -47,27 +47,27 @@
 
 @media screen and (max-width: 768px){
     .carouselService{
-        padding: 40px;
+        padding: 20px;
         .carouselSlide{
            .cardRow{
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            flex-direction: row;
+            gap: 0px;
             .cardItem{
                 img{
                     margin: auto;
-                    width: 100px;
-                    height: 100px;
+                    width: 50px;
+                    height: 50px;
                 }
                 h3{
-                    font-size: 20px;
+                    font-size: 16px;
                     margin-bottom: 0px;
                 }
                 p{
-                    font-size: 15px;
+                    font-size: 10px;
                 }
                
-                width: 280px;
+                width: 340px;
                 height: 350px;
             }
            }

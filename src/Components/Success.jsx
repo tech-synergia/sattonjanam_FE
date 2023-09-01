@@ -1,18 +1,32 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import '../scss/Success.scss'
+import Success1 from '../assets/successstory1.jpeg'
+import Success2 from '../assets/successstory2.jpeg'
+import Success3 from '../assets/success3.jpeg'
+import Success4 from '../assets/successstory4.2.jpeg'
 
 const Success = () => {
   const data = [
     {
-      image: 'https://www.wedgatematrimony.com/wp-content/uploads/2022/04/deepak-and-deepika-raheja-1.jpg',
-      title: 'Swinky & Pomil',
-      content: 'Pomil came from a well established business family wherein he had acquired sharp business acumen in his ambitious genes. He had a very good looking and optimistic persona mixed with moral and cultural ethos imbibed from his parents. On the other hand we had Swinky, a charming, slim, happy go lucky and balanced girl. We organized their first meeting at our office premises alongwith family members where both the sides mutually liked each other so well that next set of meetings between both individuals, followed by family meetings happened in quick succession. Within a span of few months, both the families finalized a happy marriage decision between two souls made for each others.',
+      image: Success1,
+      title: 'Himmashu & Yashika',
+      content: 'I"m happily married with Yashika, it"s all thanks to the Sattonjanam.com. They did a great job in bringing us together and making our dreams come true. Thank you Sattonjanam.com for helping in finding the best life partner.',
     },
     {
-      image: 'https://www.wedgatematrimony.com/wp-content/uploads/2022/04/2.jpg',
-      title: 'Vipul & Nietika',
-      content: 'Nietika parents enrolled us stating clear expectations for a businessman prospect who is handsome looking, tall, clear hearted and independent from a good family background. With god’s blessings, it didn’t take us long to arrange the first meeting between both the families alongwith prospects. It seemed like love at first sight where most of the things clicked between each other and it transpired into series of family interactions to further strengthen the alliance finalization efforts. A sweet and life time decision was soon taken to go ahead with the finalization of this match, followed by happy marriage ceremonies with all the nears and dears.',
+      image: Success2,
+      title: 'Himanshu & Hema',
+      content: 'I wanted to find the right person to share my life with, so I joined a Sattonjanam.com. They really understood what I was looking for and helped me connect with potential partners who were a good match. Through this, I met Himanshu. As we talked more, we realized we were perfect for each other. The Sattonjanam.com supported us all along. Thank you so much sattonjanam Team',
+    },
+    {
+      image: Success3,
+      title: 'Vikrant & pooja',
+      content: 'The Sattonjanam.com dedicated team took time to understand my preferences, ensuring that the potential matches aligned with my vision. Engaging conversations and thoughtful matches made the process exciting.I connected with Vikrant, With every interaction, the compatibility and connection grew stronger. The Sattonjanam.com continued support made our journey smoother. I"m grateful to the Sattonjanam.com, for uniting us and turning dreams into reality. This success story is a tribute to their commitment to fostering meaningful connections.',
+    },
+    {
+      image: Success4,
+      title: 'Pawan & Meenakshi',
+      content: 'I wanted to find the right person to marry. I got help from a Sattonjanam.com they are really good at matching people. They introduced me to Pawan & We got along great and realized we were perfect for each other. With the help of their team, we got married and now we"re really happy together.Thank you Sattonjanam.com for all the support.',
     },
   ];
 
