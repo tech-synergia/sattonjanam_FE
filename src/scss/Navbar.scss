@@ -91,7 +91,7 @@
         display: none;
       }
     }
-  }
+}
 
 
   @media (max-width: 768px) {
@@ -122,11 +122,11 @@
       }
       }
      
-      .content {
+      .navbarContent {
         justify-content: space-between;
         align-items: center;
         position: relative;
-      }
+      
       .nav-btn {
         display: block;
       }
@@ -167,5 +167,6 @@
       }
     }
   }
+}
 
 
