@@ -37,19 +37,20 @@ const HomePage = () => {
       <EnquireNow>
         <EnquireForm/>
       </EnquireNow>
+      <ProfileCard/>
       {/* <ProfileCard/> */}
-      {
+      {/* {
                 isLogged && isUser ? (
 
                     <ProfileCard/>
                     
                 ) : null
-            }
-            {
+            } */}
+            {/* {
                 isLogged && isAdmin ? (
                   <AdminPanel/>
                 ) : null
-            }
+            } */}
       
       <HomeServices/>
       <AboutInfo/>

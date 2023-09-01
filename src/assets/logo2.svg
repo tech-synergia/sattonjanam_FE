@@ -3,7 +3,7 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:white;}
+	.st0{fill:#98030A;}
 	.st1{clip-path:url(#SVGID_00000047026542780888857570000004325579752699067582_);}
 	.st2{fill:#3C2415;}
 	.st3{fill:#A97C50;}
@@ -32,8 +32,8 @@
 	.st26{opacity:0.52;fill:#F4C094;}
 	.st27{clip-path:url(#SVGID_00000065766232038441615900000015286340293414557321_);}
 	.st28{fill:#613443;}
-	.st29{fill:none;stroke:#98030A;stroke-miterlimit:10;}
-	.st30{fill:#98030A;}
+	.st29{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st30{fill:#FFFFFF;}
 </style>
 <g id="Color">
 </g>

@@ -312,6 +312,9 @@ const RegisterPage = (props) => {
               onChange={handleInputChange} 
             />
           </Form.Item>
+          <Form.Item  htmlFor="termsCondition" style={{marginLeft: "80px"}}>
+            <Checkbox>I am ready to marry people of all castes</Checkbox>
+          </Form.Item>
           <Form.Item label="Gotra" htmlFor="gotra">
             <Input
               type="text"
