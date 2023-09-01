@@ -305,45 +305,11 @@ const RegisterPage = (props) => {
             />
           </Form.Item>
           <Form.Item label="Caste" htmlFor="caste">
-            <Select
+            <Input 
+              type="text"
               name="caste"
               id="caste"
-              placeholder="Select Your Caste"
-              onChange={(value) =>
-                handleInputChange({ target: { name: "caste", value } })
-              }
-            >
-              <Option value="hindu">Adi Dharmi</Option>
-              <Option value="muslim">Adi Andhra</Option>
-              <Option value="christian">Adi Dravida</Option>
-              <Option value="sikh">Adi Karnataka</Option>
-              <Option value="parsi">Agamudayar</Option>
-              <Option value="jain">Agri</Option>
-              <Option value="buddhist">Ahir</Option>
-              <Option value="noReligion">Ahir-Ahir shimpi</Option>
-              <Option value="spiritual">Ahirwar</Option>
-              <Option value="ambalavasi">Ambalavasi</Option>
-              <Option value="amb-pisha">Ambalavasi-pisharody</Option>
-              <Option value="amb-pod">Ambalavasi-Poduval</Option>
-              <Option value="ammaKodava">Amma Kodava</Option>
-              <Option value="arakh">Arakh Arakvanshiya</Option>
-              <Option value="arekatica">Arekatica</Option>
-              <Option value="arunthathiyar">Arunthathiyar</Option>
-              <Option value="arya">Arya Vysya</Option>
-              <Option value="ayyaraka">Ayyaraka</Option>
-              <Option value="badaga">Badaga</Option>
-              <Option value="badhai">Badhai</Option>
-              <Option value="badgi">Badgi</Option>
-              <Option value="baghel">Baghel Gader</Option>
-            </Select>
-          </Form.Item>
-          <Form.Item label="Sub caste" htmlFor="subCaste">
-            <Input
-              type="text"
-              name="subCaste"
-              id="subCaste"
-              required
-              onChange={handleInputChange}
+              onChange={handleInputChange} 
             />
           </Form.Item>
           <Form.Item  htmlFor="termsCondition" style={{marginLeft: "80px"}}>
@@ -506,7 +472,9 @@ const RegisterPage = (props) => {
               <Option value="No">No</Option>
             </Select>
           </Form.Item>
-
+          <Form.Item  htmlFor="termsCondition" style={{marginLeft: "0px"}}>
+            <Checkbox>I am ready to marry people of all castes</Checkbox>
+          </Form.Item>
           <Button type="primary" onClick={handleNext} >
             Next
           </Button>
@@ -708,13 +676,18 @@ const RegisterPage = (props) => {
             </Select>
           </Form.Item>
           <Form.Item label="Actual Income Per Annum" htmlFor="annualIncome">
-            <Input
-              type="number"
+            <Select 
               name="annualIncome"
               id="annualIncome"
               required
-              onChange={handleInputChange}
-            />
+              onChange={(value) =>
+                handleInputChange({ target: { name: "annualIncome", value } })
+              }>
+                  <Option value="range1">1lakh - 5lakhs</Option>
+                  <Option value="range2">5lakhs - 10lakhs</Option>
+                  <Option value="range3">10lakhs - 25lakhs</Option>
+                  <Option value="range4">More than 25 lakhs</Option>
+            </Select>
           </Form.Item>
           <Form.Item
             label="About My self"
@@ -854,7 +827,7 @@ const RegisterPage = (props) => {
             />
           </Form.Item>
           <Form.Item  htmlFor="termsCondition">
-            <Checkbox>Terms & Condition</Checkbox>
+            <Checkbox><a href="/terms&privacy"> Terms & Condition</a></Checkbox>
           </Form.Item>
 
           <Button type="primary" onClick={handleOnSubmit}>

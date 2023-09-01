@@ -6,7 +6,7 @@ const {Title } = Typography;
 function Matrimony() {
   return (
     <div className='matrimony'>
-      <div className="wedGate">
+      {/* <div className="wedGate">
             <div className="wedGateContent">
                 <Title level={1} className="titleStyle">Wedgate Matrimony</Title>
                 <p>
@@ -25,14 +25,13 @@ function Matrimony() {
             <div className="wedgateImage">
                 <img src="https://www.wedgatematrimony.com/wp-content/uploads/2020/01/wedgate-matrimonial-services-delhi-ncr.jpg" alt="no image" />
             </div>
-      </div>
-      <div className="wedgateAbout">
-          <Title level={1} className="titleStyle">About</Title>
-          <p>Our key objective is to provide a personal touch to our clients, so we act more like family members than just a protocol-bound matrimonial firm . our team simultaneously works on important supporting factors like case study creation, profile creation, introduction writing, portfolio shoot, grooming, counselling, astro matching, availability of meeting lounges along with refreshments, presence of experienced moderators, before and after feedback, query resolution, personal touch from dedicated service coordinators, etc.</p>
-          <p>Due to our team’s consistent efforts, we have successfully concluded marriage decisions in as little as one week’s time for many of our clients. This can be considered a clear indicator of our dedication and understanding of the matchmaking process. Majority of our clients include elites, NRIs, upper class and upper middle class from all communities. However, our service is open to all walks of society.</p>
-          <p>We are inspired by strong ethical values. Though it is a professional enterprise but a deep sense of long term well being of our clients remains paramount for our entire team. We personally nurture and impart our best to every case.</p>
-          <p><strong>Vision:</strong> We visualise ourselves as a reliable and trustworthy matrimonial matchmaking service preferential for people in every walk of life.</p>
-          <p><strong>Mission:</strong> Our mission is to create the most suitable platform for all castes, age groups, genders and income groups, which helps people to find the right match and culminate an everlasting wedding bond. We consider matrimonial matchmaking an act of sanctity, and are dedicated to working hard to achieve the best results for our prospects.</p>
+      </div> */}
+      <div className="sattojanamAbout">
+          <Title level={3} className="titleStyle" style={{textAlign: "center"}}>Most Trusted Matrimony Brand In India</Title>
+          <p>Our Matrimonial venture, Sattonjanam.com has been successfully building and nurturing matrimonial relationships , bringing countless smiles and happy times to thousands of families. SattonJanam.com is a by-ivite and exclusive Matrimony service provider. We are professionaly Managed company and our team comes with a very deep and exclusive network.</p>
+          <p>SattonJanam.com Matrimonial is a matchmaking service created for parents/relatives/family and friends, who are looking for a life partner for their loved ones. Unlike other Matrimonial services, we focus on providing detailed family and background information to help you take the next step with confidence.  Sattonjanam.com Matrimonial is one of the best Matchmaking service. We offer membership options to suit different needs and budgets. Clients can choose from a range of packages that include different levels of services and support.</p>
+          <p><strong>Vision:</strong> Over vision to help you to find the one who completes you and say yes to a lifetime of love.</p>
+          <p><strong>Mission:</strong> Our mission is to create the most suitable platform for all castes, age groups, genders and income groups, which helps people to find the right match and culminate an everlasting wedding bond. We promise to spread our services all over the world through user experience feedback, constant innovation, teamwork, and integrity. We will work our customers to understand their needs and provide the perfect solutions that meet those needs. Premium Matrimony is an excellent choice for affluent individuals who are looking for a personalized and high-quality matchmaking service.</p>
       </div>
     </div>
   )

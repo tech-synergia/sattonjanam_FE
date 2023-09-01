@@ -15,10 +15,16 @@
         .cards{
             width: 260px;
             border: 2px solid #fff;
-            height: 240px;
+            height: 300px;
+            .image-size{
+                height: 200px;
+                object-fit: cover;
+                width: 260px;
+            }
             .name{
                 text-align: center;
                 font-size: 22px;
+                height: 50px;
             }
         }
     }
@@ -51,7 +57,7 @@
             .cards{
                 width: 260px;
                 border: 2px solid #fff;
-                height: 240px;
+                height: 260px;
                 .name{
                     text-align: center;
                     font-size: 22px;

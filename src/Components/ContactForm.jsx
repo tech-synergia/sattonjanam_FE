@@ -10,32 +10,32 @@ function ContactForm() {
       <div className="leftSideAddress">
         <div className="addressContent">
             <Title level={3}>For Matrimonial / Matchmaking Requirements:</Title>
-            <Text className="text"><i className="bi bi-telephone-fill"></i> +91-9599991980 & +91-1147094491 / 92</Text>
+            <Text className="text"><i className="bi bi-telephone-fill"></i> 9773643677</Text>
         </div>
         <hr />
         <div className="addressContent">
             <Title level={3}>For Portfolio Or Wedding Shoots</Title>
-            <Text className="text"><i className="bi bi-telephone-fill"></i> +91-9599991982 / 83</Text>
+            <Text className="text"><i className="bi bi-telephone-fill"></i> 9773643677</Text>
         </div>
         <hr />
         <div className="addressContent">
             <Title level={3}>For Marriage Counselling</Title>
-            <Text className="text"><i className="bi bi-telephone-fill"></i>  +91-9599991982 / 83</Text>
+            <Text className="text"><i className="bi bi-telephone-fill"></i> 9773643677</Text>
         </div>
         <hr />
         <div className="addressContent">
             <Title level={3}>For Wedding Events Planning Services</Title>
-            <Text className="text"><i className="bi bi-telephone-fill"></i>  +91-9599991982 / 83</Text>
+            <Text className="text"><i className="bi bi-telephone-fill"></i> 9773643677</Text>
         </div>
         <hr />
         <div className="addressContent">
-            <Title level={3}>For Careers Or Jobs With Wedgate Matrimony:</Title>
-            <Text className="text"><i className="bi bi-telephone-fill"></i>  +91-9599991983 / 84</Text>
+            <Title level={3}>For Careers Or Jobs With Sattonjanam Matrimony:</Title>
+            <Text className="text"><i className="bi bi-telephone-fill"></i> 9773643677</Text>
         </div>
         <hr />
         <div className="addressContent">
             <Title level={3}>Our Address</Title>
-            <Text>I-7, Metro Pillar No 333, Najafgarh Road, Near Moti Nagar Metro Station, Kailash Park, New Delhi 110015 (Above Pind Balluchi Restaurant)</Text>
+            <Text>Add- 224, Ground floor, IP colony Faridabad, Haryana. Pin- 121009</Text>
         </div>
       </div>
       <div className="rightForm">

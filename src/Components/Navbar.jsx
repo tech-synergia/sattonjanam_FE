@@ -1,6 +1,6 @@
 // import { NavLink } from "react-router-dom";
 import "../scss/Navbar.scss";
-import logo from "../assets/logo2.svg";
+import logo from "../assets/websiteLogo.svg";
 import React, { useState, useContext } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import { GlobalContext } from '../GlobalContext';
@@ -90,9 +90,10 @@ function Navbar() {
               <img src={logo} alt="logo"/>
             </div>
             <div className="contact">
-                <p className="phone"><i className="bi bi-telephone-fill"></i> +91-11-47094491</p>
-                <p className="phone"><i className="bi bi-phone"></i> +91-9599991982</p>
-                <p><i className="bi bi-envelope-fill"></i> contact@wedgatematrimony.com</p>
+                <p className="phone"><i className="bi bi-telephone-fill"></i> 9773643677</p>
+                {/* <p className="phone"><i className="bi bi-phone"></i> +91-9599991982</p> */}
+                <p><i className="bi bi-envelope-fill"></i> www.sattonjanam.com</p>
+                <p><i className="bi bi-envelope-fill"></i> Support@sattonjanam.com</p>
                 {/* <NavLink to={`/register`}><button>Register</button></NavLink>
                 <NavLink to={`/login`}><button>Login</button></NavLink> */}
 
@@ -126,6 +127,18 @@ function Navbar() {
             <li>
               <NavLink to={"/successStories"} onClick={toggleMenu}>
                 Success Stories
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to={"/wedding"} onClick={toggleMenu}>
+                Wedding Event Services
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to={"/astrologer"} onClick={toggleMenu}>
+                Astrologer
               </NavLink>
             </li>
             <li>

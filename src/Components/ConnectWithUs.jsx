@@ -36,15 +36,15 @@ function ConnectWithUs() {
 
         <div className="contactAddress">
             <div className="address">
-                <p>I-7, Metro Pillar No 333, Najafgarh Road, Near Moti Nagar Metro Station, Kailash Park, New Delhi 110015 (Above Pind Balluchi Restaurant) Get Direction</p>
+                <p>Add- 224, Ground floor, IP colony Faridabad, Haryana. Pin- 121009</p>
             </div>
             <div className="address">
-                <p>+91-11-47094491</p>
-                <p>+91-9599991980</p>
+                <p>9773643677</p>
+              
             </div>
             <div className="address">
-                <p>contact@wedgatematrimony.com</p>
-                <p>www.wedgatematrimony.com</p>
+                <p>www.sattonjanam.com</p>
+                <p>Support@sattonjanam.com</p>
             </div>
         </div>
     </div>
