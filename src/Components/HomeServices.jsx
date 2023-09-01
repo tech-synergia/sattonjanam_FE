@@ -10,43 +10,51 @@ const { Title } = Typography;
 const cardData = [
   {
     image: ring,
-    heading: 'Punjabi Matrimonial Service',
-    paragraph: 'Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...',
+    heading: "Punjabi Matrimonial Service",
+    paragraph:
+      "Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...",
   },
   {
     image: ring,
-    heading: 'Punjabi Matrimonial Service',
-    paragraph: 'Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...',
+    heading: "Sikh Matrimonial Service",
+    paragraph:
+      "Name given to a marriage ceremony in Sikh Culture is called “Anand Karaj” which means “Blissful Union”. Sikh matrimonial ceremonies..."
   },
   {
     image: ring,
-    heading: 'Punjabi Matrimonial Service',
-    paragraph: 'Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...',
+    heading: "Hindu Matrimonial Service",
+    paragraph:
+      "The Hindu community is a diverse, colourful and enchanting ethnic group of people which make up for around 80% of...",
   },
   {
     image: ring,
-    heading: 'Punjabi Matrimonial Service',
-    paragraph: 'Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...',
+    heading: "Jain Matrimonial Services",
+    paragraph:
+      "Jainsim is the sixth largest religion in India, and is mainly concentrated around the western states of Gujarat and Rajasthan...",
   },
   {
     image: ring,
-    heading: 'Punjabi Matrimonial Service',
-    paragraph: 'Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...',
+    heading: "Elite Matrimonial Service",
+    paragraph:
+      "With India’s fast paced economic development, and the ever expanding upper middle and rich class, the demand for an elite...",
   },
   {
     image: ring,
-    heading: 'Punjabi Matrimonial Service',
-    paragraph: 'Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...',
+    heading: "NRI Matrimonial Service",
+    paragraph:
+      "NRI’s, are people who are born in India but reside abroad in a different country. Despite living in foreign countries...",
   },
   {
     image: ring,
-    heading: 'Punjabi Matrimonial Service',
-    paragraph: 'Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...',
+    heading: "Late Marriage Matrimony",
+    paragraph:
+      "In the Indian subcontinent, the ideal age for marriage falls in the range of twenties and early thirties. Most people...",
   },
   {
     image: ring,
-    heading: 'Punjabi Matrimonial Service',
-    paragraph: 'Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...',
+    heading: "Re-Marriage Services",
+    paragraph:
+      "A marriage can fail because of reasons like communication gaps, adjustment issues, lack of compassion, domestic violence, or any other...",
   },
 ];
 
