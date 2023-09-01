@@ -85,19 +85,19 @@ const AdminPanel = () => {
   };
   const handleUser = async (record) => {
     try {
-      const response = await UserApi.getSingle(record._id,{
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': token
-        }
-    });
-
-    // const response = await UserApi.update(record._id,{
-    //   headers : {
-    //     'Content-Type': 'application/json',
+    //   const response = await UserApi.getSingle(record._id,{
+    //     headers: {
+    //         'Content-Type': 'application/json',
     //         'Authorization': token
-    //   }
+    //     }
     // });
+
+    const response = await UserApi.update(record._id,{
+      headers : {
+        'Content-Type': 'application/json',
+            'Authorization': token
+      }
+    });
       if (response.status === 200) {
         console.log("Profile data :", record);
         const updatedData = profileData.map((prof) =>
@@ -109,7 +109,7 @@ const AdminPanel = () => {
         //       'Content-Type': 'application/json',
         //       'Authorization': token
         //   }})
-        navigate(`/profileCard`,profileData)
+        navigate(`/profileCard`)
       }
     } catch (error) {
       console.error("Error Fetching profile:", error);
