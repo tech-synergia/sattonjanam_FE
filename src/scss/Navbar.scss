@@ -19,6 +19,18 @@
       .contact {
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
+        .logo-title {
+            cursor: pointer;
+            background-color: #fff;
+            width: 100px;
+            height: 80px;
+            img {
+              width: 100px;
+              height: 80px;
+            }
+
+              height: 100px;
         align-items: center;
         font-size: 20px;
 
