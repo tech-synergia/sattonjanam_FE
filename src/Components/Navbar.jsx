@@ -78,7 +78,7 @@ function Navbar() {
 
   return (
     <div id="navbar">
-      <div className="content-container">
+      {/* <div className="contentContainer"> */}
         <div className="logoContent">
             <div className="logo-title">
               <img src={logo} alt="logo"/>
@@ -105,7 +105,7 @@ function Navbar() {
                 }
             </div>
         </div>
-        <div className='content'>
+        <div className='navbarContent'>
           <ul className={`links ${isMenuOpen ? "open" : ""}`} style={{zIndex: "3"}}>
             <li>
               <NavLink to={"/"} onClick={toggleMenu}>
@@ -151,7 +151,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
 
