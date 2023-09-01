@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Table, Button, Modal, Form, Input } from "antd";
 import { Typography } from 'antd';
 import UserApi from "./API/UserApi";
 import { useNavigate, NavLink } from 'react-router-dom';
 import '../scss/AdminPanel.scss'
 import axios from "axios";
+import { GlobalContext } from '../GlobalContext'
 
 const { Title } = Typography;
 
@@ -12,7 +13,8 @@ const AdminPanel = () => {
   const [profileData, setProfileData] = useState([]);
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
-
+  const context = useContext(GlobalContext)
+  const token = context.token
   useEffect(() => {
     fetchProfile();
   }, []);
@@ -45,11 +47,18 @@ const AdminPanel = () => {
       key: "actions",
       render: (text, record) => (
         <span>
-          <NavLink to={`/profileCard`}><Button className="btn3" onClick={() => handleUser(record)}>Accept</Button></NavLink>
-          
-          <Button className="btn3" onClick={() => handleDelete(record)}>
+          {record.isVerified ? (<Button className="btn3" onClick={() => handleDelete(record)}>
             Delete
-          </Button>
+          </Button>):(
+            <>
+              <Button className="btn3" onClick={() => handleUser(record)}>Accept</Button>
+          
+              <Button className="btn3" onClick={() => handleDelete(record)}>
+              Delete
+              </Button>
+            </>
+          )}
+          
         </span>
       ),
     },
@@ -76,15 +85,31 @@ const AdminPanel = () => {
   };
   const handleUser = async (record) => {
     try {
-      const response = await UserApi.getSingle(record._id);
+      const response = await UserApi.getSingle(record._id,{
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token
+        }
+    });
+
+    // const response = await UserApi.update(record._id,{
+    //   headers : {
+    //     'Content-Type': 'application/json',
+    //         'Authorization': token
+    //   }
+    // });
       if (response.status === 200) {
         console.log("Profile data :", record);
-        setProfileData(record)
+        const updatedData = profileData.map((prof) =>
+          prof._id === record._id ? { ...prof, isVerified: true} : prof
+        )
+        setProfileData(updatedData)
         // const res = await UserApi.create(profileData,{
         //   headers: {
-        //       'Content-Type': 'application/json'
+        //       'Content-Type': 'application/json',
+        //       'Authorization': token
         //   }})
-        navigate(`/profileCard`,record)
+        navigate(`/profileCard`,profileData)
       }
     } catch (error) {
       console.error("Error Fetching profile:", error);

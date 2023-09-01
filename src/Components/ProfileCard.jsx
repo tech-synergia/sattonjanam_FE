@@ -11,10 +11,13 @@ function ProfileCard() {
   // const context = useContext(GlobalContext)
   // const [user] = context.useAuth.user
 
-  const fetchProfile = async () => {
+  const fetchProfile = async (record) => {
     try {
       const response = await UserApi.getAll("profileDetailsValue", "careerDetailsValue", "familyDetailsValue");
-      const verifiedProfile = response.data.users;
+      const verifiedProfile = response.data.users.filter(
+        (profileData) => profileData.isVerified
+      )
+      
       setProfile(verifiedProfile);
 
     } catch (error) {

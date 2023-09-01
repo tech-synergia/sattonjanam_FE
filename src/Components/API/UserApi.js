@@ -27,6 +27,12 @@ const UserApi = {
             url: `/api/v1/delete/${id}`,
             method: "DELETE"
         })
+    },
+    update: (id) => {
+        return axiosIns.request({
+            url:`/api/v1/update/${id}`,
+            method: "PATCH"
+        })
     }
 }
 export default UserApi

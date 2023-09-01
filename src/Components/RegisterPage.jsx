@@ -180,6 +180,7 @@ const RegisterPage = (props) => {
           show: true,
         });
       })
+      navigate('/')
     } catch (error) {
       setAlertData({
         type: "error",
