@@ -346,6 +346,9 @@ const RegisterPage = (props) => {
               onChange={handleInputChange}
             />
           </Form.Item>
+          <Form.Item  htmlFor="termsCondition" style={{marginLeft: "80px"}}>
+            <Checkbox>I am ready to marry people of all castes</Checkbox>
+          </Form.Item>
           <Form.Item label="Gotra" htmlFor="gotra">
             <Input
               type="text"
@@ -395,19 +398,37 @@ const RegisterPage = (props) => {
                 handleInputChange({ target: { name: "motherTongue", value } })
               }
             >
-              <Option value="north">
-                North(Hindi,Punjabi,Himachali,Kashmiri,Sindhi,Urdu)
-              </Option>
-              <Option value="west">West(Marathi,Gujarathi,Hindi)</Option>
-              <Option value="south">
-                South(Telugu,Tamil,Kannada,Malayalam,Tulu,Urdu)
-              </Option>
-              <Option value="east">
-                East(Bengali,Oriya,Assamese,Sikkim/Nepali)
-              </Option>
-              <Option value="english">Other(English)</Option>
+              <Select.OptGroup label="North">
+                <Option value="Hindi">Hindi</Option>
+                <Option value="Punjabi">Punjabi</Option>
+                <Option value="Himachali">Himachali</Option>
+                <Option value="Kashmiri">Kashmiri</Option>
+                <Option value="Sindhi">Sindhi</Option>
+                <Option value="Urdu">Urdu</Option>
+              </Select.OptGroup>
+              <Select.OptGroup label="West">
+                <Option value="Marathi">Marathi</Option>
+                <Option value="Gujarathi">Gujarathi</Option>
+                <Option value="Hindi">Hindi</Option>
+              </Select.OptGroup>
+              <Select.OptGroup label="South">
+                <Option value="Telugu">Telugu</Option>
+                <Option value="Tamil">Tamil</Option>
+                <Option value="Kannada">Kannada</Option>
+                <Option value="Malayalam">Malayalam</Option>
+                <Option value="Tulu">Tulu</Option>
+                <Option value="Urdu">Urdu</Option>
+              </Select.OptGroup>
+              <Select.OptGroup label="East">
+                <Option value="Bengali">Bengali</Option>
+                <Option value="Oriya">Oriya</Option>
+                <Option value="Assamese">Assamese</Option>
+                <Option value="Sikkim/Nepali">Sikkim/Nepali</Option>
+              </Select.OptGroup>
+              <Option value="english">Other (English)</Option>
             </Select>
           </Form.Item>
+
           <Form.Item label="Create Profile For" htmlFor="createProfileFor">
             <Select
               name="createProfileFor"
@@ -443,6 +464,20 @@ const RegisterPage = (props) => {
               <Option value="divorced">Divorced</Option>
               <Option value="widowed">Widowed</Option>
               <Option value="annulled">Annulled</Option>
+            </Select>
+          </Form.Item>
+          <Form.Item label="Are you Manglik?" htmlFor="manglik">
+            <Select
+              name="manglik"
+              id="manglik"
+              placeholder="Select"
+              onChange={(value) =>
+                handleInputChange({ target: { name: "manglik", value } })
+              }
+            >
+              <Option value="Manglik">Manglik</Option>
+              <Option value="NonManglik">Non-Manglik</Option>
+              <Option value="anshikManglik">Anshik Manglik</Option>
             </Select>
           </Form.Item>
           <Form.Item label="Smoking" htmlFor="smoking">
@@ -544,14 +579,14 @@ const RegisterPage = (props) => {
               }
             >
               <Option value="engineering">Engineering/Technology/Design</Option>
-              <Option value="be">B.E/B.Tech</Option>
-              <Option value="bPharmacy">B.Pharmacy</Option>
-              <Option value="me">M.E</Option>
-              <Option value="mtech">M.Tech</Option>
-              <Option value="mPharmacy">M.Pharmacy</Option>
-              <Option value="ms">
-                M.S(Engineering,B.Arch,M.Arch,B.Des,M.Des)
-              </Option>
+                  <Option value="be">B.E/B.Tech</Option>
+                  <Option value="bPharmacy">B.Pharmacy</Option>
+                  <Option value="me">M.E</Option>
+                  <Option value="mtech">M.Tech</Option>
+                  <Option value="mPharmacy">M.Pharmacy</Option>
+                  <Option value="ms">
+                    M.S(Engineering,B.Arch,M.Arch,B.Des,M.Des)
+                  </Option>
               <Option value="computers">Computers(MCA,BCA,B.IT)</Option>
               <Option value="finance">Finance/Commerce/Economics</Option>
               <Option value="bcom">B.Com</Option>
@@ -565,7 +600,43 @@ const RegisterPage = (props) => {
               <Option value="bba">BBA</Option>
               <Option value="phm">PHM</Option>
               <Option value="medicine">Medicine/Health</Option>
+              <Option value="MBBS">MBBS</Option>
+              <Option value="MD">M.D</Option>
+              <Option value="BAMS">BAMS</Option>
+              <Option value="BHMS">BHMS</Option>
+              <Option value="MSMedicine">M.S(MEDICINE)</Option>
+              <Option value="MVSC">MVSC</Option>
+              <Option value="BVSC">BVSC</Option>
+              <Option value="MDS">MDS</Option>
+              <Option value="BPT">BPT</Option>
+              <Option value="MPT">MPT</Option>
+              <Option value="DM">DM</Option>
+              <Option value="MCH">MCH</Option>
+              <Option value="LAW">LAW</Option>
+              <Option value="LLB">L.L.B</Option>
+              <Option value="LLM">L.L.M</Option>
+              <Option value="art">ART AND SCIENCE</Option>
+              <Option value="BA">B.A</Option>
+              <Option value="BED">B.ED</Option>
+              <Option value="MFA">MFA</Option>
+              <Option value="BSC">B.SC</Option>
+              <Option value="MED">M.ED</Option>
+              <Option value="BJMC">BJMC</Option>
+              <Option value="MA">M.A</Option>
+              <Option value="MSW">MSW</Option>
+              <Option value="MJMC">MJMC</Option>
+              <Option value="MSC">M.SC</Option>
+              <Option value="BFA">BFA</Option>
+              <Option value="DOCTORATE">DOCTORATE</Option>
+              <Option value="PHD">PHD</Option>
+              <Option value="MPHIL">M.PHIL</Option>
+              <Option value="NotGraduate">NOT GRADUATE</Option>
+              <Option value="Diploma">DIPLOMA</Option>
+              <Option value="HighSchool">HIGH SCHOOL</Option>
+              <Option value="TradeSchool">TRADE SCHOOL</Option>
+              <Option value="OTHERDEGREE">OTHER</Option>
             </Select>
+         
           </Form.Item>
           <Form.Item label="Employed In" htmlFor="employedIn">
             <Select
@@ -600,6 +671,16 @@ const RegisterPage = (props) => {
               <Option value="architecture">Architecture</Option>
               <Option value="banking">Banking&Finance</Option>
               <Option value="corporate">Corporate Professionals</Option>
+              <Option value="sales">Sales & Marketing</Option>
+              <Option value="doctor">Doctor</Option>
+              <Option value="edu&training">Education&Training</Option>
+              <Option value="hospitality">Hospitality</Option>
+              <Option value="engOcc">Engineering</Option>
+              <Option value="legal">Legal</Option>
+              <Option value="merchant">MERCHANT NAVY</Option>
+              <Option value="SOFTWARE">MEDICAL&HEALTHCARE/SOFTWARE/IT</Option>
+              <Option value="TOPMANAGEMNT">TOP MANAGEMENT</Option>
+              <Option value="OTHEROCC">OTHERS</Option>
             </Select>
           </Form.Item>
           <Form.Item label="Business" htmlFor="business">
@@ -607,6 +688,7 @@ const RegisterPage = (props) => {
               type="text"
               name="business"
               id="business"
+              value={careerDetails.business}
               required
               onChange={handleInputChange}
             />
@@ -665,6 +747,7 @@ const RegisterPage = (props) => {
               name="familyType"
               id="familyType"
               placeholder="Select"
+            
               onChange={(value) =>
                 handleInputChange({ target: { name: "familyType", value } })
               }
@@ -679,6 +762,7 @@ const RegisterPage = (props) => {
               name="fatherOccupation"
               id="fatherOccupation"
               placeholder="Select"
+              value={familyDetails.familyType}
               onChange={(value) =>
                 handleInputChange({
                   target: { name: "fatherOccupation", value },
@@ -723,6 +807,7 @@ const RegisterPage = (props) => {
               type="text"
               name="brother"
               id="brother"
+              value={familyDetails.brother}
               required
               onChange={handleInputChange}
             />
@@ -740,6 +825,7 @@ const RegisterPage = (props) => {
             <Select
               name="familyLivingIn"
               id="familyLivingIn"
+              value={familyDetails.familyLivingIn}
               placeholder="Select"
               onChange={(value) =>
                 handleInputChange({ target: { name: "familyLivingIn", value } })
