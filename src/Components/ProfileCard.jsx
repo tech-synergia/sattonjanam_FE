@@ -31,23 +31,25 @@ function ProfileCard() {
       <div className="content-container">
         <div className="content">
           <h2>Premium Members</h2>
-          <div className="carousel-container">
+          
+            <div className="pros-grid">
             {/* <Carousel className="slider"> */}
-              {profile && profile.map((profileData) => (
-                <div className="profile" key={profileData._id}>
-                  <img src={profileData.image}
-                    // src={
-                    //   profileData.gender === "male" ? male_avatar : female_avatar
-                    // }
-                    alt=""
-                  />
-                  <h3 className="text-center">{profileData._id}</h3>
-                </div>
-              ))}
+                {profile && profile.map((profileData) => (
+                  <div className="profile" key={profileData._id}>
+                    <img src={profileData.image}
+                      // src={
+                      //   profileData.gender === "male" ? male_avatar : female_avatar
+                      // }
+                      alt=""
+                    />
+                    <h3 className="text-center">{profileData._id}</h3>
+                  </div>
+                ))}
+              </div>
             {/* </Carousel> */}
           </div>
         </div>
-      </div>
+    
     </section>
   );
 }
