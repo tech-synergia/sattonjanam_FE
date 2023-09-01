@@ -12,9 +12,15 @@
             cursor: pointer;
             background-color: #fff;
             width: 100px;
+            height: 80px;
             img {
               width: 100px;
+<<<<<<< HEAD
+              height: 80px;
+            }
+=======
               height: 100px;
+>>>>>>> 48ceb714aa3c910f292c78116f1d3f112ba41f21
         }
         .contact{
             display: flex;
@@ -32,6 +38,17 @@
         }
     }
     
+      button{
+        background-color: vrs.$secon-color;
+        border: none;
+        margin: 0px 10px;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+  
     .nav-btn {
         display: none;
       }
@@ -84,8 +101,18 @@
                 }
             }
             .contact{
-                display: none;
+                p{
+                  display: none;
+                }
             }
+        }
+        button{
+        
+         
+          margin: 2px;
+       
+          padding:5px;
+          font-size: 12px;
         }
         .content {
             justify-content: space-between;

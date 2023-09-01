@@ -19,8 +19,6 @@ function Navbar() {
   const adminRoute = () => {
     return (
         <ul className="navbar-nav">
-        
-         
               <NavLink to={`/adminpanel`} className="dropdown-item"><button>Admin Panel</button></NavLink>
               <NavLink to={`/`} onClick={logoutUser} className="dropdown-item"><button>Logout</button></NavLink>
           
@@ -31,11 +29,8 @@ function Navbar() {
   const userRoute = () => {
     return (
         <ul className="navbar-nav">
-             
-             
-              <NavLink to={`/profileCard`} className="dropdown-item"><button>User Profile</button></NavLink>
-                    
-              <NavLink to={`/`} onClick={logoutUser} className="dropdown-item"><button>Logout</button></NavLink>
+             <NavLink to={`/profileCard`} className="dropdown-item"><button>User Profile</button></NavLink>
+             <NavLink to={`/`} onClick={logoutUser} className="dropdown-item"><button>Logout</button></NavLink>
                 
             
         </ul>
@@ -44,11 +39,10 @@ function Navbar() {
 
   const commonRoute = () => {
     return (
-        <ul className="navbar-nav">
-            
-                <NavLink to={`/login`} className="nav-link"><button>Login</button></NavLink>
-            
-                <NavLink to={`/register`} className="nav-link"><button>Register</button></NavLink>
+        // <ul className="navbar-nav">
+        <ul className={`navbar-nav ${isMenuOpen ? "open" : ""}`}>
+            <NavLink to={`/login`} className="nav-link" onClick={toggleMenu}><button>Login</button></NavLink>
+            <NavLink to={`/register`} className="nav-link" onClick={toggleMenu}><button>Register</button></NavLink>
             
         </ul>
     )
