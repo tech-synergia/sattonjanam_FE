@@ -16,6 +16,7 @@ import RefundPolicy from '../Pages/RefundPolicy'
 import DisclaimerPage from '../Pages/DisclaimerPage'
 import WeddingEvent from '../Pages/WeddingEvent'
 import Astrologer from '../Pages/Astrologer'
+import UserDetails from './UserDetails'
 
 
 function MainRoute() {
@@ -42,10 +43,11 @@ function MainRoute() {
             <Route path={'/disclaimer'} element={<DisclaimerPage/>} />
             <Route path={'/wedding'} element={<WeddingEvent/>} />
             <Route path={'/astrologer'} element={<Astrologer/>} />
+            <Route path={'/userdetails'} element={<UserDetails/>}/>
             {
                 isLogged && isUser ? (
                     <Route element={<ProtectedRoute/>}>
-                        <Route path={'/profileCard'} element={<ProfileCard/>}/>
+                        <Route path={'/userdetails'} element={<UserDetails/>}/>
                     </Route>
                 ) : null
             }

@@ -29,7 +29,7 @@ function Navbar() {
   const userRoute = () => {
     return (
         <ul className="navbar-nav">
-             <NavLink to={`/profileCard`} className="dropdown-item"><button>User Profile</button></NavLink>
+             <NavLink to={`/userdetails`} className="dropdown-item"><button>User Profile</button></NavLink>
              <NavLink to={`/`} onClick={logoutUser} className="dropdown-item"><button>Logout</button></NavLink>
                 
             
