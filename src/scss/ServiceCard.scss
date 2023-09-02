@@ -47,6 +47,14 @@
         }
       .text-content {
        margin: 10px;
+       .titleService{
+        a{
+          color: #fff;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+       }
       
       }
    }
