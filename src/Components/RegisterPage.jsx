@@ -66,6 +66,15 @@ const RegisterPage = (props) => {
     contactAddress: "",
     aboutFamily: "",
   });
+  const [partnerDetails, setPartnerDetails] = useState({
+    pAge: "",
+    pHeight: "",
+    pCaste: "",
+    community: "",
+    pEducation :"",
+    personalIncome: "",
+    maritalStatusPartner: ""
+  })
 
   const allIndiaStates = [
     "Andhra Pradesh",
@@ -136,7 +145,13 @@ const RegisterPage = (props) => {
 
   
 }
-
+    const heightOptions = [];
+    for (let feet = 5; feet <= 6; feet++) {
+      for (let inches = 0; inches <= 5; inches++) {
+        const height = `${feet} foot ${inches} inches`;
+        heightOptions.push(height);
+      }
+    }
 
   const handleInputChange = (e) => {
     // uploadHandler()
@@ -145,11 +160,11 @@ const RegisterPage = (props) => {
     setProfileDetails((prevData) => ({ ...prevData, [name]: value }));
     setCareerDetails((prevData) => ({ ...prevData, [name]: value }));
     setFamilyDetails((prevData) => ({ ...prevData, [name]: value }));
+    setPartnerDetails((prevData) => ({ ...prevData, [name]: value }))
   };
 
   
   const handleOnSubmit = async (e) => {
-    e.preventDefault();
     try {
       const newImage = {
           ...profileDetails,
@@ -159,7 +174,7 @@ const RegisterPage = (props) => {
           }
         }
         console.log(newImage.image.url)
-      const response = await UserApi.create(profileDetails,careerDetails,familyDetails,profileDetails.image= images.url, {
+      const response = await UserApi.create(profileDetails,careerDetails,familyDetails,partnerDetails,profileDetails.image= images.url, {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': token
@@ -227,6 +242,7 @@ const RegisterPage = (props) => {
               type="text"
               name="userName"
               id="userName"
+              value={profileDetails.userName}
               required
               onChange={handleInputChange}
             />
@@ -297,12 +313,24 @@ const RegisterPage = (props) => {
             />
           </Form.Item>
           <Form.Item label="Age" htmlFor="age">
-            <Input
-              type="number"
-              name="age"
-              id="age"
-              onChange={handleInputChange}
-            />
+              <Input
+                type="number"
+                name="age"
+                id="age"
+                onChange={handleInputChange}
+              />
+            </Form.Item>
+            <Form.Item label="Height" htmlFor="height">
+              <Select
+                onChange={handleInputChange}
+                placeholder="Select height"
+              >
+                {heightOptions.map(option => (
+                  <Option key={option} value={option}>
+                    {option}
+                  </Option>
+                ))}
+              </Select>
           </Form.Item>
           <Form.Item label="Caste" htmlFor="caste">
             <Input 
@@ -311,9 +339,6 @@ const RegisterPage = (props) => {
               id="caste"
               onChange={handleInputChange} 
             />
-          </Form.Item>
-          <Form.Item  htmlFor="termsCondition" style={{marginLeft: "80px"}}>
-            <Checkbox>I am ready to marry people of all castes</Checkbox>
           </Form.Item>
           <Form.Item label="Gotra" htmlFor="gotra">
             <Input
@@ -333,15 +358,7 @@ const RegisterPage = (props) => {
               onChange={handleInputChange}
             />
           </Form.Item>
-          <Form.Item label="Height" htmlFor="height">
-            <Input
-              type="number"
-              name="height"
-              id="height"
-              required
-              onChange={handleInputChange}
-            />
-          </Form.Item>
+         
           <Form.Item label="Color" htmlFor="color">
             <Select
               name="color"
@@ -415,23 +432,7 @@ const RegisterPage = (props) => {
               <Option value="Relative">Relative/Friend</Option>
             </Select>
           </Form.Item>
-          <Form.Item label="Marital Status" htmlFor="maritalStatus">
-            <Select
-              name="maritalStatus"
-              id="maritalStatus"
-              placeholder="Select Your Status"
-              onChange={(value) =>
-                handleInputChange({ target: { name: "maritalStatus", value } })
-              }
-            >
-              <Option value="neverMarried">Never Married</Option>
-              <Option value="married">Married</Option>
-              <Option value="awaiting">Awaiting Divorce</Option>
-              <Option value="divorced">Divorced</Option>
-              <Option value="widowed">Widowed</Option>
-              <Option value="annulled">Annulled</Option>
-            </Select>
-          </Form.Item>
+          
           <Form.Item label="Are you Manglik?" htmlFor="manglik">
             <Select
               name="manglik"
@@ -493,6 +494,7 @@ const RegisterPage = (props) => {
               type="text"
               name="country"
               id="country"
+              value={careerDetails.country}
               required
               onChange={handleInputChange}
             />
@@ -502,6 +504,7 @@ const RegisterPage = (props) => {
               showSearch
               name="state"
               id="state"
+              value={careerDetails.state}
               required
               placeholder="Select Your State"
               optionFilterProp="children"
@@ -523,6 +526,7 @@ const RegisterPage = (props) => {
             <Input
               type="text"
               name="city"
+              value={careerDetails.city}
               id="city"
               required
               onChange={handleInputChange}
@@ -533,6 +537,7 @@ const RegisterPage = (props) => {
               type="number"
               name="pinCode"
               id="pinCode"
+              value={careerDetails.pinCode}
               required
               onChange={handleInputChange}
             />
@@ -679,6 +684,7 @@ const RegisterPage = (props) => {
             <Select 
               name="annualIncome"
               id="annualIncome"
+              value={careerDetails.annualIncome}
               required
               onChange={(value) =>
                 handleInputChange({ target: { name: "annualIncome", value } })
@@ -686,7 +692,8 @@ const RegisterPage = (props) => {
                   <Option value="range1">1lakh - 5lakhs</Option>
                   <Option value="range2">5lakhs - 10lakhs</Option>
                   <Option value="range3">10lakhs - 25lakhs</Option>
-                  <Option value="range4">More than 25 lakhs</Option>
+                  <Option value="range4">25lakhs - 50lakhs</Option>
+                  <Option value="range4">50lakhs - 1crore</Option>
             </Select>
           </Form.Item>
           <Form.Item
@@ -735,7 +742,6 @@ const RegisterPage = (props) => {
               name="fatherOccupation"
               id="fatherOccupation"
               placeholder="Select"
-              value={familyDetails.familyType}
               onChange={(value) =>
                 handleInputChange({
                   target: { name: "fatherOccupation", value },
@@ -808,7 +814,7 @@ const RegisterPage = (props) => {
               <Option value="abroad">Abroad</Option>
             </Select>
           </Form.Item>
-          <Form.Item label="Contact Details" htmlFor="contactDetails">
+          <Form.Item label="Contact Address" htmlFor="contactDetails">
             <TextArea
               name="contactDetails"
               id="contactDetails"
@@ -826,10 +832,174 @@ const RegisterPage = (props) => {
               onChange={handleInputChange}
             />
           </Form.Item>
-          <Form.Item  htmlFor="termsCondition">
-            <Checkbox><a href="/terms&privacy"> Terms & Condition</a></Checkbox>
+          <Button type="primary" onClick={handleNext}>
+            Next
+          </Button>
+          <Button style={{ margin: "0 8px" }} onClick={handlePrev}>
+            Previous
+          </Button>
+          
+        </Form>
+      ),
+    },
+    {
+      title: "Partner Preference",
+      content: (
+        <Form>
+            <Form.Item label="Age" htmlFor="pAge">
+              <Input
+                type="number"
+                name="pAge"
+                id="pAge"
+                value={partnerDetails.pAge}
+                onChange={handleInputChange}
+              />
+            </Form.Item>
+            <Form.Item label="Height" htmlFor="pHeight">
+              <Select
+                onChange={handleInputChange}
+                placeholder="Select height"
+              >
+                {heightOptions.map(option => (
+                  <Option key={option} value={option}>
+                    {option}
+                  </Option>
+                ))}
+              </Select>
           </Form.Item>
-
+          <Form.Item label="Community" htmlFor="community">
+              <Select
+                name="community"
+                id="community"
+                value={partnerDetails.community}
+                onChange={handleInputChange}
+                placeholder="Select Community"
+              >
+                <Option value=""></Option>
+              </Select>
+          </Form.Item>
+          <Form.Item label="Caste" htmlFor="pCaste">
+            <Input 
+              type="text"
+              name="pCaste"
+              id="pCaste"
+              value={partnerDetails.pCaste}
+              onChange={handleInputChange} 
+            />
+          </Form.Item>
+          <Form.Item label="Education" htmlFor="pEducation">
+            <Select
+              name="pEducation"
+              id="pEducation"
+              value={partnerDetails.pEducation}
+              placeholder="Select"
+              onChange={(value) =>
+                handleInputChange({ target: { name: "pEducation", value } })
+              }
+            >
+              <Option value="Engineering">Engineering/Technology/Design</Option>
+                  <Option value="Be">B.E/B.Tech</Option>
+                  <Option value="BPharmacy">B.Pharmacy</Option>
+                  <Option value="Me">M.E</Option>
+                  <Option value="Mtech">M.Tech</Option>
+                  <Option value="MPharmacy">M.Pharmacy</Option>
+                  <Option value="Ms">
+                    M.S(Engineering,B.Arch,M.Arch,B.Des,M.Des)
+                  </Option>
+              <Option value="Computers">Computers(MCA,BCA,B.IT)</Option>
+              <Option value="Finance">Finance/Commerce/Economics</Option>
+              <Option value="Bcom">B.Com</Option>
+              <Option value="Mcom">M.Com</Option>
+              <Option value="Ca">CA</Option>
+              <Option value="Cfa">CFA</Option>
+              <Option value="Cs">CS</Option>
+              <Option value="Icwa">ICWA</Option>
+              <Option value="Management">Management</Option>
+              <Option value="Mba">MBA/PGDM</Option>
+              <Option value="Bba">BBA</Option>
+              <Option value="Phm">PHM</Option>
+              <Option value="Medicine">Medicine/Health</Option>
+              <Option value="Mbbs">MBBS</Option>
+              <Option value="Md">M.D</Option>
+              <Option value="Bams">BAMS</Option>
+              <Option value="Bhms">BHMS</Option>
+              <Option value="MsMedicine">M.S(MEDICINE)</Option>
+              <Option value="Mvsc">MVSC</Option>
+              <Option value="Bvsc">BVSC</Option>
+              <Option value="Mds">MDS</Option>
+              <Option value="Bpt">BPT</Option>
+              <Option value="Mpt">MPT</Option>
+              <Option value="Dm">DM</Option>
+              <Option value="Mvh">MCH</Option>
+              <Option value="Law">LAW</Option>
+              <Option value="Llb">L.L.B</Option>
+              <Option value="Llm">L.L.M</Option>
+              <Option value="Art">ART AND SCIENCE</Option>
+              <Option value="Ba">B.A</Option>
+              <Option value="Bed">B.ED</Option>
+              <Option value="Mfa">MFA</Option>
+              <Option value="Bsc">B.SC</Option>
+              <Option value="Med">M.ED</Option>
+              <Option value="Bjmc">BJMC</Option>
+              <Option value="Ma">M.A</Option>
+              <Option value="Msw">MSW</Option>
+              <Option value="Mjmc">MJMC</Option>
+              <Option value="Msc">M.SC</Option>
+              <Option value="Bfa">BFA</Option>
+              <Option value="Doctorate">DOCTORATE</Option>
+              <Option value="Phd">PHD</Option>
+              <Option value="Mphil">M.PHIL</Option>
+              <Option value="NotGrad">NOT GRADUATE</Option>
+              <Option value="DIPLOMA">DIPLOMA</Option>
+              <Option value="HIGHSCHOOL">HIGH SCHOOL</Option>
+              <Option value="TRADE">TRADE SCHOOL</Option>
+              <Option value="OtherDeg">OTHER</Option>
+            </Select>
+         
+          </Form.Item>
+          <Form.Item label="Personal Income" htmlFor="personalIncome">
+            <Select 
+              name="personalIncome"
+              id="personalIncome"
+              value={partnerDetails.personalIncome}
+              required
+              onChange={(value) =>
+                handleInputChange({ target: { name: "personalIncome", value } })
+              }>
+                 
+                  <Option value="Range1">5lakhs - 10lakhs</Option>
+                  <Option value="Range2">10lakhs - 20lakhs</Option>
+                  <Option value="Range3">20lakhs - 30lakhs</Option>
+                  <Option value="Range4">30lakhs - 40lakhs</Option>
+                  <Option value="Range5">40lakhs - 50lakhs</Option>
+                  <Option value="Range6">50lakhs - 60lakhs</Option>
+                  <Option value="Range7">60lakhs - 70lakhs</Option>
+                  <Option value="Range8">70lakhs - 80lakhs</Option>
+                  <Option value="Range9">80lakhs - 90lakhs</Option>
+                  <Option value="Range0">90lakhs - 1crore</Option>
+            </Select>
+          </Form.Item>
+          <Form.Item label="Marital Status" htmlFor="maritalStatusPartner">
+            <Select
+              name="maritalStatusPartner"
+              id="maritalStatusPartner"
+              value= {partnerDetails.maritalStatusPartner}
+              placeholder="Select Your Status"
+              onChange={(value) =>
+                handleInputChange({ target: { name: "maritalStatusPartner", value } })
+              }
+            >
+              <Option value="UNMARRRIED">UnMarried</Option>
+              <Option value="MARRIED">Married</Option>
+              <Option value="AWAITING">Awaiting Divorce</Option>
+              <Option value="DIVORCED">Divorced</Option>
+              <Option value="WIDOWED">Widowed</Option>
+              <Option value="ANNULLED">Annulled</Option>
+            </Select>
+          </Form.Item>
+          <Form.Item  htmlFor="termsCondition">
+            <Checkbox> <a href="/terms&privacy"> I have agreed to the Terms & conditions & have read & understood the privacy policy</a></Checkbox>
+          </Form.Item>
           <Button type="primary" onClick={handleOnSubmit}>
             Submit
           </Button>
@@ -837,8 +1007,8 @@ const RegisterPage = (props) => {
             Previous
           </Button>
         </Form>
-      ),
-    },
+      )
+    }
   ];
 
   return (

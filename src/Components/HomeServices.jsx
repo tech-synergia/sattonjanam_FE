@@ -168,7 +168,7 @@ function HomeServices() {
 
   return (
     <div className='carouselService'>
-      <Title level={1} style={{textAlign: "center"}}>Services</Title>
+      <Title level={1} className='titleService'>Services</Title>
       <div className="carouselSlide">
         {isMobile ? (
           <Carousel dots={true} >

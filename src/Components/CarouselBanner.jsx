@@ -1,7 +1,9 @@
 import { Carousel } from 'antd';
-import wedding1 from '../assets/wedding1.jpg'
-import wedding2 from '../assets/wedding2.jpg'
-import wedding3 from '../assets/wedding3.jpeg'
+import wedding1 from '../assets/1-01.jpg'
+import wedding2 from '../assets/2-01.jpg'
+import wedding3 from '../assets/3-01.jpg'
+import wedding4 from '../assets/4-01.jpg'
+import wedding5 from '../assets/5-01.jpg'
 import '../scss/CarouselBanner.scss'
 
 
@@ -16,6 +18,12 @@ function CarouselBanner() {
     </div>
     <div>
      <img src={wedding3} alt="" />
+    </div>
+    <div>
+     <img src={wedding4} alt="" />
+    </div>
+    <div>
+     <img src={wedding5} alt="" />
     </div>
   </Carousel>
   )
