@@ -1,5 +1,6 @@
 import { Card, Typography } from "antd";
 import "../scss/ServiceCard.scss";
+import Astrologer from '../assets/astrologer.jpeg'
 
 const { Title, Text } = Typography;
 
@@ -69,20 +70,11 @@ const weddingData = [
       "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/remarriage-1.jpg",
   },
   {
-    _id: 9,
-    title: "Pre-Wedding Dietician Services",
-    content:
-      "In the current societal scenario, a wedding ceremony is taken as a very serious event to present your hospitality and...",
-    imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/ditecian.jpg",
-  },
-  {
     _id: 4,
-    title: "Wedding Photography",
+    title: "Astrologer",
     content:
       "Portfolio & Wedding Shoots by Celebrity Photographer, Sachin Kumar, Wedgate Matrimony’s Exclusive Associate Sachin Kumar has captured various shoots of...",
-    imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/wedding-photography-services-delhi-ncr.jpg",
+    imageUrl: Astrologer
   },
   {
     _id: 5,

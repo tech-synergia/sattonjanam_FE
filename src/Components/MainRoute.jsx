@@ -19,6 +19,16 @@ import Astrologer from '../Pages/Astrologer'
 import UserDetails from './UserDetails'
 import EnquireNow from './EnquireNow'
 import EnquireForm from './EnquireForm'
+import HinduServices from '../Pages/HinduServices'
+import PunjabServices from '../Pages/PunjabServices'
+import JainServices from '../Pages/JainServices'
+import SikhServices from '../Pages/SikhServices'
+import AgarwalServices from '../Pages/AgarwalServices'
+import EliteServices from '../Pages/EliteServices'
+import NRIServices from '../Pages/NRIServices'
+import LateServices from '../Pages/LateServices'
+import ReMarriageServices from '../Pages/ReMarriageServices'
+import SecondMarriage from '../Pages/SecondMarriage'
 
 
 function MainRoute() {
@@ -48,6 +58,17 @@ function MainRoute() {
             <Route path={'/userdetails'} element={<UserDetails/>}/>
             <Route path={'/enquirenow'} element={<EnquireNow/>}/>
             <Route path={'/enquireform'} element={<EnquireForm/>}/>
+            <Route path='/hindu-matrimonial-services' element={<HinduServices/>} />
+            <Route path='/punjabi-matrimonial-services' element={<PunjabServices/>} />
+            <Route path='/sikh-matrimonial-services' element={<SikhServices/>} />
+            <Route path='/jain-matrimonial-services' element={<JainServices/>} />
+            <Route path='/agarwal-matrimonial-services' element={<AgarwalServices/>} />
+            <Route path='/elite-matrimonial-services' element={<EliteServices/>} />
+            <Route path='/nri-matrimonial-services' element={<NRIServices/>} />
+            <Route path='/late-marriage-matrimonial-services' element={<LateServices/>} />
+            <Route path='/re-marriage-services' element={<ReMarriageServices/>} />
+
+            <Route path='/second-marriage-services' element={<SecondMarriage/>} />
             {
                 isLogged && isUser ? (
                     <Route element={<ProtectedRoute/>}>
