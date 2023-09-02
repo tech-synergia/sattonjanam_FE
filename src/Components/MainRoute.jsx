@@ -16,6 +16,9 @@ import RefundPolicy from '../Pages/RefundPolicy'
 import DisclaimerPage from '../Pages/DisclaimerPage'
 import WeddingEvent from '../Pages/WeddingEvent'
 import Astrologer from '../Pages/Astrologer'
+import UserDetails from './UserDetails'
+import EnquireNow from './EnquireNow'
+import EnquireForm from './EnquireForm'
 
 
 function MainRoute() {
@@ -42,10 +45,13 @@ function MainRoute() {
             <Route path={'/disclaimer'} element={<DisclaimerPage/>} />
             <Route path={'/wedding'} element={<WeddingEvent/>} />
             <Route path={'/astrologer'} element={<Astrologer/>} />
+            <Route path={'/userdetails'} element={<UserDetails/>}/>
+            <Route path={'/enquirenow'} element={<EnquireNow/>}/>
+            <Route path={'/enquireform'} element={<EnquireForm/>}/>
             {
                 isLogged && isUser ? (
                     <Route element={<ProtectedRoute/>}>
-                        <Route path={'/profileCard'} element={<ProfileCard/>}/>
+                        <Route path={'/userdetails'} element={<UserDetails/>}/>
                     </Route>
                 ) : null
             }

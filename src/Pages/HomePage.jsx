@@ -34,9 +34,9 @@ const HomePage = () => {
         <BreadcrumbComponent paths={breadcrumbPaths} />
       </div>
       <CarouselBanner/>
-      <EnquireNow>
+      {/* <EnquireNow>
         <EnquireForm/>
-      </EnquireNow>
+      </EnquireNow> */}
       <ProfileCard/>
       {/* <ProfileCard/> */}
       {/* {

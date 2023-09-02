@@ -1,12 +1,78 @@
-import { Typography, Form, Input, Button } from "antd";
+import { Typography, Form, Input, Button, Alert } from "antd";
 import '../scss/ContactForm.scss'
-
+import React, { useContext , useState} from 'react'
+import { GlobalContext } from '../GlobalContext'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 const { Title, Text } = Typography;
 
 function ContactForm() {
+    const { TextArea } = Input;
+    const [alertData, setAlertData] = useState({
+        type: "",
+        message: "",
+        show: false,
+    });
+
+    const [connectus, setConnectus] = useState({
+        lookingFor: "",
+        userName: "",
+        email: "",
+        phoneNumber: "",
+        location: ""
+    })
+
+    const navigate = useNavigate()
+    const context = useContext(GlobalContext)
+  const token = context.token
+
+    const readValue = (e) => {
+        const { name, value } = e.target
+        setConnectus({ ...connectus, [name]: value })
+    }
+
+    const submitHandler = async (e) => {
+        e.preventDefault();
+        try{
+
+            axios.post(`https://sattonjanam-be.onrender.com/api/v1/connectus/create`, connectus,{
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': token
+                }
+            })
+
+            axios.post(`https://sattonjanam-be.onrender.com/api/v1/connectus/sendmail`, {lookingFor: connectus.lookingFor, userName: connectus.userName, email: connectus.email, phoneNumber: connectus.phoneNumber,location: connectus.location, query: connectus.query})
+
+            .then(res => {
+                setAlertData({
+                  type: "success",
+                  message: "Message send  successfully!",
+                  show: true,
+                });
+              }).catch(err => {
+                setAlertData({
+                  type: "error",
+                  message: err.response.data.msg,
+                  show: true,
+                });
+              })
+
+              navigate('/contact')
+
+        } catch (error) {
+            setAlertData({
+              type: "error",
+              message: error.response.data.msg,
+              show: true,
+            });
+          }
+    }
+    
   return (
     <div className='contactForm'>
+        
       <div className="leftSideAddress">
         <div className="addressContent">
             <Title level={3}>For Matrimonial / Matchmaking Requirements:</Title>
@@ -39,20 +105,34 @@ function ContactForm() {
         </div>
       </div>
       <div className="rightForm">
+      {alertData.show && (
+        <Alert
+          message={alertData.message}
+          type={alertData.type}
+          showIcon
+          closable
+          onClose={() => setAlertData({ ...alertData, show: false })}
+          style={{ marginTop: "20px" }}
+        />
+      )}
             <Form className="form" >
-                <Form.Item htmlFor="name">
-                    <Input type="text" name="name" id="name" placeholder="Your Name" className="input"/>
+                <Form.Item htmlFor="userName">
+                    <Input type="text" name="userName" id="userName" placeholder="Your Name" className="input" onChange={readValue}/>
                 </Form.Item>
-                <Form.Item htmlFor="phone" className="name">
-                    <Input type="number" name="phone" id="phone" placeholder="Phone" className="input"/>
+                <Form.Item htmlFor="phoneNumber" className="name">
+                    <Input type="number" name="phoneNumber" id="phone" placeholder="Phone" className="input" onChange={readValue}/>
                 </Form.Item>
                 <Form.Item htmlFor="email">
-                    <Input type="email" name="email" id="email" placeholder="Email Id" className="input"/>
+                    <Input type="email" name="email" id="email" placeholder="Email Id" className="input" onChange={readValue}/>
+                </Form.Item>
+                <Form.Item htmlFor="lookingFor" className="name">
+                    <Input type="text" name="lookingFor" id="location" placeholder="Seeking Alliance For" className="input" onChange={readValue}/>
                 </Form.Item>
                 <Form.Item htmlFor="location" className="name">
-                    <Input type="text" name="location" id="location" placeholder="Seeking Alliance For" className="input"/>
+                    <Input type="text" name="location" id="location" placeholder="Location" onChange={readValue}/>
                 </Form.Item>
-                <Button className="btn">Send Message</Button>
+                
+                <Button className="btn" onClick={submitHandler}>Send Message</Button>
             </Form>
 
       </div>

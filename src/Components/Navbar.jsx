@@ -29,7 +29,7 @@ function Navbar() {
   const userRoute = () => {
     return (
         <ul className="navbar-nav">
-             <NavLink to={`/profileCard`} className="dropdown-item"><button>User Profile</button></NavLink>
+             <NavLink to={`/userdetails`} className="dropdown-item"><button>User Profile</button></NavLink>
              <NavLink to={`/`} onClick={logoutUser} className="dropdown-item"><button>Logout</button></NavLink>
                 
             
@@ -43,7 +43,7 @@ function Navbar() {
         <ul className={`navbar-nav ${isMenuOpen ? "open" : ""}`}>
             <NavLink to={`/login`} className="nav-link" onClick={toggleMenu}><button>Login</button></NavLink>
             <NavLink to={`/register`} className="nav-link" onClick={toggleMenu}><button>Register</button></NavLink>
-            
+            <NavLink to={`/enquireform`} className="nav-link" onClick={toggleMenu}><button>Enquire Now</button></NavLink>
         </ul>
     )
   }

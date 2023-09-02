@@ -6,6 +6,7 @@ import { useNavigate, NavLink } from 'react-router-dom';
 import { CloseOutlined } from '@ant-design/icons'
 import { GlobalContext } from '../GlobalContext'
 import axios from 'axios'
+import Title from 'antd/es/skeleton/Title';
 
 function EnquireForm({children}) {
     const [alertData, setAlertData] = useState({
@@ -82,9 +83,11 @@ function EnquireForm({children}) {
           style={{ marginTop: "20px" }}
         />
       )}
-         <button onClick={() => setShow(!show)} className="closeButton">&times;</button>
-        
+         {/* <button onClick={() => setShow(!show)} className="closeButton">&times;</button> */}
+         <h3>Enquiry form</h3>
+        {/* <Title>Enquiry form</Title> */}
       <Form className='formContainer'>
+      
             <div className="name-container">
                 <Form.Item htmlFor="userName">
                     <Input type="text" name="userName" id="userName" placeholder="Your Name"
