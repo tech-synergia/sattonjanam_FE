@@ -5,31 +5,33 @@
     background-position: center;
     padding: 30px 200px;
     .carouselSlide{
-       .cardRow{
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        .cardItem{
-            flex: 1;
-            img{
-                margin: auto;
-                width: 100px;
-                height: 100px;
+        // .cardRow{
+        //     display: flex;
+        //     flex-direction: row;
+        //     gap: 20px;
+            .cardItem{
+               
+                img{
+                    margin: auto;
+                    width: 100px;
+                    height: 100px;
+                }
+                h3{
+                    font-size: 20px;
+                    margin-bottom: 0px;
+                }
+                p{
+                    font-size: 15px;
+                }
+                background-color: vrs.$prim-color;
+                width: 280px;
+                height: 350px;
+                color: #fff;
+                text-align: center;
+            
             }
-            h3{
-                font-size: 20px;
-                margin-bottom: 0px;
-            }
-            p{
-                font-size: 15px;
-            }
-            background-color: vrs.$prim-color;
-            width: 280px;
-            height: 350px;
-            color: #fff;
-            text-align: center;
-        }
-       }
+        
+       
     }
     .buttonService{
         margin: 50px auto;
@@ -51,28 +53,28 @@
     .carouselService{
         padding: 20px;
         .carouselSlide{
-           .cardRow{
-            display: flex;
-            flex-direction: row;
-            gap: 0px;
+        //    .cardRow{
+        //     display: flex;
+        //     flex-direction: row;
+        //     gap: 20px;
             .cardItem{
                 img{
                     margin: auto;
-                    width: 50px;
-                    height: 50px;
+                    width: 100px;
+                    height: 100px;
                 }
                 h3{
-                    font-size: 16px;
+                    font-size: 20px;
                     margin-bottom: 0px;
                 }
                 p{
-                    font-size: 10px;
+                    font-size: 16px;
                 }
                
                 width: 340px;
                 height: 350px;
             }
-           }
+           
         }
         .buttonService{
             margin: 50px auto;
