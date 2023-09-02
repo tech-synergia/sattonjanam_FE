@@ -1,11 +1,23 @@
 div.enqForm{
+    margin-bottom: 30px;
+    text-align: center;
+    margin: 50px;
+    margin-left: 20%;
     position: fixed;
-    background-color: #A36177;
-    right: 0px;
-    width: 200px;
+    border: 2px solid gray;
+    // background-color: #A36177;
+    // right: 0px;
+    width: 50%;
     // height: 340px;
     padding: 20px;
     bottom: 200px;
+
+    Title{
+        color: black;
+    }
+}
+Title{
+    color: black;
 }
 .closeButton{
     position: relative;

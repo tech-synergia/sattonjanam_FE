@@ -21,9 +21,9 @@ const ContactUsPage = () => {
       <div>
         <Breadcrumb paths={breadcrumbPaths} />
       </div>
-      <EnquireNow>
+      {/* <EnquireNow>
           <EnquireForm/>
-      </EnquireNow>
+      </EnquireNow> */}
       <ContactForm/>
       <ConnectWithUs/>
       <Footer/>

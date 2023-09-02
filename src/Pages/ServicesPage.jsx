@@ -20,9 +20,9 @@ function ServicesPage() {
         <div>
             <BreadCrumb paths={breadcrumbPaths} />
         </div>
-        <EnquireNow>
+        {/* <EnquireNow>
           <EnquireForm/>
-        </EnquireNow>
+        </EnquireNow> */}
         <ServiceCard/>
         <ConnectWithUs/>
         <Footer/>

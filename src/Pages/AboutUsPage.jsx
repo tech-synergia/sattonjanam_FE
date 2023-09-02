@@ -21,9 +21,9 @@ function AboutUsPage() {
         <div>
             <BreadCrumb paths={breadcrumbPaths} />
         </div>
-        <EnquireNow>
+        {/* <EnquireNow>
           <EnquireForm/>
-        </EnquireNow>
+        </EnquireNow> */}
         <Matrimony/>
         <WhyUs/>
         <ConnectWithUs/>
