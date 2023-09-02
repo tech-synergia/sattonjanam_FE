@@ -28,7 +28,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       console.log('login=', user);
-       await axios.post(`https://sattonjanam.onrender.com/api/v1/login`, user)
+       await axios.post(`https://sattonjanam-be.onrender.com/api/v1/login`, user)
       
       .then(res => {
         // localStorage.setItem("accessToken", res.data.token)

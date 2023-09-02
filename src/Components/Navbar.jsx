@@ -51,7 +51,7 @@ function Navbar() {
   const logoutUser = async () => {
     if(window.confirm(`Are you sure to logout?`)) {
       try {
-        const res = await axios.get(`https://sattonjanam.onrender.com/api/v1/logout`)
+        const res = await axios.get(`https://sattonjanam-be.onrender.com/api/v1/logout`)
         localStorage.clear()
         // toast.success(res.data.msg)
         console.log(res.data.msg)

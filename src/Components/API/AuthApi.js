@@ -14,7 +14,7 @@ function AuthApi() {
           const token = localStorage.getItem("accessToken") || false;
           // console.log("token =", token);
           if (token) {
-            const res = await axios.get(`https://sattonjanam.onrender.com/api/v1/auth/currentUser`, {
+            const res = await axios.get(`https://sattonjanam-be.onrender.com/api/v1/auth/currentUser`, {
               headers: {
                 Authorization: token,
               },

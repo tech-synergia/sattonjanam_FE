@@ -37,9 +37,9 @@ function EnquireForm({children}) {
         try{
             const newQuery = {...enquery}
 
-            axios.post(`https://sattonjanam.onrender.com/api/v1/query/queryCreate`, newQuery)
+            axios.post(`https://sattonjanam-be.onrender.com/api/v1/query/queryCreate`, newQuery)
 
-            axios.post(`https://sattonjanam.onrender.com/api/v1/query/sendQuery`, {userName: newQuery.userName, email: newQuery.email, phoneNumber: newQuery.phoneNumber, query: newQuery.query})
+            axios.post(`https://sattonjanam-be.onrender.com/api/v1/query/sendQuery`, {userName: newQuery.userName, email: newQuery.email, phoneNumber: newQuery.phoneNumber, query: newQuery.query})
 
             .then(res => {
                 setAlertData({
