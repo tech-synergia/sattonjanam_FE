@@ -1,53 +1,51 @@
-.whyUs{
-    padding: 40px 200px;
-    background-image:linear-gradient(rgba(177, 110, 145,0.8),rgba(177, 110, 145,0.8),rgba(177, 110, 145,0.8)), url("https://www.k4fashion.com/wp-content/uploads/2022/09/The-Picture-Perfect-Family-Portrait-wedding-photos.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #fff;
-    .title{
-        text-align: center;
-        color: #fff;
+.whyUs {
+  padding: 40px 200px;
+  background-color: white;
+  color: darkgoldenrod;
+  .title {
+    text-align: center;
+    color: darkgoldenrod;
+    font-family: "Cookie", cursive;
+  }
+  .whyUsContent {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    img {
+      width: 400px;
+      height: 500px;
     }
-    .whyUsContent{
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-        img{
-            width: 400px;
-            height: 500px;
-        }
-        .whyUsInfo{
-            ul li, p{
-                font-size: 19px;
-
-            }
-        }
+    .whyUsInfo {
+      ul li,
+      p {
+        font-size: 19px;
+        padding: 15px;
+      }
     }
+  }
 }
 
-@media screen and (max-width: 768px){
-    .whyUs{
-        padding: 20px;
-        .title{
-            text-align: center;
-            color: #fff;
-        }
-        .whyUsContent{
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            img{
-                width: 350px;
-                height: 380px;
-            }
-            .whyUsInfo{
-                ul li, p{
-                    font-size: 19px;
-                  
-    
-                }
-            }
-        }
+@media screen and (max-width: 768px) {
+  .whyUs {
+    padding: 20px;
+    .title {
+      text-align: center;
+      color: #fff;
     }
+    .whyUsContent {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      img {
+        width: 350px;
+        height: 380px;
+      }
+      .whyUsInfo {
+        ul li,
+        p {
+          font-size: 19px;
+        }
+      }
+    }
+  }
 }
