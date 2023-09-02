@@ -1,9 +1,9 @@
-import React, {useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Carousel } from "antd";
-import male_avatar from '../assets/male_avatar.jpg';
-import female_avatar from '../assets/female_avatar.jpg';
-import '../scss/ProfileCard.scss';
-import UserApi from './API/UserApi';
+import male_avatar from "../assets/male_avatar.jpg";
+import female_avatar from "../assets/female_avatar.jpg";
+import "../scss/ProfileCard.scss";
+import UserApi from "./API/UserApi";
 import { GlobalContext } from "../GlobalContext";
 
 function ProfileCard() {
@@ -13,13 +13,12 @@ function ProfileCard() {
 
   const fetchProfile = async () => {
     try {
-      const response = await UserApi.getAll("profileDetailsValue", "careerDetailsValue", "familyDetailsValue");
+      const response = await UserApi.getAll("image", "sjId");
       const verifiedProfile = response.data.users.filter(
         (profileData) => profileData.isVerified
-      )
-      
-      setProfile(verifiedProfile);
+      );
 
+      setProfile(verifiedProfile);
     } catch (error) {
       console.log(error);
     }
@@ -34,31 +33,31 @@ function ProfileCard() {
       <div className="content-container">
         <div className="content">
           <h2>Premium Members</h2>
-          
-            <div className="pros-grid">
+
+          <div className="pros-grid">
             {/* <Carousel className="slider"> */}
-                {profile && profile.map((profileData) => (
-                  <div className="profile" key={profileData._id}>
-                    <img src={profileData.image}
-                      // src={
-                      //   profileData.gender === "male" ? male_avatar : female_avatar
-                      // }
-                      alt=""
-                    />
-                    <h3 className="text-center">{profileData._id}</h3>
-                  </div>
-                ))}
-              </div>
-            {/* </Carousel> */}
+            {profile &&
+              profile.map((profileData) => (
+                <div className="profile" key={profileData._id}>
+                  <img
+                    src={profileData.image}
+                    // src={
+                    //   profileData.gender === "male" ? male_avatar : female_avatar
+                    // }
+                    alt=""
+                  />
+                  <h3 className="text-center">Id: {profileData.sjId}</h3>
+                </div>
+              ))}
           </div>
+          {/* </Carousel> */}
         </div>
-    
+      </div>
     </section>
   );
 }
 
 export default ProfileCard;
-
 
 // import React, { useState, useEffect } from "react";
 // import { Carousel } from "antd";
