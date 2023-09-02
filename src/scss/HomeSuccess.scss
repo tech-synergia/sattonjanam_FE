@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Lobster&display=swap');
+
 .homeSuccess{
     padding: 40px 200px;
-    background-image:linear-gradient(rgba(177, 110, 145,0.8),rgba(177, 110, 145,0.8),rgba(177, 110, 145,0.8)), url("https://www.k4fashion.com/wp-content/uploads/2022/09/The-Picture-Perfect-Family-Portrait-wedding-photos.jpg");
+    background-image:linear-gradient(rgba(242, 197, 220, 0.8),rgba(196, 141, 170, 0.8),rgba(177, 110, 145,0.8)), url("https://www.k4fashion.com/wp-content/uploads/2022/09/The-Picture-Perfect-Family-Portrait-wedding-photos.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     h1{
         text-align: center;
-        color: #fff;
+        color: darkgoldenrod;
+        font-family: "Cookie", cursive;
+        font-size: 50px;
     }
     .successCards{
         display: flex;
@@ -47,7 +51,7 @@
         padding: 70px;
         h1{
             text-align: center;
-            color: #fff;
+           
         }
         .successCards{
             display: flex;

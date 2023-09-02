@@ -1,9 +1,16 @@
 @use './modules/vrs';
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Lobster&display=swap');
 
 .carouselService{
     background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScSPPUCIswv3cry9qdFpNWXKr43RVVkJcSxJgmwbEra_ds0kk8");
     background-position: center;
     padding: 30px 200px;
+    .titleService{
+            text-align: center;
+            color: darkgoldenrod;
+            font-size: 50px;
+            font-family: "Cookie",cursive;
+    }
     .carouselSlide{
         // .cardRow{
         //     display: flex;

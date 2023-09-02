@@ -1,4 +1,5 @@
 @use "./modules/vrs";
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Lobster&display=swap');
 
 .connectUs{
     text-align: center;
@@ -8,8 +9,9 @@
     background-position: center;
     background-size: cover;
     h1{
-        color: vrs.$secon-color;
+        color: darkgoldenrod;
         font-size: 50px;
+        font-family: 'Cookie', cursive; 
        
     }
     .formContainer{
