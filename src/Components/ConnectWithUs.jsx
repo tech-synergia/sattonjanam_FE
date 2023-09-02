@@ -35,14 +35,14 @@ function ConnectWithUs() {
         e.preventDefault();
         try{
 
-            axios.post(`https://sattonjanam.onrender.com/api/v1/connectus/create`, connectus,{
+            axios.post(`https://sattonjanam-be.onrender.com/api/v1/connectus/create`, connectus,{
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': token
                 }
             })
 
-            axios.post(`https://sattonjanam.onrender.com/api/v1/connectus/sendmail`, {lookingFor: connectus.lookingFor, userName: connectus.userName, email: connectus.email, phoneNumber: connectus.phoneNumber,location: connectus.location, query: connectus.query})
+            axios.post(`https://sattonjanam-be.onrender.com/api/v1/connectus/sendmail`, {lookingFor: connectus.lookingFor, userName: connectus.userName, email: connectus.email, phoneNumber: connectus.phoneNumber,location: connectus.location, query: connectus.query})
 
             .then(res => {
                 setAlertData({

@@ -12,7 +12,7 @@ function DataProvider(props) {
         const accessToken = localStorage.getItem("accessToken") || false;
 
         if(accessToken) {
-            const res = await axios.get(`https://sattonjanam.onrender.com/api/v1/auth/authToken`)
+            const res = await axios.get(`https://sattonjanam-be.onrender.com/api/v1/auth/authToken`)
             console.log('auth token =', res.data)
             setToken(res.data.accessToken)
         }

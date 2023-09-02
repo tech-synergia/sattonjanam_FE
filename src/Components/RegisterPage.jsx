@@ -130,7 +130,7 @@ const RegisterPage = (props) => {
             // setLoading(true)
 
             // post the file content to server
-            const res = await axios.post(`https://sattonjanam.onrender.com/api/v1/image/upload`, formData, {
+            const res = await axios.post(`https://sattonjanam-be.onrender.com/api/v1/image/upload`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -181,7 +181,7 @@ const RegisterPage = (props) => {
         }
     })
 
-    axios.post(`https://sattonjanam.onrender.com/api/v1/sendmail`, {email: profileDetails.email, userName: profileDetails.userName})
+    axios.post(`https://sattonjanam-be.onrender.com/api/v1/sendmail`, {email: profileDetails.email, userName: profileDetails.userName})
       .then(res => {
         setAlertData({
           type: "success",
