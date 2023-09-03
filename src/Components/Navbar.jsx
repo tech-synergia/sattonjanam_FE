@@ -6,7 +6,13 @@ import { MenuOutlined } from "@ant-design/icons";
 import { GlobalContext } from '../GlobalContext';
 import { NavLink, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { Menu, Dropdown } from 'antd';
 
+
+const menuStyle = {
+  textDecoration: "none",
+  fontSize: "17px"
+}
 
 function Navbar() {
   const context = useContext(GlobalContext)
@@ -15,6 +21,8 @@ function Navbar() {
   const [isUser] = context.useAuth.isUser ? context.useAuth.isUser : false;
   const [user] = context.useAuth.user ? context.useAuth.user : false;
   const navigate = useNavigate()
+
+  const [isServiceMenu, setIsServiceMenu] = useState(false);
 
   const adminRoute = () => {
     return (
@@ -76,6 +84,73 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const serviceDropdown = (
+    <Menu>
+      <Menu.Item key="hindu">
+        <NavLink to={"/hindu-matrimonial-services"} onClick={toggleMenu} style={menuStyle}>
+          Hindu Matrimonial Services
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item key="punjabi">
+        <NavLink to={"/punjabi-matrimonial-services"} onClick={toggleMenu} style={menuStyle}>
+          Punjabi Matrimonial Services
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item key="sikh">
+        <NavLink to={"/sikh-matrimonial-services"} onClick={toggleMenu} style={menuStyle}>
+          Sikh Matrimonial Services
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item key="jain">
+        <NavLink to={"/jain-matrimonial-services"} onClick={toggleMenu} style={menuStyle}>
+          Jain Matrimonial Services
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item key="aggarwal">
+        <NavLink to={"/agarwal-matrimonial-services"} onClick={toggleMenu} style={menuStyle}>
+          Aggarwal-gupta-baniya Matrimonial Services
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item key="elite">
+        <NavLink to={"/elite-matrimonial-services"} onClick={toggleMenu} style={menuStyle}>
+          Elite Matrimonial Services
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item key="NRI">
+        <NavLink to={"/nri-matrimonial-services"} onClick={toggleMenu} style={menuStyle}>
+          NRI Matrimonial Services
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item key="late">
+        <NavLink to={"/late-marriage-matrimonial-services"} onClick={toggleMenu} style={menuStyle}>
+          Late Marriage Matrimonial Services
+        </NavLink>
+      </Menu.Item>
+
+      <Menu.Item key="re-marriage">
+        <NavLink to={"/re-marriage-services"} onClick={toggleMenu} style={menuStyle}>
+          Re-Marriage Services
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item key="wedding">
+        <NavLink to={"/wedding"} onClick={toggleMenu} style={menuStyle}>
+          Wedding Event Services
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item key="astrologer">
+        <NavLink to={"/astrologer"} onClick={toggleMenu} style={menuStyle}>
+          Astrologer
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item key="second">
+        <NavLink to={"/second-marriage-services"} onClick={toggleMenu} style={menuStyle}>
+           Second Marriage
+        </NavLink>
+      </Menu.Item>
+    </Menu>
+  );
+
+
   return (
     <div id="navbar">
       {/* <div className="contentContainer"> */}
@@ -85,11 +160,8 @@ function Navbar() {
             </div>
             <div className="contact">
                 <p className="phone"><i className="bi bi-telephone-fill"></i> 9773643677</p>
-                {/* <p className="phone"><i className="bi bi-phone"></i> +91-9599991982</p> */}
                 <p><i className="bi bi-envelope-fill"></i> www.sattonjanam.com</p>
                 <p><i className="bi bi-envelope-fill"></i> Support@sattonjanam.com</p>
-                {/* <NavLink to={`/register`}><button>Register</button></NavLink>
-                <NavLink to={`/login`}><button>Login</button></NavLink> */}
 
                   {
                     isLogged ? (
@@ -113,8 +185,12 @@ function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/service"} onClick={toggleMenu}>
-                Services
+              <NavLink to={"/service"} 
+               onMouseEnter={() => setIsServiceMenu(true)}
+               onMouseLeave={() => setIsServiceMenu(false)}>
+                <Dropdown overlay={serviceDropdown} open={isServiceMenu} placement="bottomLeft">
+                <span>Services <i className="bi bi-caret-down-fill" style={{fontSize: "12px"}}></i></span>
+                </Dropdown>
               </NavLink>
             </li>
            

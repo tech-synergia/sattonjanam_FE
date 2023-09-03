@@ -26,7 +26,7 @@ const RegisterPage = (props) => {
     religion: "",
     gender: "",
     email: "",
-   image:{},
+    image:{},
     phoneNumber: "",
     password: "",
     age: "",
@@ -67,13 +67,13 @@ const RegisterPage = (props) => {
     aboutFamily: "",
   });
   const [partnerDetails, setPartnerDetails] = useState({
-    pAge: "",
-    pHeight: "",
-    pCaste: "",
-    community: "",
-    pEducation :"",
-    personalIncome: "",
-    maritalStatusPartner: ""
+    partnerAge: "",
+    partnerHeight: "",
+    partnerCaste: "",
+    partnerCommunity: "",
+    partnerEducation: "",
+    partnerIncome: "",
+    partnerMaritalStatus: "",
   })
 
   const allIndiaStates = [
@@ -223,6 +223,7 @@ const RegisterPage = (props) => {
             <Select
               name="registeredFor"
               id="registeredFor"
+              value={profileDetails.registeredFor}
               placeholder="Select"
               onChange={(value) =>
                 handleInputChange({ target: { name: "registeredFor", value } })
@@ -251,6 +252,7 @@ const RegisterPage = (props) => {
             <Select
               name="religion"
               id="religion"
+              value={profileDetails.religion}
               placeholder="Select Your Religion"
               onChange={(value) =>
                 handleInputChange({ target: { name: "religion", value } })
@@ -290,6 +292,7 @@ const RegisterPage = (props) => {
               type="email"
               name="email"
               id="email"
+              value={profileDetails.email}
               required
               onChange={handleInputChange}
             />
@@ -299,6 +302,7 @@ const RegisterPage = (props) => {
               type="number"
               name="phoneNumber"
               id="phoneNumber"
+              value={profileDetails.phoneNumber}
               required
               onChange={handleInputChange}
             />
@@ -308,6 +312,7 @@ const RegisterPage = (props) => {
               type="password"
               name="password"
               id="password"
+              value={profileDetails.password}
               required
               onChange={handleInputChange}
             />
@@ -317,12 +322,18 @@ const RegisterPage = (props) => {
                 type="number"
                 name="age"
                 id="age"
+                value={profileDetails.age}
                 onChange={handleInputChange}
               />
             </Form.Item>
             <Form.Item label="Height" htmlFor="height">
               <Select
-                onChange={handleInputChange}
+                name="height"
+                id="height"
+                value={profileDetails.height}
+                onChange={(value) =>
+                  handleInputChange({ target: { name: "height", value } })
+                }
                 placeholder="Select height"
               >
                 {heightOptions.map(option => (
@@ -336,6 +347,7 @@ const RegisterPage = (props) => {
             <Input 
               type="text"
               name="caste"
+              value={profileDetails.caste}
               id="caste"
               onChange={handleInputChange} 
             />
@@ -345,6 +357,7 @@ const RegisterPage = (props) => {
               type="text"
               name="gotra"
               id="gotra"
+              value={profileDetails.gotra}
               required
               onChange={handleInputChange}
             />
@@ -354,6 +367,7 @@ const RegisterPage = (props) => {
               type="text"
               name="hobbies"
               id="hobbies"
+              value={profileDetails.hobbies}
               required
               onChange={handleInputChange}
             />
@@ -363,6 +377,7 @@ const RegisterPage = (props) => {
             <Select
               name="color"
               id="color"
+              value={profileDetails.color}
               defaultValue="Fair"
               onChange={(value) =>
                 handleInputChange({ target: { name: "color", value } })
@@ -376,6 +391,7 @@ const RegisterPage = (props) => {
             <Select
               name="motherTongue"
               id="motherTongue"
+              value={profileDetails.motherTongue}
               placeholder="Select Your Mother Tongue"
               onChange={(value) =>
                 handleInputChange({ target: { name: "motherTongue", value } })
@@ -411,32 +427,12 @@ const RegisterPage = (props) => {
               <Option value="english">Other (English)</Option>
             </Select>
           </Form.Item>
-
-          <Form.Item label="Create Profile For" htmlFor="createProfileFor">
-            <Select
-              name="createProfileFor"
-              id="createProfileFor"
-              defaultValue="Self"
-              onChange={(value) =>
-                handleInputChange({
-                  target: { name: "createProfileFor", value },
-                })
-              }
-            >
-              <Option value="self">Self</Option>
-              <Option value="Brother">Brother</Option>
-              <Option value="Sister">Sister</Option>
-              <Option value="Son">Son</Option>
-              <Option value="Daughter">Daughter</Option>
-              <Option value="Sibling">Sibling</Option>
-              <Option value="Relative">Relative/Friend</Option>
-            </Select>
-          </Form.Item>
           
           <Form.Item label="Are you Manglik?" htmlFor="manglik">
             <Select
               name="manglik"
               id="manglik"
+              value={profileDetails.manglik}
               placeholder="Select"
               onChange={(value) =>
                 handleInputChange({ target: { name: "manglik", value } })
@@ -451,6 +447,7 @@ const RegisterPage = (props) => {
             <Select
               name="smoking"
               id="smoking"
+              value={profileDetails.smoking}
               placeholder="Are you smoking?"
               onChange={(value) =>
                 handleInputChange({ target: { name: "smoking", value } })
@@ -464,6 +461,7 @@ const RegisterPage = (props) => {
             <Select
               name="drinking"
               id="drinking"
+              value={profileDetails.drinking}
               placeholder="Are you drinking?"
               onChange={(value) =>
                 handleInputChange({ target: { name: "drinking", value } })
@@ -546,6 +544,7 @@ const RegisterPage = (props) => {
             <Select
               name="highestDegree"
               id="highestDegree"
+              value={careerDetails.highestDegree}
               placeholder="Select"
               onChange={(value) =>
                 handleInputChange({ target: { name: "highestDegree", value } })
@@ -615,6 +614,7 @@ const RegisterPage = (props) => {
             <Select
               name="employedIn"
               id="employedIn"
+              value={careerDetails.employedIn}
               placeholder="Select"
               onChange={(value) =>
                 handleInputChange({ target: { name: "employedIn", value } })
@@ -631,6 +631,7 @@ const RegisterPage = (props) => {
             <Select
               name="occupation"
               id="occupation"
+              value={careerDetails.occupation}
               placeholder="Select Your Occupation"
               onChange={(value) =>
                 handleInputChange({ target: { name: "occupation", value } })
@@ -670,6 +671,7 @@ const RegisterPage = (props) => {
             <Select
               name="job"
               id="job"
+              value={careerDetails.job}
               placeholder="Select Your job type"
               onChange={(value) =>
                 handleInputChange({ target: { name: "job", value } })
@@ -706,6 +708,7 @@ const RegisterPage = (props) => {
               id="mySelf"
               rows={3}
               cols={10}
+              value={careerDetails.mySelf}
               onChange={handleInputChange}
             />
           </Form.Item>
@@ -727,7 +730,7 @@ const RegisterPage = (props) => {
               name="familyType"
               id="familyType"
               placeholder="Select"
-            
+              value={familyDetails.familyType}
               onChange={(value) =>
                 handleInputChange({ target: { name: "familyType", value } })
               }
@@ -741,6 +744,7 @@ const RegisterPage = (props) => {
             <Select
               name="fatherOccupation"
               id="fatherOccupation"
+              value={familyDetails.fatherOccupation}
               placeholder="Select"
               onChange={(value) =>
                 handleInputChange({
@@ -762,6 +766,7 @@ const RegisterPage = (props) => {
             <Select
               name="motherOccupation"
               id="motherOccupation"
+              value={familyDetails.motherOccupation}
               placeholder="Select"
               onChange={(value) =>
                 handleInputChange({
@@ -796,6 +801,7 @@ const RegisterPage = (props) => {
               type="text"
               name="sister"
               id="sister"
+              value={familyDetails.sister}
               required
               onChange={handleInputChange}
             />
@@ -814,19 +820,21 @@ const RegisterPage = (props) => {
               <Option value="abroad">Abroad</Option>
             </Select>
           </Form.Item>
-          <Form.Item label="Contact Address" htmlFor="contactDetails">
+          <Form.Item label="Contact Address" htmlFor="contactAddress">
             <TextArea
-              name="contactDetails"
-              id="contactDetails"
+              name="contactAddress"
+              id="contactAddress"
+              value={familyDetails.contactAddress}
               rows={3}
               cols={10}
               onChange={handleInputChange}
             />
           </Form.Item>
-          <Form.Item label="About My Family" htmlFor="aboutMyFamily">
+          <Form.Item label="About My Family" htmlFor="aboutFamily">
             <TextArea
-              name="aboutMyFamily"
-              id="aboutMyFamily"
+              name="aboutFamily"
+              id="aboutFamily"
+              value={careerDetails.aboutFamily}
               rows={3}
               cols={10}
               onChange={handleInputChange}
@@ -846,18 +854,23 @@ const RegisterPage = (props) => {
       title: "Partner Preference",
       content: (
         <Form>
-            <Form.Item label="Age" htmlFor="pAge">
+            <Form.Item label="Age" htmlFor="partnerAge">
               <Input
                 type="number"
-                name="pAge"
-                id="pAge"
-                value={partnerDetails.pAge}
+                name="partnerAge"
+                id="partnerAge"
+                value={partnerDetails.partnerAge}
                 onChange={handleInputChange}
               />
             </Form.Item>
-            <Form.Item label="Height" htmlFor="pHeight">
+            <Form.Item label="Height" htmlFor="partnerHeight">
               <Select
-                onChange={handleInputChange}
+                name="partnerHeight"
+                id="partnerHeight"
+                value={partnerDetails.partnerHeight}
+                onChange={(value) =>
+                  handleInputChange({ target: { name: "partnerHeight", value } })
+                }
                 placeholder="Select height"
               >
                 {heightOptions.map(option => (
@@ -867,34 +880,32 @@ const RegisterPage = (props) => {
                 ))}
               </Select>
           </Form.Item>
-          <Form.Item label="Community" htmlFor="community">
-              <Select
-                name="community"
-                id="community"
-                value={partnerDetails.community}
+          <Form.Item label="Community" htmlFor="partnerCommunity">
+            <Input 
+                name="partnerCommunity"
+                id="partnerCommunity"
+                value={partnerDetails.partnerCommunity}
                 onChange={handleInputChange}
-                placeholder="Select Community"
-              >
-                <Option value=""></Option>
-              </Select>
+                
+            />
           </Form.Item>
-          <Form.Item label="Caste" htmlFor="pCaste">
+          <Form.Item label="Caste" htmlFor="partnerCaste">
             <Input 
               type="text"
-              name="pCaste"
-              id="pCaste"
-              value={partnerDetails.pCaste}
+              name="partnerCaste"
+              id="partnerCaste"
+              value={partnerDetails.partnerCaste}
               onChange={handleInputChange} 
             />
           </Form.Item>
-          <Form.Item label="Education" htmlFor="pEducation">
+          <Form.Item label="Education" htmlFor="partnerEducation">
             <Select
-              name="pEducation"
-              id="pEducation"
-              value={partnerDetails.pEducation}
+              name="partnerEducation"
+              id="partnerEducation"
+              value={partnerDetails.partnerEducation}
               placeholder="Select"
               onChange={(value) =>
-                handleInputChange({ target: { name: "pEducation", value } })
+                handleInputChange({ target: { name: "partnerEducation", value } })
               }
             >
               <Option value="Engineering">Engineering/Technology/Design</Option>
@@ -957,14 +968,14 @@ const RegisterPage = (props) => {
             </Select>
          
           </Form.Item>
-          <Form.Item label="Personal Income" htmlFor="personalIncome">
+          <Form.Item label="Personal Income" htmlFor="partnerIncome">
             <Select 
-              name="personalIncome"
-              id="personalIncome"
-              value={partnerDetails.personalIncome}
+              name="partnerIncome"
+              id="partnerIncome"
+              value={partnerDetails.partnerIncome}
               required
               onChange={(value) =>
-                handleInputChange({ target: { name: "personalIncome", value } })
+                handleInputChange({ target: { name: "partnerIncome", value } })
               }>
                  
                   <Option value="Range1">5lakhs - 10lakhs</Option>
@@ -979,14 +990,14 @@ const RegisterPage = (props) => {
                   <Option value="Range0">90lakhs - 1crore</Option>
             </Select>
           </Form.Item>
-          <Form.Item label="Marital Status" htmlFor="maritalStatusPartner">
+          <Form.Item label="Marital Status" htmlFor="partnerMaritalStatus">
             <Select
-              name="maritalStatusPartner"
-              id="maritalStatusPartner"
-              value= {partnerDetails.maritalStatusPartner}
+              name="partnerMaritalStatus"
+              id="partnerMaritalStatus"
+              value= {partnerDetails.partnerMaritalStatus}
               placeholder="Select Your Status"
               onChange={(value) =>
-                handleInputChange({ target: { name: "maritalStatusPartner", value } })
+                handleInputChange({ target: { name: "partnerMaritalStatus", value } })
               }
             >
               <Option value="UNMARRRIED">UnMarried</Option>
