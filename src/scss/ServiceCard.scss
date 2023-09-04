@@ -1,5 +1,5 @@
 @use "./modules/vrs";
-@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Great+Vibes&family=Lato&family=Lobster&display=swap');
 
 .details{
     background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR7z1BdpPrg_rq2kfCbixdD65miYS0zQdUHE3VlbYIZEge2eMaP");
@@ -45,16 +45,31 @@
       .ant-typography {
         color: #fff;
         }
-      .text-content {
+      .text-info {
        margin: 10px;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+      
+       max-height: 240px; 
+       overflow: hidden;
        .titleService{
         a{
-          color: #fff;
+          color: rgb(247, 181, 12);
           &:hover{
             text-decoration: underline;
           }
         }
        }
+       .content {
+        display: -webkit-box;
+        -webkit-line-clamp: 3; 
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+      }
+      
       
       }
    }

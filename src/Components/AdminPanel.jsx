@@ -5,6 +5,7 @@ import UserApi from "./API/UserApi";
 import { useNavigate, NavLink } from 'react-router-dom';
 import '../scss/AdminPanel.scss'
 import axios from "axios";
+import logo from '../assets/websiteLogo.svg'
 import { GlobalContext } from '../GlobalContext'
 
 const { Title } = Typography;
@@ -130,6 +131,7 @@ const AdminPanel = () => {
 
   return (
     <div>
+      <img src={logo} alt="no image" width={100} height={100}/>
       <Table
         dataSource={profileData}
         columns={columns}

@@ -2,6 +2,9 @@
 
 #navbar {
   color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 3;
   .logoContent {
     background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR7z1BdpPrg_rq2kfCbixdD65miYS0zQdUHE3VlbYIZEge2eMaP");
     display: flex;
@@ -26,19 +29,9 @@
         justify-content: space-evenly;
         color: #000;
         align-items: center;
-        // .logo-title {
-        //     cursor: pointer;
-        //     background-color: #fff;
-        //     width: 100px;
-        //     height: 80px;
-        //     img {
-        //       width: 100px;
-        //       height: 80px;
-        //     }
-
-              height: 100px;
-              align-items: center;
-              font-size: 20px;
+        height: 100px;
+        align-items: center;
+        font-size: 20px;
 
         p {
           padding: 0px 10px;

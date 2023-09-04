@@ -20,12 +20,9 @@ function LateServices() {
       </div>
       <div>
         <ServiceComponent
-            imageSrc="https://www.wedgatematrimony.com/wp-content/uploads/2019/09/late-marriage-bureau-delhi.jpg"
+            imageSrc="https://imarriages.com/m/images/m-free-matrimony.jpg"
             heading="Late Marriage Matrimony"
-            content="In the Indian subcontinent, the ideal age for marriage falls in the range of twenties and early thirties. Most people get married when in this age group, however for some, time just flies by. There can be one or many straightforward or peculiar reasons for this delay. It can be associated with family responsibilities, career ambitions, health issues, personal preferences, and a myriad of other reasons. But there’s always a ray of hope, no matter how late you realize to get married."
-            summary="We at SattonJanam Matrimony are experts in Late marriage matrimonial matchmaking, and count it as one of our core specialties. We cater to late marriage profiles from every caste including Brahmin, Rajput, Yadav, Kayastha, Sikh, Baniya, Punjabi, and any others you can think of. We pride ourselves in having successfully matched thousands of late marriage profiles in the past decade.
-
-            We don’t judge you by your appearance, complexion, creed, or social status. We have an extensive and diverse database, which we are confident about, and can assure to try our best to find you the ideal match according to your preferences. Wedgate Matrimony is the Largest Late Marriage Site and Late Marriage Bureau in Delhi NCR."
+            content="Nowadays, both men and women prefer late marriage because they want economic empowerment in their life. Also, if these people study in universities or for master's or Ph. D., their marriage age would be late. On the other hand, career targets make people delay their marriages even if they have a partner in their life."
         />
       </div>
       <Footer/>

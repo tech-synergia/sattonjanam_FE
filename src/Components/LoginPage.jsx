@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { Button, Form, Input, Alert, Typography } from "antd";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import logo from '../assets/websiteLogo.svg'
 
 const {Title} = Typography;
 
@@ -59,7 +60,7 @@ const LoginPage = () => {
 
   const [successMessage, setSuccessMessage] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
-    return (
+  return (
     <Form
       name="basic"
       labelCol={{ span: 6 }}
@@ -72,6 +73,7 @@ const LoginPage = () => {
       }}
       initialValues={{ remember: false }}
     >
+      <img src={logo} alt="no image" width={100} height={100}/>
       <Title level={2} style={{textAlign:"center"}}>Login</Title>
       {alertData.show && (
         <Alert
@@ -130,8 +132,8 @@ const LoginPage = () => {
           onChange={readValue}
         />
       </Form.Item>
-      <p style={{textAlign: "center"}}>
-        Don't Have an Account? <a href="/register">Register</a>
+      <p style={{textAlign: "right", marginRight: "46px"}}>
+        <a href="#">Forgot Password</a>
       </p>
 
       <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
@@ -139,6 +141,9 @@ const LoginPage = () => {
           Sign In
         </Button>
       </Form.Item>
+      <p style={{textAlign: "center"}}>
+        Don't Have an Account? <a href="/register">Register</a>
+      </p>
     </Form>
   );
 };

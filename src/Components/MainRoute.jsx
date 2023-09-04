@@ -18,6 +18,7 @@ import WeddingEvent from "../Pages/WeddingEvent";
 import Astrologer from "../Pages/Astrologer";
 import UserDetails from "./UserDetails";
 // import EnquireNow from "./EnquireNow";
+
 import EnquireForm from "./EnquireForm";
 import HinduServices from "../Pages/HinduServices";
 import PunjabServices from "../Pages/PunjabServices";
@@ -29,6 +30,7 @@ import NRIServices from "../Pages/NRIServices";
 import LateServices from "../Pages/LateServices";
 import ReMarriageServices from "../Pages/ReMarriageServices";
 import SecondMarriage from "../Pages/SecondMarriage";
+import ScrollToTop from "./ScrollToTop";
 
 function MainRoute() {
   const context = useContext(GlobalContext);
@@ -89,6 +91,7 @@ function MainRoute() {
           </Route>
         ) : null}
       </Routes>
+      <ScrollToTop />
     </BrowserRouter>
   );
 }

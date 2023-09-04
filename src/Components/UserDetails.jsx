@@ -5,6 +5,7 @@ import axios from "axios";
 import { GlobalContext } from '../GlobalContext'
 import '../scss/UserDetails.scss'
 import UserApi from "./API/UserApi";
+import logo from '../assets/websiteLogo.svg'
 
 const { Title } = Typography;
 
@@ -39,6 +40,7 @@ function UserDetails() {
   return (
     <div>
       <Form className="popUpForm">
+          <img src={logo} alt="no image" width={100} height={100}/>
           <Title level={5}>Profile Details</Title>
             <Form.Item >
                 <Image src={profileData.image} height={300} width={250} readOnly/>
@@ -47,10 +49,10 @@ function UserDetails() {
               <Input value={profileData.userName} readOnly/>
             </Form.Item>
             <Form.Item label="Email Id" >
-              <Input value={profileData.email} readOnly/>
+              <Input value={profileData.email} />
             </Form.Item>
             <Form.Item label="Mobile Number" >
-              <Input value={profileData.phoneNumber} readOnly/>
+              <Input value={profileData.phoneNumber}/>
             </Form.Item>
             <Form.Item label="Religion" >
               <Input value={profileData.religion} readOnly />

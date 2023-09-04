@@ -20,12 +20,9 @@ function SikhServices() {
       </div>
       <div>
         <ServiceComponent
-            imageSrc="https://www.wedgatematrimony.com/wp-content/uploads/2019/09/sikh-marriage-bureau-matrimonial-services-delhi.jpg"
+            imageSrc="https://www.imperial.wedding/storage/cms_pages/thumb/310521014336-sikh.jpg"
             heading="Sikh Matrimonial Services"
-            content="Name given to a marriage ceremony in Sikh Culture is called “Anand Karaj” which means “Blissful Union”. Sikh matrimonial ceremonies are the truly momentous times full of lifetime celebrations. Most of the ceremonies are done in a relaxed, energetic with age old traditional rituals under the guidance of family elders and all nears and dears."
-            summary="We extensively deal in all Sikh castes such as Arora, Khatri castes like Khurana, Kohli, Bhasin, Chaddha, Ramgarhia, Ramdasia, Jat, Guru Sikh or Gur Sikh, Keshdhari, Naamdhari, Kukhrain, Dhillon, Saini, Kamboh, Mahton, Chhimba, Mohyal, etc.
-
-            We have Sikh alliances families based in Northern India, Delhi NCR, Punjab, other parts of India, overseas specially Canada, America, Europe, UK and other parts of the world where prospects are placed due to occupational or other reasons."
+            content="The Sikh marriage is a very colourful and unique ceremony in which two individuals are joined in a partnership of two equals. The couple will marry in front of the Guru Granth Sahib while the guests gather around the couple, usually with men on one side and women on the other.We have Sikh alliances families based in Northern India, Delhi NCR, Punjab, other parts of India, overseas specially Canada, America, Europe, UK and other parts of the world where prospects are placed due to occupational or other reasons."
         />
       </div>
       <Footer/>

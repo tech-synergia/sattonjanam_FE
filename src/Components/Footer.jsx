@@ -40,8 +40,7 @@ function Footer() {
                 <h3>Support</h3>
                 <div className="Links">
                     <span><i className="bi bi-telephone-fill"></i> 9773643677 </span>
-                    <span> <i className="bi bi-envelope-fill"></i> www.sattonjanam.com </span>
-                    <span><i className="bi bi-envelope-fill"></i> Support@sattonjanam.com</span>
+                    <span><i className="bi bi-envelope-fill"></i> support@sattonjanam.com</span>
                     <span className='location'><i class="bi bi-geo-alt-fill"></i> Add- 224, Ground floor, IP colony Faridabad, Haryana. Pin- 121009</span>
                     <span><i className="bi bi-geo-fill"></i> Get Direction</span>
                 </div>
@@ -52,18 +51,18 @@ function Footer() {
                 
                 <div className="Links logos">
                     
-                    <span><a href="whatsapp://send?text=Hi!&phone=+91+91-9599991982" className="bi bi-whatsapp" > </a></span>
-                    <span><a href="mailto:contact@wedgatematrimony.com" className="bi bi-envelope-fill" > </a></span>
-                    <span><a href="https://www.linkedin.com/in/wedgatematrimony/" className='bi bi-linkedin'></a></span>
-                    <span><a href="https://www.facebook.com/Wedgatematrimonydelhi" className='bi bi-facebook'></a></span>
-                    <span><a href="https://www.instagram.com/wedgate_matrimony/" className='bi bi-instagram'></a></span>
-                    <span><a href="https://twitter.com/wedgate" className='bi bi-twitter'></a></span>
+                    <span><a href="whatsapp://send?text=Hi!&phone=9773643677" className="bi bi-whatsapp" > </a></span>
+                    <span><a href="mailto:support@sattonjanam.com" className="bi bi-envelope-fill" > </a></span>
+                    <span><a href="https://www.linkedin.com/company/sattonjanam-matrimonial-services/about/?viewAsMember=true" className='bi bi-linkedin'></a></span>
+                    <span><a href="https://www.facebook.com/profile.php?id=61550954489680&sk=about_contact_and_basic_info" className='bi bi-facebook'></a></span>
+                    <span><a href="#" className='bi bi-instagram'></a></span>
+                    <span><a href="#" className='bi bi-twitter'></a></span>
                 </div>
             </div>
         {/* </div> */}
 
         <div className="footerEnd">
-            <p>© 2008 - 2023 SattonJanam.com Matrimonial Services | The Matchmaking Universe | All Rights Reserved.</p>
+            <p>© 2023 sattonjanam.com. All Rights Reserved. | Privacy Policy</p>
         </div>
     </footer>
   )

@@ -11,7 +11,8 @@ import { Menu, Dropdown } from 'antd';
 
 const menuStyle = {
   textDecoration: "none",
-  fontSize: "17px"
+  fontSize: "17px",
+  color:"#fff"
 }
 
 function Navbar() {
@@ -85,7 +86,7 @@ function Navbar() {
   };
 
   const serviceDropdown = (
-    <Menu>
+    <Menu style={{ backgroundColor: "rgb(177, 110, 145)", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }}>
       <Menu.Item key="hindu">
         <NavLink to={"/hindu-matrimonial-services"} onClick={toggleMenu} style={menuStyle}>
           Hindu Matrimonial Services
@@ -156,12 +157,13 @@ function Navbar() {
       {/* <div className="contentContainer"> */}
         <div className="logoContent">
             <div className="logo-title">
-              <img src={logo} alt="logo"/>
+              <NavLink to={'/'}>
+                <img src={logo} alt="logo"/>
+              </NavLink>
             </div>
             <div className="contact">
                 <p className="phone"><i className="bi bi-telephone-fill"></i> 9773643677</p>
-                <p><i className="bi bi-envelope-fill"></i> www.sattonjanam.com</p>
-                <p><i className="bi bi-envelope-fill"></i> Support@sattonjanam.com</p>
+                <p><i className="bi bi-envelope-fill"></i> support@sattonjanam.com</p>
 
                   {
                     isLogged ? (
