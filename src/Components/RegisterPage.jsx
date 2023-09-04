@@ -7,6 +7,7 @@ import { useNavigate, NavLink } from 'react-router-dom';
 import { GlobalContext } from '../GlobalContext'
 import axios from 'axios'
 import { useEffect } from "react";
+import logo from '../assets/websiteLogo.svg'
 
 const { Step } = Steps;
 const { Option } = Select;
@@ -1194,6 +1195,7 @@ const RegisterPage = (props) => {
 
   return (
     <div className="form-container">
+      <img src={logo} alt="no image" width={100} height={100}/>
       <h2>Register Form</h2>
       {alertData.show && (
         <Alert

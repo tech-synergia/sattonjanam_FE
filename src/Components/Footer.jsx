@@ -55,8 +55,8 @@ function Footer() {
                     <span><a href="mailto:support@sattonjanam.com" className="bi bi-envelope-fill" > </a></span>
                     <span><a href="https://www.linkedin.com/company/sattonjanam-matrimonial-services/about/?viewAsMember=true" className='bi bi-linkedin'></a></span>
                     <span><a href="https://www.facebook.com/profile.php?id=61550954489680&sk=about_contact_and_basic_info" className='bi bi-facebook'></a></span>
-                    <span><a href="https://www.instagram.com/wedgate_matrimony/" className='bi bi-instagram'></a></span>
-                    <span><a href="https://twitter.com/wedgate" className='bi bi-twitter'></a></span>
+                    <span><a href="#" className='bi bi-instagram'></a></span>
+                    <span><a href="#" className='bi bi-twitter'></a></span>
                 </div>
             </div>
         {/* </div> */}
