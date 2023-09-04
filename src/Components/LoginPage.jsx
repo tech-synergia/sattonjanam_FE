@@ -130,8 +130,8 @@ const LoginPage = () => {
           onChange={readValue}
         />
       </Form.Item>
-      <p style={{textAlign: "center"}}>
-        Don't Have an Account? <a href="/register">Register</a>
+      <p style={{textAlign: "right", marginRight: "46px"}}>
+        <a href="#">Forgot Password</a>
       </p>
 
       <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
@@ -139,6 +139,9 @@ const LoginPage = () => {
           Sign In
         </Button>
       </Form.Item>
+      <p style={{textAlign: "center"}}>
+        Don't Have an Account? <a href="/register">Register</a>
+      </p>
     </Form>
   );
 };

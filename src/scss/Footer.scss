@@ -1,5 +1,7 @@
+@use './modules/vrs';
+
 footer{
-    background-color: #222;
+    background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR7z1BdpPrg_rq2kfCbixdD65miYS0zQdUHE3VlbYIZEge2eMaP");
     color: grey;
     .footerColumns{
         display: flex;
@@ -34,7 +36,7 @@ footer{
         .impLinks{
             width: 260px;
             h3{
-                color: #fff;
+                color: #000;
                 font-weight: 100;
             }
             .Links{
@@ -80,7 +82,8 @@ footer{
     }
     .footerEnd{
         text-align: center;
-        background-color: #333333;
+        background-color: vrs.$prim-color;
         padding: 10px 0px;
+        color: #fff;
     }
 }

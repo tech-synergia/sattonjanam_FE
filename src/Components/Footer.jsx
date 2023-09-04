@@ -52,10 +52,10 @@ function Footer() {
                 
                 <div className="Links logos">
                     
-                    <span><a href="whatsapp://send?text=Hi!&phone=+91+91-9599991982" className="bi bi-whatsapp" > </a></span>
+                    <span><a href="whatsapp://send?text=Hi!&phone=9773643677" className="bi bi-whatsapp" > </a></span>
                     <span><a href="mailto:contact@wedgatematrimony.com" className="bi bi-envelope-fill" > </a></span>
-                    <span><a href="https://www.linkedin.com/in/wedgatematrimony/" className='bi bi-linkedin'></a></span>
-                    <span><a href="https://www.facebook.com/Wedgatematrimonydelhi" className='bi bi-facebook'></a></span>
+                    <span><a href="https://www.linkedin.com/company/sattonjanam-matrimonial-services/about/?viewAsMember=true" className='bi bi-linkedin'></a></span>
+                    <span><a href="https://www.facebook.com/profile.php?id=61550954489680&sk=about_contact_and_basic_info" className='bi bi-facebook'></a></span>
                     <span><a href="https://www.instagram.com/wedgate_matrimony/" className='bi bi-instagram'></a></span>
                     <span><a href="https://twitter.com/wedgate" className='bi bi-twitter'></a></span>
                 </div>
@@ -63,7 +63,7 @@ function Footer() {
         {/* </div> */}
 
         <div className="footerEnd">
-            <p>© 2008 - 2023 SattonJanam.com Matrimonial Services | The Matchmaking Universe | All Rights Reserved.</p>
+            <p>© 2023 sattonjanam.com. All Rights Reserved. | Privacy Policy</p>
         </div>
     </footer>
   )

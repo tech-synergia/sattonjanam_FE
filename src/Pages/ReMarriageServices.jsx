@@ -21,7 +21,7 @@ function ReMarriageServices() {
       </div>
       <div>
         <ServiceComponent
-            imageSrc="https://www.wedgatematrimony.com/wp-content/uploads/2019/09/remarriage-1.jpg"
+            imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGghJzhYmJvuBSC2BiQrsIJHGBYFa6xZT5jUiOvSicRrdLfQQ9QIcAGCgMQdVXUCt6idA&usqp=CAU"
             heading="Re-Marriage Services"
             content="A marriage can fail because of reasons like communication gaps, adjustment issues, lack of compassion, domestic violence, or any other detrimental causes. But that doesn’t mean that your life is decimated. You can always start afresh, and give a thought to another horizon. Remarriage or second marriage is still a topic that people choose to leave untouched. We emphatically understand the needs of people falling into this segment and offer the most genuine and hospitable second marriage matrimonial service in India and overseas to Resident Indians or NRIs."
             summary="Whether you are a divorced, separated, or widowed man/ woman, we will assist you in finding the perfect partner for you. We offer you an efficient platform and a streamlined process for concluding re-marriage and starting a new life.

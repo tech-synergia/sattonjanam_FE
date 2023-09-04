@@ -11,9 +11,9 @@ const weddingData = [
       <a href="/punjabi-matrimonial-services">Punjabi Matrimonial Service</a>
     ),
     content:
-      "Punjabi weddings are renowned for being pompous and energetic. People hailing from the Punjabi ethnicity are joyous, playful and extremely...",
+      "As a part of this, the bridegroom is made to wear a turban and a headgear or sehera, which covers his face. The traditional baraat includes the groom, who rides his horse (or rather mare) and reaches the wedding venue where the ceremonies take place, with his close family and friends dancing as a part of the baraat.",
     imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/punjabi-marriage-bureau-matrimonial-services-delhi.jpg",
+      "https://www.imperial.wedding/storage/cms_pages/thumb/310521014627-punjabi.jpg",
   },
   {
     _id: 2,
@@ -21,9 +21,9 @@ const weddingData = [
       <a href="/sikh-matrimonial-services">Sikh Matrimonial Service</a>
     ),
     content:
-      "Name given to a marriage ceremony in Sikh Culture is called “Anand Karaj” which means “Blissful Union”. Sikh matrimonial ceremonies...",
+      "The Sikh marriage is a very colourful and unique ceremony in which two individuals are joined in a partnership of two equals. The couple will marry in front of the Guru Granth Sahib while the guests gather around the couple, usually with men on one side and women on the other.",
     imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/sikh-marriage-bureau-matrimonial-services-delhi.jpg",
+      "https://www.imperial.wedding/storage/cms_pages/thumb/310521014336-sikh.jpg",
   },
   {
     _id: 3,
@@ -31,9 +31,9 @@ const weddingData = [
       <a href="/hindu-matrimonial-services">Hindu Matrimonial Service</a>
     ),
     content:
-      "The Hindu community is a diverse, colourful and enchanting ethnic group of people which make up for around 80% of...",
+      "It is a religious necessity rather than a mere physical luxury. Hindu Marriage is a tie that can never be broken and it is a relation established from birth to birth.",
     imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/hindu-marriage-bureau-matrimonial-services.jpg",
+      "https://www.hindumatrimony.net/assets/story/15525766862070646525.jpg",
   },
   {
     _id: 4,
@@ -41,9 +41,9 @@ const weddingData = [
       <a href="/jain-matrimonial-services">Jain Matrimonial Services</a>
     ),
     content:
-      "Jainsim is the sixth largest religion in India, and is mainly concentrated around the western states of Gujarat and Rajasthan...",
+      "Jain marriage is announced through a tilak. The bride's family visits the groom's family and gifts and sweets are exchanged along with a tilak ceremony of the groom.",
     imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/marriage-bureau-matrimonial-services-delhi-ncr.jpg",
+      "https://www.imperial.wedding/storage/cms_pages/thumb/310521015221-Jain.jpg",
   },
   {
     _id: 5,
@@ -53,7 +53,7 @@ const weddingData = [
     content:
       "With India’s fast paced economic development, and the ever expanding upper middle and rich class, the demand for an elite...",
     imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/elite-matrimony-marriage-bureau-delhi.jpg",
+      "https://www.elitematrimony.com/revamp-images/elite-matchmaking-mobile-banner-2.png",
   },
   {
     _id: 6,
@@ -61,9 +61,9 @@ const weddingData = [
       <a href="/nri-matrimonial-services">NRI Matrimonial Service</a>
     ),
     content:
-      "NRI’s, are people who are born in India but reside abroad in a different country. Despite living in foreign countries...",
+      "NRI marriages', as generally understood, are between an Indian woman from India and an Indian man residing in another country (thus NRI – non-resident Indian), either as Indian citizen (when he would legally be an 'NRI') or as citizen of that other country (when he would legally be a PIO – person of Indian origin).",
     imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/nri-marriage-bureau-matrimonial-services-delhi.jpg",
+      "https://www.imperial.wedding/storage/blogs/290622040425-NRIMarriageBureau.jpg",
   },
   {
     _id: 7,
@@ -71,9 +71,9 @@ const weddingData = [
       <a href="/late-marriage-matrimonial-services">Late Marriage Matrimony</a>
     ),
     content:
-      "In the Indian subcontinent, the ideal age for marriage falls in the range of twenties and early thirties. Most people...",
+      "Nowadays, both men and women prefer late marriage because they want economic empowerment in their life. Also, if these people study in universities or for master's or Ph. D., their marriage age would be late. On the other hand, career targets make people delay their marriages even if they have a partner in their life.",
     imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/late-marriage-bureau-delhi.jpg",
+      "https://imarriages.com/m/images/m-free-matrimony.jpg",
   },
   {
     _id: 8,
@@ -83,7 +83,7 @@ const weddingData = [
     content:
       "A marriage can fail because of reasons like communication gaps, adjustment issues, lack of compassion, domestic violence, or any other...",
     imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/remarriage-1.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGghJzhYmJvuBSC2BiQrsIJHGBYFa6xZT5jUiOvSicRrdLfQQ9QIcAGCgMQdVXUCt6idA&usqp=CAU",
   },
   {
     _id: 9,
@@ -100,9 +100,9 @@ const weddingData = [
       <a href="/wedding">Wedding Events Services</a>
     ),
     content:
-      "Weddings are an extremely busy affair in India. It can take months for a family to properly prepare for the...",
+      "From coordinating your recce trip to finalizing your wedding we cover all under our cloud. So now you can say goodbye to the inconvenience of running around. Let our team do the running around while you enjoy the event with your loved ones.",
     imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/wedding-event-services-1.jpg",
+      "https://cdn0.weddingwire.in/vendor/4308/3_2/960/jpeg/wedding-planner-rp-events-stage-decor-7_15_294308-160800708459494.jpeg",
   },
   {
     _id: 11,
@@ -112,7 +112,7 @@ const weddingData = [
     content:
       "Aggarwal / Gupta / Baniya caste hails from the Vaishya caste which is considered to be a mercantile clan of...",
     imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/elite-marriage-bureau-matrimonial-services-delhi.jpg",
+      "https://www.saathimere.com/matrimonial-service/img/Agarwal-Matrimonial-Services.jpg",
   },
   {
     _id: 12,
@@ -122,7 +122,7 @@ const weddingData = [
     content:
       "Second Marriage caste hails from the Vaishya caste which is considered to be a mercantile clan of...",
     imageUrl:
-      "https://www.wedgatematrimony.com/wp-content/uploads/2019/09/wedding-photography-services-delhi-ncr.jpg",
+      "https://2.bp.blogspot.com/-CYn6hd-Xls4/WYc5UMLZdnI/AAAAAAAAIdg/B0JPled64lQN_MaXKfYUoZbypFCySk8egCLcBGAs/s640/Married-widows-free-matrimonial-sites-for-widows-Second-Marriage-Matrimonial-Sites.jpg",
   },
 ];
 
@@ -132,9 +132,9 @@ export const WeddingImage = () => {
       {weddingData.map((dataItem) => (
         <Card className="card">
             <img src={dataItem.imageUrl} alt="" />
-            <div className="text-content">
+            <div className="text-info">
                 <Title level={3} className="titleService">{dataItem.title}</Title>
-                <Text> {dataItem.content} </Text>
+                <Text className="content"> {dataItem.content} </Text>
             </div>
         </Card>
       ))}

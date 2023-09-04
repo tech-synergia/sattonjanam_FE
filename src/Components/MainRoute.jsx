@@ -17,7 +17,7 @@ import DisclaimerPage from "../Pages/DisclaimerPage";
 import WeddingEvent from "../Pages/WeddingEvent";
 import Astrologer from "../Pages/Astrologer";
 import UserDetails from "./UserDetails";
-import EnquireNow from "./EnquireNow";
+// import EnquireNow from "./";
 import EnquireForm from "./EnquireForm";
 import HinduServices from "../Pages/HinduServices";
 import PunjabServices from "../Pages/PunjabServices";
@@ -29,6 +29,7 @@ import NRIServices from "../Pages/NRIServices";
 import LateServices from "../Pages/LateServices";
 import ReMarriageServices from "../Pages/ReMarriageServices";
 import SecondMarriage from "../Pages/SecondMarriage";
+import ScrollToTop from "./ScrollToTop";
 
 function MainRoute() {
   const context = useContext(GlobalContext);
@@ -56,7 +57,7 @@ function MainRoute() {
         <Route path={"/wedding"} element={<WeddingEvent />} />
         <Route path={"/astrologer"} element={<Astrologer />} />
         <Route path={"/userdetails"} element={<UserDetails />} />
-        <Route path={"/enquirenow"} element={<EnquireNow />} />
+        {/* <Route path={"/enquirenow"} element={<EnquireNow />} /> */}
         <Route path={"/enquireform"} element={<EnquireForm />} />
         <Route path="/hindu-matrimonial-services" element={<HinduServices />} />
         <Route
@@ -89,6 +90,7 @@ function MainRoute() {
           </Route>
         ) : null}
       </Routes>
+      <ScrollToTop />
     </BrowserRouter>
   );
 }

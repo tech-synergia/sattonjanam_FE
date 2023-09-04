@@ -1,20 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Great+Vibes&family=Lato&family=Lobster&display=swap');
+
 .common-background {
     background-image: url('https://www.wedgatematrimony.com/wp-content/themes/weddingmate/assets/images/default.jpg');
     background-size: cover;
     background-position: center;
-    height: 30vh;
+    height: 25vh;
     color: #fff;
     text-align: center;
-    font-family: Arial, sans-serif;
     @media screen and (max-width: 768px){
       display: none;
     }
     .content {
       h1 {
-        color: #fff;
-        font-family:'Trebuchet MS';
+        color: rgb(244, 179, 15);
+        font-family:'Great Vibes', cursive;
         text-align: center;
-        font-size: 60px;
+        font-size: 70px;
         margin-top: 50px;
       }
     }

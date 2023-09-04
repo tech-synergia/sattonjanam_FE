@@ -18,6 +18,9 @@ const RegisterPage = (props) => {
     message: "",
     show: false,
   });
+  const [isAllFieldsFilled, setIsAllFieldsFilled] = useState(false);
+  const [isCareerDetailsFilled, setIsCareerDetailsFilled] = useState(false); 
+  const [isFamilyDetailsFilled, setIsFamilyDetailsFilled] = useState(false);
 
   const [currentStep, setCurrentStep] = useState(0);
   const [profileDetails, setProfileDetails] = useState({
@@ -31,7 +34,6 @@ const RegisterPage = (props) => {
     password: "",
     age: "",
     caste: "",
-    subCaste: "",
     gotra: "",
     hobbies: "",
     height: "",
@@ -73,15 +75,18 @@ const RegisterPage = (props) => {
     partnerCommunity: "",
     partnerEducation: "",
     partnerIncome: "",
+    partnerLocation: "",
     partnerMaritalStatus: "",
   })
 
   const allIndiaStates = [
     "Andhra Pradesh",
     "Arunachal Pradesh",
+    "Abroad",
     "Assam",
     "Bihar",
     "Chattisgarh",
+    "Delhi",
     "Goa",
     "Gujarat",
     "Haryana",
@@ -111,6 +116,80 @@ const RegisterPage = (props) => {
   const navigate = useNavigate()
   const context = useContext(GlobalContext)
   const token = context.token
+
+  
+  const validateFields = () => {
+    // Implement your validation logic here
+    const requiredFields = [
+      profileDetails.registeredFor,
+      profileDetails.userName,
+      profileDetails.religion,
+      profileDetails.gender,
+      profileDetails.email,
+      profileDetails.phoneNumber,
+      profileDetails.password,
+      profileDetails.age,
+      profileDetails.caste,
+      profileDetails.gotra,
+      profileDetails.hobbies,
+      profileDetails.height,
+      profileDetails.color,
+      profileDetails.motherTongue,
+      profileDetails.maritalStatus,
+      profileDetails.manglik,
+      profileDetails.smoking,
+      profileDetails.drinking,
+    ];
+
+    const allFieldsFilled = requiredFields.every((field) => field !== "");
+
+    setIsAllFieldsFilled(allFieldsFilled);
+  };
+
+  const validateCareerDetailsFields = () => {
+    // Implement your validation logic here
+    const requiredFields = [
+      careerDetails.country,
+      careerDetails.state,
+      careerDetails.city,
+      careerDetails.pinCode,
+      careerDetails.highestDegree,
+      careerDetails.employedIn,
+      careerDetails.occupation,
+      careerDetails.business,
+      careerDetails.job,
+      careerDetails.annualIncome,
+      careerDetails.mySelf,
+    ];
+
+    const allFieldsFilled = requiredFields.every((field) => field !== "");
+    const isPinCodeValid = /^\d{6}$/.test(careerDetails.pinCode);
+    setIsCareerDetailsFilled(allFieldsFilled && isPinCodeValid);
+  };
+
+  const validateFamilyDetailsFields = () => {
+    // Implement your validation logic here
+    const requiredFields = [
+      familyDetails.familyType,
+      familyDetails.fatherOccupation,
+      familyDetails.motherOccupation,
+      familyDetails.brother,
+      familyDetails.sister,
+      familyDetails.familyLivingIn,
+      familyDetails.contactAddress,
+      familyDetails.aboutFamily,
+    ];
+
+    const allFieldsFilled = requiredFields.every((field) => field !== "");
+
+    setIsFamilyDetailsFilled(allFieldsFilled);
+  };
+
+  useEffect(() => {
+    validateFields();
+    validateCareerDetailsFields();
+    validateFamilyDetailsFields();
+  }, [profileDetails, careerDetails, familyDetails]);
 
   const uploadHandler = async (e) => {
     // to upload image
@@ -146,12 +225,15 @@ const RegisterPage = (props) => {
   
 }
     const heightOptions = [];
-    for (let feet = 5; feet <= 6; feet++) {
+    for (let feet = 5; feet <= 7; feet++) {
       for (let inches = 0; inches <= 5; inches++) {
         const height = `${feet} foot ${inches} inches`;
         heightOptions.push(height);
       }
     }
+
+    // Assuming you have an array of age options from 18 to 60
+    const ageOptions = Array.from({ length: 43 }, (_, index) => ({ value: 18 + index, label: (18 + index).toString() }));
 
   const handleInputChange = (e) => {
     // uploadHandler()
@@ -318,13 +400,22 @@ const RegisterPage = (props) => {
             />
           </Form.Item>
           <Form.Item label="Age" htmlFor="age">
-              <Input
-                type="number"
+            <Select 
+               
                 name="age"
                 id="age"
                 value={profileDetails.age}
-                onChange={handleInputChange}
-              />
+                onChange={(value) =>
+                  handleInputChange({ target: { name: "age", value } })
+                }
+            >
+              {ageOptions.map((option) => (
+                      <Select.Option key={option.value} value={option.value}>
+                        {option.label}
+                      </Select.Option>
+                ))}
+
+            </Select>
             </Form.Item>
             <Form.Item label="Height" htmlFor="height">
               <Select
@@ -427,7 +518,24 @@ const RegisterPage = (props) => {
               <Option value="english">Other (English)</Option>
             </Select>
           </Form.Item>
-          
+          <Form.Item label="Marital Status" htmlFor="maritalStatus">
+            <Select
+              name="maritalStatus"
+              id="maritalStatus"
+              value= {partnerDetails.maritalStatus}
+              placeholder="Select Your Status"
+              onChange={(value) =>
+                handleInputChange({ target: { name: "maritalStatus", value } })
+              }
+            >
+              <Option value="unmarried">Unmarried</Option>
+              <Option value="married">Married</Option>
+              <Option value="awaiting">Awaiting Divorce</Option>
+              <Option value="divorced">Divorced</Option>
+              <Option value="widowed">Widowed</Option>
+              <Option value="annulled">Annulled</Option>
+            </Select>
+          </Form.Item>
           <Form.Item label="Are you Manglik?" htmlFor="manglik">
             <Select
               name="manglik"
@@ -474,7 +582,7 @@ const RegisterPage = (props) => {
           <Form.Item  htmlFor="termsCondition" style={{marginLeft: "0px"}}>
             <Checkbox>I am ready to marry people of all castes</Checkbox>
           </Form.Item>
-          <Button type="primary" onClick={handleNext} >
+          <Button type="primary" onClick={handleNext} disabled={!isAllFieldsFilled} >
             Next
           </Button>
           <p style={{textAlign: "center"}}>
@@ -488,14 +596,19 @@ const RegisterPage = (props) => {
       content: (
         <Form>
           <Form.Item label="Country" htmlFor="country">
-            <Input
-              type="text"
+            <Select 
               name="country"
               id="country"
               value={careerDetails.country}
               required
-              onChange={handleInputChange}
-            />
+              placeholder="Select Your Country"
+              onChange={(value) =>
+                handleInputChange({ target: { name: "country", value } })
+              }
+            >
+              <Option value="India">India</Option>
+              <Option value="Abroad">Abroad</Option>
+            </Select>
           </Form.Item>
           <Form.Item label="State" htmlFor="state">
             <Select
@@ -530,7 +643,7 @@ const RegisterPage = (props) => {
               onChange={handleInputChange}
             />
           </Form.Item>
-          <Form.Item label="Pin Code" htmlFor="pinCode">
+          {/* <Form.Item label="Pin Code" htmlFor="pinCode">
             <Input
               type="number"
               name="pinCode"
@@ -539,7 +652,22 @@ const RegisterPage = (props) => {
               required
               onChange={handleInputChange}
             />
-          </Form.Item>
+          </Form.Item> */}
+             <Form.Item label="Pin Code" htmlFor="pinCode">
+              <Input
+                type="number"
+                name="pinCode"
+                id="pinCode"
+                value={careerDetails.pinCode}
+                required
+                onChange={(e) => {
+                  const inputPinCode = e.target.value;
+                  if (/^\d{0,6}$/.test(inputPinCode)) { // Limit input to 6 digits
+                    handleInputChange({ target: { name: "pinCode", value: inputPinCode } });
+                  }
+                }}
+              />
+            </Form.Item>
           <Form.Item label="Highest Degree" htmlFor="highestDegree">
             <Select
               name="highestDegree"
@@ -712,7 +840,7 @@ const RegisterPage = (props) => {
               onChange={handleInputChange}
             />
           </Form.Item>
-          <Button type="primary" onClick={handleNext}>
+          <Button type="primary" onClick={handleNext} disabled={!isCareerDetailsFilled}>
             Next
           </Button>
           <Button style={{ margin: "0 8px" }} onClick={handlePrev}>
@@ -840,7 +968,7 @@ const RegisterPage = (props) => {
               onChange={handleInputChange}
             />
           </Form.Item>
-          <Button type="primary" onClick={handleNext}>
+          <Button type="primary" onClick={handleNext} disabled={!isFamilyDetailsFilled}>
             Next
           </Button>
           <Button style={{ margin: "0 8px" }} onClick={handlePrev}>
@@ -855,13 +983,24 @@ const RegisterPage = (props) => {
       content: (
         <Form>
             <Form.Item label="Age" htmlFor="partnerAge">
-              <Input
-                type="number"
-                name="partnerAge"
-                id="partnerAge"
-                value={partnerDetails.partnerAge}
-                onChange={handleInputChange}
-              />
+              <Select
+               type="number"
+               name="partnerAge"
+               id="partnerAge"
+               value={partnerDetails.partnerAge}
+               onChange={(value) =>
+                handleInputChange({ target: { name: "partnerAge", value } })
+              }
+              >
+                {ageOptions.map((option) => (
+                      <Select.Option key={option.value} value={option.value}>
+                        {option.label}
+                      </Select.Option>
+                ))}
+              </Select>
+              {/* <Input
+               
+              /> */}
             </Form.Item>
             <Form.Item label="Height" htmlFor="partnerHeight">
               <Select
@@ -990,6 +1129,29 @@ const RegisterPage = (props) => {
                   <Option value="Range0">90lakhs - 1crore</Option>
             </Select>
           </Form.Item>
+          <Form.Item label="Location" htmlFor="partnerLocation">
+            <Select
+              showSearch
+              name="partnerLocation"
+              id="partnerLocation"
+              value={careerDetails.partnerLocation}
+              required
+              placeholder="Select Your Partner Location"
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              onChange={(value) =>
+                handleInputChange({ target: { name: "state", value } })
+              }
+            >
+              {allIndiaStates.map((state) => (
+                <Select.Option key={state} value={state}>
+                  {state}
+                </Select.Option>
+              ))}
+            </Select>
+          </Form.Item>
           <Form.Item label="Marital Status" htmlFor="partnerMaritalStatus">
             <Select
               name="partnerMaritalStatus"
@@ -1000,7 +1162,7 @@ const RegisterPage = (props) => {
                 handleInputChange({ target: { name: "partnerMaritalStatus", value } })
               }
             >
-              <Option value="UNMARRRIED">UnMarried</Option>
+              <Option value="UNMARRRIED">Unmarried</Option>
               <Option value="MARRIED">Married</Option>
               <Option value="AWAITING">Awaiting Divorce</Option>
               <Option value="DIVORCED">Divorced</Option>
@@ -1009,7 +1171,15 @@ const RegisterPage = (props) => {
             </Select>
           </Form.Item>
           <Form.Item  htmlFor="termsCondition">
-            <Checkbox> <a href="/terms&privacy"> I have agreed to the Terms & conditions & have read & understood the privacy policy</a></Checkbox>
+            <Checkbox checked={partnerDetails.termsCondition}
+              onChange={(e) =>
+                handleInputChange({
+                  target: { name: "termsCondition", value: e.target.checked },
+                })
+              }> 
+              <a href="/terms&privacy"> I have agreed to the Terms & conditions & have read & understood the privacy policy
+              </a>
+            </Checkbox>
           </Form.Item>
           <Button type="primary" onClick={handleOnSubmit}>
             Submit
