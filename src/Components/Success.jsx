@@ -54,19 +54,6 @@ const Success = () => {
               </div>
             </Col>
           </>
-        {/* // ) : (
-          // <>
-          //   <Col xs={24} sm={24} md={12}>
-          //     <div className="content">
-          //       <h4 className="title">{item.title}</h4>
-          //       <p className="text">{item.content}</p>
-          //     </div>
-          //   </Col>
-          //   <Col xs={24} sm={24} md={12}>
-          //     <img src={item.image} alt={`Image ${index + 1}`} className="custom-image" />
-          //   </Col>
-          // </> */}
-        {/* )} */}
       </Row>
     ))}
   </div>

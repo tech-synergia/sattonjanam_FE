@@ -163,8 +163,7 @@ function Navbar() {
             </div>
             <div className="contact">
                 <p className="phone"><i className="bi bi-telephone-fill"></i> 9773643677</p>
-                <p><i className="bi bi-envelope-fill"></i> www.sattonjanam.com</p>
-                <p><i className="bi bi-envelope-fill"></i> Support@sattonjanam.com</p>
+                <p><i className="bi bi-envelope-fill"></i> support@sattonjanam.com</p>
 
                   {
                     isLogged ? (

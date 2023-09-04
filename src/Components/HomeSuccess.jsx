@@ -15,7 +15,7 @@ function HomeSuccess() {
         <Card
             hoverable
             className='cards'
-            cover={ <Link to="/successStories/1" >
+            cover={ <Link to="/successStories" >
                 <img alt="example" src={Success1} className='image-size' />
             </Link>}
         >
@@ -24,21 +24,21 @@ function HomeSuccess() {
         <Card
             hoverable
             className='cards'
-            cover={ <Link to="/successStories/2" ><img alt="example" src={Success2} className='image-size' /></Link>}
+            cover={ <Link to="/successStories" ><img alt="example" src={Success2} className='image-size' /></Link>}
         >
             <Meta title="Himanshu & Hema" className='name'/>
         </Card>
         <Card
             hoverable
             className='cards'
-            cover={<Link to="/successStories/3" ><img alt="example" src={Success3} className='image-size'/></Link>}
+            cover={<Link to="/successStories" ><img alt="example" src={Success3} className='image-size'/></Link>}
         >
             <Meta title="Vikrant & pooja" className='name'/>
         </Card>
         <Card
             hoverable
             className='cards'
-            cover={ <Link to="/successStories/4" ><img alt="example" src={Success4} className='image-size'/></Link>}
+            cover={ <Link to="/successStories" ><img alt="example" src={Success4} className='image-size'/></Link>}
         >
             <Meta title= "Pawan & Meenakshi" className='name'/>
         </Card>

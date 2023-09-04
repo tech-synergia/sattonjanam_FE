@@ -47,10 +47,10 @@ function UserDetails() {
               <Input value={profileData.userName} readOnly/>
             </Form.Item>
             <Form.Item label="Email Id" >
-              <Input value={profileData.email} readOnly/>
+              <Input value={profileData.email} />
             </Form.Item>
             <Form.Item label="Mobile Number" >
-              <Input value={profileData.phoneNumber} readOnly/>
+              <Input value={profileData.phoneNumber}/>
             </Form.Item>
             <Form.Item label="Religion" >
               <Input value={profileData.religion} readOnly />
