@@ -7,24 +7,6 @@
     p{
         font-size: 19px;
     }
-    // .wedGate{
-    //     display: flex;
-    //     flex-direction: row;
-    //     gap: 30px;
-    //     .wedGateContent{
-    //         font-size: 18px;
-    //        .titleStyle{
-    //             color: vrs.$prim-color;
-    //        }
-         
-    //     }
-    //     .wedgateImage{
-    //         img{
-    //             width: 450px;
-    //             height: 450px;
-    //         }
-    //     }
-    // }
     .sattojanamAbout{
         img{
             width: 400px;
@@ -46,19 +28,11 @@
         padding: 20px;
         p{
             font-size: 15px;
+            text-align: justify;
         }
-        .wedGate{
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            .wedGateContent{
-                font-size: 16px;
-            }
-            .wedgateImage{
-                img{
-                    width: 350px;
-                    height: 300px;
-                }
+        .sattojanamAbout{
+            img{
+                width: 350px;
             }
         }
     }
