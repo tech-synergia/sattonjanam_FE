@@ -1,5 +1,5 @@
 import React, {useState, useContext,  useEffect} from 'react'
-import { Table, Button, Modal, Form, Input } from "antd";
+import { Table, Button, Modal, Form, Input , Image} from "antd";
 import { Typography } from 'antd';
 import axios from "axios";
 import { GlobalContext } from '../GlobalContext'
@@ -10,9 +10,10 @@ const { Title } = Typography;
 
 function UserDetails() {
     const [profileData, setProfileData] = useState([]);
-    const context = useContext(GlobalContext)
-    console.log(context)
-    const token = context.token
+    const token = localStorage.getItem("accessToken")
+    // const context = useContext(GlobalContext)
+    // console.log(context)
+    // const token = context.token
 
   const fetchProfile = async () => {
     console.log(token)
@@ -39,7 +40,9 @@ function UserDetails() {
     <div>
       <Form className="popUpForm">
           <Title level={5}>Profile Details</Title>
-          
+            <Form.Item >
+                <Image src={profileData.image} height={300} width={250} readOnly/>
+              </Form.Item>
             <Form.Item label="User Name" >
               <Input value={profileData.userName} readOnly/>
             </Form.Item>
@@ -54,6 +57,9 @@ function UserDetails() {
             </Form.Item>
             <Form.Item label="Age" >
               <Input value={profileData.age} readOnly />
+            </Form.Item>
+            <Form.Item label="Gender" >
+              <Input value={profileData.gender} readOnly />
             </Form.Item>
             <Form.Item label="Caste" >
               <Input value={profileData.caste} readOnly/>
@@ -142,6 +148,30 @@ function UserDetails() {
             </Form.Item>
             <Form.Item label="About Family">
               <Input value={profileData.aboutFamily} readOnly/>
+            </Form.Item>
+            
+
+            <Title level={5}>Partner Preference</Title>
+            <Form.Item label="Partner Age" >
+              <Input value={profileData.partnerAge} readOnly />
+            </Form.Item>
+            <Form.Item label="Partner Height" >
+              <Input value={profileData.partnerHeight} readOnly />
+            </Form.Item>
+            <Form.Item label="Partner Community" >
+              <Input value={profileData.partnerCommunity} readOnly />
+            </Form.Item>
+            <Form.Item label="Partner Caste" >
+              <Input value={profileData.partnerCaste} readOnly />
+            </Form.Item>
+            <Form.Item label="Partner Education" >
+              <Input value={profileData.partnerEducation} readOnly />
+            </Form.Item>
+            <Form.Item label="Partner Income" >
+              <Input value={profileData.partnerIncome} readOnly />
+            </Form.Item>
+            <Form.Item label="Partner Marital Status" >
+              <Input value={profileData.partnerMaritalStatus} readOnly />
             </Form.Item>
           </Form>
     </div>

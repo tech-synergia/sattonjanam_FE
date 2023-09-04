@@ -17,7 +17,7 @@ import DisclaimerPage from "../Pages/DisclaimerPage";
 import WeddingEvent from "../Pages/WeddingEvent";
 import Astrologer from "../Pages/Astrologer";
 import UserDetails from "./UserDetails";
-import EnquireNow from "./EnquireNow";
+// import EnquireNow from "./EnquireNow";
 import EnquireForm from "./EnquireForm";
 import HinduServices from "../Pages/HinduServices";
 import PunjabServices from "../Pages/PunjabServices";
@@ -56,7 +56,7 @@ function MainRoute() {
         <Route path={"/wedding"} element={<WeddingEvent />} />
         <Route path={"/astrologer"} element={<Astrologer />} />
         <Route path={"/userdetails"} element={<UserDetails />} />
-        <Route path={"/enquirenow"} element={<EnquireNow />} />
+        {/* <Route path={"/enquirenow"} element={<EnquireNow />} /> */}
         <Route path={"/enquireform"} element={<EnquireForm />} />
         <Route path="/hindu-matrimonial-services" element={<HinduServices />} />
         <Route
