@@ -30,7 +30,7 @@ function Navbar() {
         <ul className="navbar-nav">
               <NavLink to={`/adminpanel`} className="dropdown-item"><button>Admin Panel</button></NavLink>
               <NavLink to={`/`} onClick={logoutUser} className="dropdown-item"><button>Logout</button></NavLink>
-          
+              <NavLink to={`/enquireform`} className="nav-link" onClick={toggleMenu}><button>Enquire Now</button></NavLink>
    </ul>
     )
   }
@@ -40,7 +40,7 @@ function Navbar() {
         <ul className="navbar-nav">
              <NavLink to={`/userdetails`} className="dropdown-item"><button>User Profile</button></NavLink>
              <NavLink to={`/`} onClick={logoutUser} className="dropdown-item"><button>Logout</button></NavLink>
-                
+             <NavLink to={`/enquireform`} className="nav-link" onClick={toggleMenu}><button>Enquire Now</button></NavLink>   
             
         </ul>
     )

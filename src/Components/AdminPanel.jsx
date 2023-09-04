@@ -14,14 +14,22 @@ const AdminPanel = () => {
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
   const context = useContext(GlobalContext)
-  const token = context.token
+  const token = localStorage.getItem("accessToken")
+  // const token = context.token
+  console.log(token)
   useEffect(() => {
     fetchProfile();
   }, []);
 
   const fetchProfile = async () => {
     try {
-      const response = await UserApi.getAll();
+      // const response = await UserApi.getAll();
+      const response = await axios.get(`https://sattonjanam-be.onrender.com/api/v1/all/users`, {
+        headers : {
+          'Content-Type': 'application/json',
+              'Authorization': token
+        }
+      })
       setProfileData(response.data.users);
     } catch (error) {
       console.error("Error fetching professionals:", error);

@@ -17,7 +17,8 @@ import DisclaimerPage from "../Pages/DisclaimerPage";
 import WeddingEvent from "../Pages/WeddingEvent";
 import Astrologer from "../Pages/Astrologer";
 import UserDetails from "./UserDetails";
-// import EnquireNow from "./";
+// import EnquireNow from "./EnquireNow";
+
 import EnquireForm from "./EnquireForm";
 import HinduServices from "../Pages/HinduServices";
 import PunjabServices from "../Pages/PunjabServices";
