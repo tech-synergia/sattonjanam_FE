@@ -88,15 +88,6 @@ const weddingData = [
   {
     _id: 9,
     title: (
-      <a href="/astrologer">Astrologer</a>
-    ),
-    content:
-      "Portfolio & Wedding Shoots by Celebrity Photographer, Sachin Kumar, Wedgate Matrimony’s Exclusive Associate Sachin Kumar has captured various shoots of...",
-    imageUrl: Astrologer
-  },
-  {
-    _id: 10,
-    title: (
       <a href="/wedding">Wedding Events Services</a>
     ),
     content:
@@ -105,7 +96,7 @@ const weddingData = [
       "https://cdn0.weddingwire.in/vendor/4308/3_2/960/jpeg/wedding-planner-rp-events-stage-decor-7_15_294308-160800708459494.jpeg",
   },
   {
-    _id: 11,
+    _id: 10,
     title: (
       <a href="/agarwal-matrimonial-services">Aggarwal | Gupta | Baniya</a>
     ),
@@ -115,7 +106,7 @@ const weddingData = [
       "https://www.saathimere.com/matrimonial-service/img/Agarwal-Matrimonial-Services.jpg",
   },
   {
-    _id: 12,
+    _id: 11,
     title: (
       <a href="/second-marriage-services">Second Marriage</a>
     ),

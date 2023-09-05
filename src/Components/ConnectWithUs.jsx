@@ -122,7 +122,7 @@ function ConnectWithUs() {
             <Button className="btn" onClick={submitHandler}>Send Query</Button>
         </Form>
 
-        <div className="contactAddress">
+        {/* <div className="contactAddress">
             <div className="address">
                 <p>Add- 224, Ground floor, IP colony Faridabad, Haryana. Pin- 121009</p>
             </div>
@@ -133,7 +133,7 @@ function ConnectWithUs() {
             <div className="address">
                 <p>support@sattonjanam.com</p>
             </div>
-        </div>
+        </div> */}
     </div>
   )
 }

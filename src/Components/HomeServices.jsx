@@ -1,7 +1,7 @@
 import { Carousel, Card, Button } from 'antd';
 import React, {useState, useEffect} from 'react';
 import { Typography } from 'antd';
-import ring from '../assets/ringService.png';
+import ring from '../assets/sattonjanamLogo.svg';
 import '../scss/HomeServices.scss'
 import { NavLink } from 'react-router-dom';
 

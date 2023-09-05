@@ -89,14 +89,19 @@ function ContactForm() {
           <Text className="text">
             <i className="bi bi-telephone-fill"></i> 9773643677
           </Text>
+          <br />
+          <Text className="text">
+            <i className="bi bi-envelope-fill"></i> support@sattonjanam.com
+          </Text>
+          
         </div>
         <hr />
-        <div className="addressContent">
+        {/* <div className="addressContent">
           <Title level={3}>Our Address</Title>
           <Text>
             Add- 224, Ground floor, IP colony Faridabad, Haryana. Pin- 121009
           </Text>
-        </div>
+        </div> */}
       </div>
       <div className="rightForm">
         {alertData.show && (

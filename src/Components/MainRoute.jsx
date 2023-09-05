@@ -31,6 +31,8 @@ import LateServices from "../Pages/LateServices";
 import ReMarriageServices from "../Pages/ReMarriageServices";
 import SecondMarriage from "../Pages/SecondMarriage";
 import ScrollToTop from "./ScrollToTop";
+import SuccessMessage from "../Pages/SuccessMessage";
+import Packages from "../Pages/Packages";
 
 function MainRoute() {
   const context = useContext(GlobalContext);
@@ -56,6 +58,8 @@ function MainRoute() {
         <Route path={"/adminpanel"} element={<AdminPanel />} />
         <Route path={"/disclaimer"} element={<DisclaimerPage />} />
         <Route path={"/wedding"} element={<WeddingEvent />} />
+        <Route path="/successMessage" element={<SuccessMessage/>} />
+        <Route path="/packages" element={<Packages/>} />
         <Route path={"/astrologer"} element={<Astrologer />} />
         <Route path={"/userdetails"} element={<UserDetails />} />
         {/* <Route path={"/enquirenow"} element={<EnquireNow />} /> */}

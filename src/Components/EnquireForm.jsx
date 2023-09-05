@@ -6,6 +6,7 @@ import { useNavigate, NavLink } from 'react-router-dom';
 import { CloseOutlined } from '@ant-design/icons'
 import { GlobalContext } from '../GlobalContext'
 import axios from 'axios'
+import logo from '../assets/sattonjanamLogo.svg'
 import Title from 'antd/es/skeleton/Title';
 
 function EnquireForm({children}) {
@@ -83,6 +84,7 @@ function EnquireForm({children}) {
           style={{ marginTop: "20px" }}
         />
       )}
+        <img src={logo} alt="no image" width={100} height={100}/>
          {/* <button onClick={() => setShow(!show)} className="closeButton">&times;</button> */}
          <h3>Enquiry form</h3>
         {/* <Title>Enquiry form</Title> */}

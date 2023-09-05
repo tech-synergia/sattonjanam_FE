@@ -9,6 +9,8 @@ function AboutInfo() {
         <p>SattonJanam.com Matrimonial is a matchmaking service created for parents/relatives/family and friends, who are looking for a life partner for their loved ones. Unlike other Matrimonial services, we focus on providing detailed family and background information to help you take the next step with confidence.  Sattonjanam.com Matrimonial is one of the best Matchmaking service. We offer membership options to suit different needs and budgets. Clients can choose from a range of packages that include different levels of services and support.
         </p>
 
+        
+
     </div>
   )
 }
