@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Button, Form, Input, Alert, Typography } from "antd";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from 'axios';
-import logo from '../assets/websiteLogo.svg'
+import logo from '../assets/sattonjanamLogo.svg'
 
 const {Title} = Typography;
 

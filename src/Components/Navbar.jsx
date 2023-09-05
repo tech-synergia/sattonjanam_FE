@@ -1,6 +1,6 @@
 // import { NavLink } from "react-router-dom";
 import "../scss/Navbar.scss";
-import logo from "../assets/websiteLogo.svg";
+import logo from '../assets/sattonjanamLogo.svg'
 import React, { useState, useContext } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import { GlobalContext } from '../GlobalContext';
@@ -138,11 +138,6 @@ function Navbar() {
           Wedding Event Services
         </NavLink>
       </Menu.Item>
-      <Menu.Item key="astrologer">
-        <NavLink to={"/astrologer"} onClick={toggleMenu} style={menuStyle}>
-          Astrologer
-        </NavLink>
-      </Menu.Item>
       <Menu.Item key="second">
         <NavLink to={"/second-marriage-services"} onClick={toggleMenu} style={menuStyle}>
            Second Marriage
@@ -211,6 +206,11 @@ function Navbar() {
             <li>
               <NavLink to={"/astrologer"} onClick={toggleMenu}>
                 Astrologer
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"/packages"} onClick={toggleMenu}>
+                Packages
               </NavLink>
             </li>
             <li>

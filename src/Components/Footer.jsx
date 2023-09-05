@@ -1,6 +1,5 @@
 import '../scss/Footer.scss'
-import footerLogo from '../assets/websiteLogo.svg'
-
+import footerLogo from '../assets/sattonjanamLogo.svg'
 
 function Footer() {
   return (
@@ -8,7 +7,7 @@ function Footer() {
         <div className="footerColumns">
             <div className="footerLogoInfo">
             <img src={footerLogo} alt="no image" />
-            <p>A decade old matrimonial company in Delhi focused to provide most genuine & selectivity choosen mactches to every individuals's preferences and suitablity</p>
+            <p>Marriage is a journey of two individuals who come together to grow, learn, and support each other in every aspect of life.</p>
             </div>
             <div className="impLinks">
                 <h3>Important Links</h3>
@@ -41,8 +40,8 @@ function Footer() {
                 <div className="Links">
                     <span><i className="bi bi-telephone-fill"></i> 9773643677 </span>
                     <span><i className="bi bi-envelope-fill"></i> support@sattonjanam.com</span>
-                    <span className='location'><i class="bi bi-geo-alt-fill"></i> Add- 224, Ground floor, IP colony Faridabad, Haryana. Pin- 121009</span>
-                    <span><i className="bi bi-geo-fill"></i> Get Direction</span>
+                    {/* <span className='location'><i class="bi bi-geo-alt-fill"></i> Add- 224, Ground floor, IP colony Faridabad, Haryana. Pin- 121009</span>
+                    <span><i className="bi bi-geo-fill"></i> Get Direction</span> */}
                 </div>
             </div>
         </div>
@@ -55,7 +54,7 @@ function Footer() {
                     <span><a href="mailto:support@sattonjanam.com" className="bi bi-envelope-fill" > </a></span>
                     <span><a href="https://www.linkedin.com/company/sattonjanam-matrimonial-services/about/?viewAsMember=true" className='bi bi-linkedin'></a></span>
                     <span><a href="https://www.facebook.com/profile.php?id=61550954489680&sk=about_contact_and_basic_info" className='bi bi-facebook'></a></span>
-                    <span><a href="#" className='bi bi-instagram'></a></span>
+                    <span><a href="https://www.instagram.com/sattonjanam_matrimony/" className='bi bi-instagram'></a></span>
                     <span><a href="#" className='bi bi-twitter'></a></span>
                 </div>
             </div>
