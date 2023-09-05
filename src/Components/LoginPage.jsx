@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Button, Form, Input, Alert, Typography } from "antd";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Link } from "react-router-dom";
 import axios from 'axios';
 import logo from '../assets/sattonjanamLogo.svg'
 
@@ -142,7 +142,7 @@ const LoginPage = () => {
         </Button>
       </Form.Item>
       <p style={{textAlign: "center"}}>
-        Don't Have an Account? <a href="/register">Register</a>
+        Don't Have an Account? <Link to={"/register"}>Register</Link>
       </p>
     </Form>
   );

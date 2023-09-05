@@ -16,7 +16,7 @@ const packageData = [
       heading: "SJ Self Services"
     },
     {
-      heading: "SJ Personalized Services"
+      heading: "SJ Personalised Services"
     },
     {
       heading: "SJ Elite Services"

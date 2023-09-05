@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Form, Input, Select, Radio, Button, Steps, Alert, Upload, Checkbox } from "antd";
 import "../scss/RegisterPage.scss";
 import UserApi from './API/UserApi'
-import { useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate, Link, NavLink } from 'react-router-dom';
 import { GlobalContext } from '../GlobalContext'
 import axios from 'axios'
 import { useEffect } from "react";
@@ -14,6 +14,7 @@ const {TextArea} = Input;
 
 const RegisterPage = (props) => {
   const [wordCount, setWordCount] = useState(0); 
+  const [images, setImages] = useState([]);
 
   const [alertData, setAlertData] = useState({
     type: "",
@@ -116,7 +117,6 @@ const RegisterPage = (props) => {
     "West Bengal",
   ];
 
-  const [images, setImages] = useState({})
   const navigate = useNavigate()
   const context = useContext(GlobalContext)
   const token = context.token
@@ -185,7 +185,11 @@ const RegisterPage = (props) => {
     ];
 
     const allFieldsFilled = requiredFields.every((field) => field !== "");
+    // const aboutFamilyWords = familyDetails.aboutFamily.trim().split(/\s+/).filter(Boolean).length;
 
+    // const isAboutFamilyValid = aboutFamilyWords >= 30 && aboutFamilyWords <= 300;
+  
+    // setIsFamilyDetailsFilled(allFieldsFilled && isAboutFamilyValid);
     setIsFamilyDetailsFilled(allFieldsFilled);
   };
 
@@ -228,6 +232,9 @@ const RegisterPage = (props) => {
 
   
 }
+
+
+
     const heightOptions = [];
     for (let feet = 5; feet <= 7; feet++) {
       for (let inches = 0; inches <= 5; inches++) {
@@ -242,7 +249,7 @@ const RegisterPage = (props) => {
   const handleInputChange = (e) => {
     // uploadHandler()
     const { name, value } = e.target;
-    if (name === "mySelf") {
+    if (name === "mySelf" || name === "aboutFamily") {
       // Calculate the current word count
       const currentWordCount = countWords(value);
   
@@ -254,6 +261,15 @@ const RegisterPage = (props) => {
       } else {
         // If it doesn't exceed, update the value as usual
         setCareerDetails((prevData) => ({ ...prevData, [name]: value }));
+      }
+
+      if (currentWordCount > 50) {
+        // If it exceeds, truncate the input to the first 100 words
+        const truncatedValue = value.split(/\s+/).slice(0, 100).join(" ");
+        setFamilyDetails((prevData) => ({ ...prevData, aboutFamily: truncatedValue }));
+      } else {
+        // If it doesn't exceed, update the value as usual
+        setFamilyDetails((prevData) => ({ ...prevData, [name]: value }));
       }
   
       // Update the word count state
@@ -394,6 +410,7 @@ const RegisterPage = (props) => {
               id="image"
               required
               onChange= {uploadHandler}
+              
             />
           </Form.Item>
           <Form.Item label="Email" htmlFor="email">
@@ -496,12 +513,12 @@ const RegisterPage = (props) => {
               name="color"
               id="color"
               value={profileDetails.color}
-              defaultValue="Fair"
+              placeholder="Select"
               onChange={(value) =>
                 handleInputChange({ target: { name: "color", value } })
               }
             >
-              <Option value="">Fair</Option>
+              <Option value="fair">Fair</Option>
               <Option value="veryFair">Very Fair</Option>
             </Select>
           </Form.Item>
@@ -613,7 +630,7 @@ const RegisterPage = (props) => {
             Next
           </Button>
           <p style={{textAlign: "center"}}>
-            Already Have an Account? <a href="/login">Login</a>
+            Already Have an Account? <Link to={"/login"}>Login</Link>
           </p>
         </Form>
       ),
@@ -991,12 +1008,11 @@ const RegisterPage = (props) => {
               value={careerDetails.aboutFamily}
               rows={3}
               cols={10}
-              minLength={50}
-              maxLength={300}
+             
               onChange={handleInputChange}
             />
-            <div style={{ marginTop: "8px" }}>
-                Word Count: {wordCount}/100
+           <div style={{ marginTop: "8px" }}>
+                Word Count: {wordCount}/300(Min. 50 words)
               </div>
           </Form.Item>
           <Button type="primary" onClick={handleNext} disabled={!isFamilyDetailsFilled}>
