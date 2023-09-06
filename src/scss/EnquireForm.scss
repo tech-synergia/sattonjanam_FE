@@ -11,7 +11,7 @@ body{
     margin: 73px auto;
     text-align: center;
     border: none;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 900px) {
         width: 90%;
         margin: 140px auto;
         height: 100%;
@@ -40,7 +40,7 @@ body{
                     background-color: rgba(253, 185, 14,0.8);
                     color: #000;
                 }
-                @media screen and (max-width: 768px){
+                @media screen and (max-width: 900px){
                     margin: 0px 20px;
                     font-size: 17px;
                 }

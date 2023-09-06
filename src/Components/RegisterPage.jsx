@@ -851,17 +851,17 @@ const RegisterPage = (props) => {
               onChange={(value) =>
                 handleInputChange({ target: { name: "annualIncome", value } })
               }>
-                  <Option value="range1">5lakhs - 10lakhs</Option>
-                  <Option value="range2">10lakhs - 20lakhs</Option>
-                  <Option value="range3">20lakhs - 30lakhs</Option>
-                  <Option value="range4">30lakhs - 40lakhs</Option>
-                  <Option value="range5">40lakhs - 50lakhs</Option>
-                  <Option value="range6">50lakhs - 60lakhs</Option>
-                  <Option value="range7">60lakhs - 70lakhs</Option>
-                  <Option value="range8">70lakhs - 80lakhs</Option>
-                  <Option value="range9">80lakhs - 90lakhs</Option>
-                  <Option value="range0">90lakhs - 1crore</Option>
-                  <Option value="range01">More than 1crore</Option>
+                  <Option value="5lakhs-10lakhs">5lakhs - 10lakhs</Option>
+                  <Option value="10lakhs-20lakhs">10lakhs - 20lakhs</Option>
+                  <Option value="20lakhs-30lakhs">20lakhs - 30lakhs</Option>
+                  <Option value="30lakhs-40lakhs">30lakhs - 40lakhs</Option>
+                  <Option value="40lakhs-50lakhs">40lakhs - 50lakhs</Option>
+                  <Option value="50lakhs-60lakhs">50lakhs - 60lakhs</Option>
+                  <Option value=">60lakhs-70lakhs">60lakhs - 70lakhs</Option>
+                  <Option value="70lakhs-80lakhs">70lakhs - 80lakhs</Option>
+                  <Option value="80lakhs-90lakhs">80lakhs - 90lakhs</Option>
+                  <Option value="90lakhs-1crore">90lakhs - 1crore</Option>
+                  <Option value="More than 1crore">More than 1crore</Option>
             </Select>
           </Form.Item>
           <Form.Item
@@ -1065,15 +1065,6 @@ const RegisterPage = (props) => {
                 ))}
               </Select>
           </Form.Item>
-          <Form.Item label="Gotra" htmlFor="partnerGotra">
-            <Input 
-                name="partnerGotra"
-                id="partnerGotra"
-                value={partnerDetails.partnerGotra}
-                onChange={handleInputChange}
-                
-            />
-          </Form.Item>
           <Form.Item label="Caste" htmlFor="partnerCaste">
             <Input 
               type="text"
@@ -1083,6 +1074,16 @@ const RegisterPage = (props) => {
               onChange={handleInputChange} 
             />
           </Form.Item>
+          <Form.Item label="Gotra" htmlFor="partnerGotra">
+            <Input 
+                name="partnerGotra"
+                id="partnerGotra"
+                value={partnerDetails.partnerGotra}
+                onChange={handleInputChange}
+                
+            />
+          </Form.Item>
+          
           <Form.Item label="Education" htmlFor="partnerEducation">
             <Select
               name="partnerEductation"
@@ -1165,14 +1166,14 @@ const RegisterPage = (props) => {
                 })
               }
             >
-              <Option value="partnerFatherOcc1">Business/Entrepreneur</Option>
-              <Option value="partnerFatherOcc2">Private Service</Option>
-              <Option value="partnerFatherOcc3">Government Service</Option>
-              <Option value="partnerFatherOcc4">Self Employed</Option>
-              <Option value="partnerFatherOcc5">Expired</Option>
-              <Option value="partnerFatherOcc6">Retired</Option>
-              <Option value="partnerFatherOcc7">Army</Option>
-              <Option value="partnerFatherOcc8">CivilServices</Option>
+              <Option value="Business">Business/Entrepreneur</Option>
+              <Option value="private service">Private Service</Option>
+              <Option value="government service">Government Service</Option>
+              <Option value="self employed">Self Employed</Option>
+              <Option value="EXPIRED">Expired</Option>
+              <Option value="RETIRED">Retired</Option>
+              <Option value="ARMY">Army</Option>
+              <Option value="civil  ervices">CivilServices</Option>
             </Select>
           </Form.Item>
           <Form.Item label="Mother Occupation" htmlFor="partnerMotherOccupation">
@@ -1187,16 +1188,16 @@ const RegisterPage = (props) => {
                 })
               }
             >
-              <Option value="partnerMotherOcc1">Business/Entrepreneur</Option>
-              <Option value="partnerMotherOcc2">Teacher</Option>
-              <Option value="partnerMotherOcc3">House Wife</Option>
-              <Option value="partnerMotherOcc4">Private Service</Option>
-              <Option value="partnerMotherOcc5">Government Service</Option>
-              <Option value="partnerMotherOcc6">Self Employed</Option>
-              <Option value="partnerMotherOcc7">Expired</Option>
-              <Option value="partnerMotherOcc8">Retired</Option>
-              <Option value="partnerMotherOcc9">Army</Option>
-              <Option value="partnerMotherOcc0">CivilServices</Option>
+              <Option value="Business/Entrepreneur">Business/Entrepreneur</Option>
+              <Option value="tEACHER">Teacher</Option>
+              <Option value="house wife">House Wife</Option>
+              <Option value=">privateservice">Private Service</Option>
+              <Option value="governmentservice">Government Service</Option>
+              <Option value="self employed">Self Employed</Option>
+              <Option value="expired">Expired</Option>
+              <Option value="retired">Retired</Option>
+              <Option value="army officer">Army</Option>
+              <Option value="Civil Service">CivilServices</Option>
              
             </Select>
           </Form.Item>
@@ -1210,17 +1211,17 @@ const RegisterPage = (props) => {
                 handleInputChange({ target: { name: "partnerIncome", value } })
               }>
                  
-                  <Option value="Range1">5lakhs - 10lakhs</Option>
-                  <Option value="Range2">10lakhs - 20lakhs</Option>
-                  <Option value="Range3">20lakhs - 30lakhs</Option>
-                  <Option value="Range4">30lakhs - 40lakhs</Option>
-                  <Option value="Range5">40lakhs - 50lakhs</Option>
-                  <Option value="Range6">50lakhs - 60lakhs</Option>
-                  <Option value="Range7">60lakhs - 70lakhs</Option>
-                  <Option value="Range8">70lakhs - 80lakhs</Option>
-                  <Option value="Range9">80lakhs - 90lakhs</Option>
-                  <Option value="Range0">90lakhs - 1crore</Option>
-                  <Option value="Range01">More than 1crore</Option>
+                  <Option value="5lakh-10lakh">5lakhs - 10lakhs</Option>
+                  <Option value="10lakh-20lakh">10lakhs - 20lakhs</Option>
+                  <Option value="20lakh-30lakh">20lakhs - 30lakhs</Option>
+                  <Option value="30lakh-40lakh">30lakhs - 40lakhs</Option>
+                  <Option value="40lakh-50lakh">40lakhs - 50lakhs</Option>
+                  <Option value="50lakh-60lakh">50lakhs - 60lakhs</Option>
+                  <Option value="60lakh-70lakh">60lakhs - 70lakhs</Option>
+                  <Option value="70lakh-80lakh">70lakhs - 80lakhs</Option>
+                  <Option value="80lakh-90lakh">80lakhs - 90lakhs</Option>
+                  <Option value="90lakh-1crore">90lakhs - 1crore</Option>
+                  <Option value="more than 1crore">More than 1crore</Option>
             </Select>
           </Form.Item>
           <Form.Item label="Location" htmlFor="partnerLocation">

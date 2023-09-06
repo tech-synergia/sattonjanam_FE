@@ -52,6 +52,45 @@
   }
 }
 
+@media (min-width: 769px) and (max-width: 900px) {
+  .homeSuccess {
+    padding: 20px;
+    h1 {
+      text-align: center;
+    }
+    .successCards {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+      .cards {
+        width: 150px;
+        border: 2px solid #fff;
+        height: 200px;
+        .image-size{
+          width: 150px;
+        }
+        .name {
+          text-align: center;
+          font-size: 22px;
+        }
+      }
+    }
+    .buttonSuccess {
+      margin: 50px auto;
+      background-color: gray;
+      color: #fff;
+      height: 50px;
+      padding: 0px 30px;
+      border: none;
+      font-size: 18px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .homeSuccess {
     padding: 70px;

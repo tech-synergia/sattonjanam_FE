@@ -6,6 +6,7 @@ import BreadCrumb from '../Components/BreadCrumb'
 import { Typography } from 'antd'
 import AstrologerPic from '../assets/astrologerImage.jpg'
 import ConnectWithUs from '../Components/ConnectWithUs'
+import MenuPage from '../Components/Menu'
 
 const {Title} = Typography;
 
@@ -17,6 +18,7 @@ function Astrologer() {
   return (
     <>
       <Navbar/>
+      <MenuPage/>
       <CommonBanner title="Astrologer"/>
         <div>
             <BreadCrumb paths={breadcrumbPaths} />
