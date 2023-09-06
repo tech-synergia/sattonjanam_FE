@@ -16,7 +16,7 @@ function UserDetails() {
     message: "",
     show: false,
   });
-    // const [images, setImages] = useState({})
+    const [images, setImages] = useState([])
     const [profileData, setProfileData] = useState([]);
     const token = localStorage.getItem("accessToken")
     // const context = useContext(GlobalContext)
@@ -36,7 +36,7 @@ function UserDetails() {
         });
     
       setProfileData(response.data.user);
-      // setImages(response.data.user)
+      setImages(response.data.user.image)
       console.log(profileData)
     } catch (error) {
       console.error("Error fetching professionals:", error);
@@ -46,72 +46,80 @@ function UserDetails() {
     fetchProfile();
   }, []);
 
-//   const uploadHandler = async (e) => {
-//     // to upload image
-//     e.preventDefault();
-//     try {
-//         const file = e.target.files[0];
-//         console.log('image data =', file);
+  const deleteHandler = async (e) => {
+    try {
+        if(window.confirm(`Are you sure to delete an image?`)) {
+            // setLoading(true)
+           const res = await axios.post(`https://sattonjanam-be.onrender.com/api/v1/image/destroy`, {public_id: images }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            // setImages({})
+            setImages('')
+            // setLoading(false)
+            console.log(res.data.msg)
+        }
+    } catch (err) {
+        console.log(err.response.data.msg)
+    }
+  }
+  
 
-//         if(!file)
-//             return console.log('image not exists.. choose image to upload.')
+  const uploadHandler = async (e) => {
+    // to upload image
+    e.preventDefault();
+    try {
+        const file = e.target.files[0];
+        console.log('image data =', file);
+
+        if(!file)
+            return console.log('image not exists.. choose image to upload.')
         
-//         if(file.size > 5 * 1024 * 1024)
-//                 return console.log('File size must be less than 5Mb')
+        if(file.size > 5 * 1024 * 1024)
+                return console.log('File size must be less than 5Mb')
 
-//             let formData = new FormData()
-//             formData.append('profile', file)
-//             // setLoading(true)
+            let formData = new FormData()
+            formData.append('profile', file)
+            // setLoading(true)
 
-//             // post the file content to server
-//             const res = await axios.post(`https://sattonjanam-be.onrender.com/api/v1/image/upload`, formData, {
-//                 headers: {
-//                     'Content-Type': 'multipart/form-data'
-//                 }
-//             });
-//             // setProfileData(res.data.result)
-//             // setImages(true)
-//             setImages(res.data.result)
-//             console.log(res.data.result)
+            // post the file content to server
+            const res = await axios.post(`https://sattonjanam-be.onrender.com/api/v1/image/upload`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            // setProfileData(res.data.result)
+            // setImages(true)
+            setImages(res.data.result)
+            console.log(res.data.result)
 
             
-//     } catch (err) {
-//         console.log(err.response.data.msg)
-//     }
+    } catch (err) {
+        console.log(err.response.data.msg)
+    }
 
   
-// }
+}
 
-// const deleteHandler = async (e) => {
-//   try {
-//       if(window.confirm(`Are you sure to delete an image?`)) {
-//           // setLoading(true)
-//          const res = await axios.post(`https://sattonjanam-be.onrender.com/api/v1/image/destroy`, {public_id: images.image }, {
-//               headers: {
-//                   'Content-Type': 'application/json'
-//               }
-//           });
-//           // setImages({})
-//           setImages()
-//           // setLoading(false)
-//           console.log(res.data.msg)
-//       }
-//   } catch (err) {
-//       console.log(err.response.data.msg)
-//   }
-// }
 
   const readValue = (e) => {
     const {name, value} = e.target
     setProfileData({ ...profileData, [name]: value})
+    // setImages({ ...profileData.image, [name]: value})
   }
 
-  const submitHandler = async () => {
-    // e.preventDefault();
+  const submitHandler = async (e) => {
+    e.preventDefault();
     try {
-      const newUser = { ...profileData }
-
-      const res = await axios.patch(`https://sattonjanam-be.onrender.com/api/v1/user/update/${profileData._id}`, newUser, {
+      const newUser = { ...profileData,
+        image: {
+              
+          url: images.url
+      } }
+    console.log(newUser.image.url)
+      // console.log(newUser)
+      const res = await axios.patch(`https://sattonjanam-be.onrender.com/api/v1/user/update/${profileData._id}`, newUser, profileData.image=images.url ,  {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': token
@@ -134,7 +142,7 @@ function UserDetails() {
       navigate(`/userdetails`)
       
     } catch (error) {
-      // console.log(err.response.data.msg)
+      // console.log(error.response.data.msg)
       setAlertData({
         type: "error",
         message: error.response.data.msg,
@@ -160,8 +168,33 @@ function UserDetails() {
           <img src={logo} alt="no image" width={100} height={100}/>
           <Title level={5}>Profile Details</Title>
             <Form.Item >
-              
-                <Image src={profileData.image} height={300} width={250} />
+            {
+                            images ? (
+                                <Button onClick={deleteHandler} > 
+                                    <i className="bi bi-trash"></i>
+                                 </Button>
+                            ) : null 
+              }
+              {
+                            images ? (
+                                <Image src={images ? images.url : ''} alt="no image" height={300} />
+                            ): (
+                                <span style={{ fontSize: '5em'}}>
+                                    <i className="bi bi-file-arrow-up"></i>
+                                </span>
+                            )
+                }
+                {
+                  images ? null : <Input
+                  type="file"
+                  name="image"
+                  id="image"
+                  required
+                  // value={profileData.image}
+                  onChange= {uploadHandler} 
+                />
+                }
+                {/* <Image src={profileData.image} height={300} width={250} /> */}
               </Form.Item>
             <Form.Item label="User Name" >
               <Input value={profileData.userName} readOnly/>
@@ -328,7 +361,7 @@ function UserDetails() {
               id="partnerMaritalStatus" value={profileData.partnerMaritalStatus} onChange={readValue}/>
             </Form.Item>
             <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
-              <Button type="primary" onClick={submitHandler}>
+              <Button htmlType='submit' type="primary" onClick={submitHandler}>
             Update
               </Button>
             </Form.Item>
