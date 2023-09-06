@@ -74,7 +74,9 @@ const RegisterPage = (props) => {
   const [partnerDetails, setPartnerDetails] = useState({
     partnerAge: "",
     partnerHeight: "",
-    partnerCaste: "",
+    partnerCommunity:"",
+    partnerCast:"",
+    partnerEductation:"",
     partnerGotra: "",
     partnerEducation: "",
     partnerIncome: "",
@@ -1075,23 +1077,23 @@ const RegisterPage = (props) => {
                 
             />
           </Form.Item>
-          <Form.Item label="Caste" htmlFor="partnerCaste">
+          <Form.Item label="Caste" htmlFor="partnerCast">
             <Input 
               type="text"
-              name="partnerCaste"
-              id="partnerCaste"
-              value={partnerDetails.partnerCaste}
+              name="partnerCast"
+              id="partnerCast"
+              value={partnerDetails.partnerCast}
               onChange={handleInputChange} 
             />
           </Form.Item>
-          <Form.Item label="Education" htmlFor="partnerEducation">
+          <Form.Item label="Education" htmlFor="partnerEductation">
             <Select
-              name="partnerEducation"
-              id="partnerEducation"
-              value={partnerDetails.partnerEducation}
+              name="partnerEductation"
+              id="partnerEductation"
+              value={partnerDetails.partnerEductation}
               placeholder="Select"
               onChange={(value) =>
-                handleInputChange({ target: { name: "partnerEducation", value } })
+                handleInputChange({ target: { name: "partnerEductation", value } })
               }
             >
               <Option value="Engineering">Engineering/Technology/Design</Option>
