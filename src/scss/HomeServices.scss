@@ -33,10 +33,10 @@
                 p{
                     font-size: 15px;
                 }
-                background-color: rgb(248, 189, 41);
+                background-color:burlywood;
                 width: 280px;
                 // height: 350px;
-                color: #fff;
+                color: #000;
                 text-align: center;
                 /* HomeServices.scss */
 
@@ -77,7 +77,7 @@
 
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 900px){
     .carouselService{
         padding: 20px;
         .carouselSlide{

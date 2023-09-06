@@ -9,7 +9,7 @@ footer{
         justify-content: center;
         gap: 20px;
         padding: 50px 130px;
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: 900px){
             flex-direction: column;
             gap: 10px;
             padding: 20px;
@@ -25,7 +25,7 @@ footer{
                 line-height: 20px;
                 text-align: center;
             }
-            @media screen and (max-width: 768px){
+            @media screen and (max-width: 900px){
                 text-align: center;
                 p{
                     width: 300px;
@@ -64,7 +64,7 @@ footer{
     }
     .logos{
         margin-left: 40%;
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: 900px){
             margin-left: 20%;
         }
   
