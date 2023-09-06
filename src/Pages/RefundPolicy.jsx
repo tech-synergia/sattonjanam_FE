@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar'
 import { Typography } from 'antd'
 import Footer from '../Components/Footer'
 import ConnectWithUs from '../Components/ConnectWithUs';
+import Menu from '../Components/Menu';
 
 const {Title} = Typography;
 
@@ -10,6 +11,7 @@ function RefundPolicy() {
   return (
     <>
         <Navbar/>
+        <Menu/>
         <div className="matrimony">
             <div className="sattojanamAbout">
                 <Title level={2} className="titleStyle">Refund Policy</Title>

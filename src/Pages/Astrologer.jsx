@@ -4,7 +4,7 @@ import Footer from '../Components/Footer'
 import CommonBanner from '../Components/CommonBanner'
 import BreadCrumb from '../Components/BreadCrumb'
 import { Typography } from 'antd'
-import AstrologerPic from '../assets/astrologer.jpeg'
+import AstrologerPic from '../assets/astrologerImage.jpg'
 import ConnectWithUs from '../Components/ConnectWithUs'
 
 const {Title} = Typography;

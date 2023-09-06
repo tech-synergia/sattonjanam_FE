@@ -1,11 +1,14 @@
 @use './modules//vrs';
 
 .matrimony{
-    background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScSPPUCIswv3cry9qdFpNWXKr43RVVkJcSxJgmwbEra_ds0kk8");
+    background-image: url("https://img.freepik.com/premium-photo/copy-space-text-red-texture-background-concept-chinese-new-year-background_45281-280.jpg");
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 80px 200px;
     p, ol li{
         font-size: 17px;
+        color: #fff;
         line-height: 32px;
         text-align: justify;
         word-spacing: 5px;
@@ -13,7 +16,17 @@
     ol li{
         margin-left: 100px;
     }
+   
     .sattojanamAbout{
+        .images{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: space-between;
+            img{
+                width: 330px;
+            }
+        }
         img{
             width: 400px;
             height: 300px;
@@ -36,7 +49,19 @@
             font-size: 15px;
             text-align: justify;
         }
+        ol li{
+            margin-left: 0px;
+        }
         .sattojanamAbout{
+            .images{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                justify-content: space-between;
+                img{
+                    width: 330px;
+                }
+            }
             img{
                 width: 350px;
             }

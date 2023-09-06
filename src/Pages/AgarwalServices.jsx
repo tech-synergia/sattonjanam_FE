@@ -3,6 +3,7 @@ import CommonBanner from '../Components/CommonBanner'
 import BreadCrumb from '../Components/BreadCrumb'
 import ServiceComponent from '../Components/ServiceComponent';
 import Footer from '../Components/Footer';
+import Menu from '../Components/Menu';
 
 function AgarwalServices() {
     const breadcrumbPaths = [
@@ -13,6 +14,7 @@ function AgarwalServices() {
   return (
     <div>
       <Navbar/>
+      <Menu/>
       <CommonBanner title="Aggarwal | Gupta | Baniya Matrimonial Services"/>
       <div>
         <BreadCrumb paths={breadcrumbPaths} />

@@ -6,7 +6,7 @@ const {Title} = Typography
 function WhyUs() {
   return (
     <div className='whyUs'>
-        <Title level={1} className="title">Why Us Sattonjanam.com</Title>
+        <Title level={1} className="title">Why Us sattonjanam.com</Title>
         <div className="whyUsContent">
             <img src="https://i.pinimg.com/736x/9d/06/12/9d06126192ab784ed8c7f1412f0ca8b2.jpg" alt="no image" />
             <div className="whyUsInfo">

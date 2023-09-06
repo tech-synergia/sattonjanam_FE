@@ -3,6 +3,7 @@ import CommonBanner from '../Components/CommonBanner'
 import BreadCrumb from '../Components/BreadCrumb'
 import ServiceComponent from '../Components/ServiceComponent';
 import Footer from '../Components/Footer';
+import Menu from '../Components/Menu';
 
 function NRIServices() {
     const breadcrumbPaths = [
@@ -14,6 +15,7 @@ function NRIServices() {
   return (
     <div>
        <Navbar/>
+       <Menu/>
         <CommonBanner title="NRI Matrimonial Services"/>
         <div>
             <BreadCrumb paths={breadcrumbPaths} />

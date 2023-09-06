@@ -2,8 +2,10 @@
 
 
 .serviceComponent{
-    background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScSPPUCIswv3cry9qdFpNWXKr43RVVkJcSxJgmwbEra_ds0kk8");
+    background-image: url("https://img.freepik.com/premium-photo/copy-space-text-red-texture-background-concept-chinese-new-year-background_45281-280.jpg");
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 30px 200px;
     @media screen and (max-width: 768px){
         padding: 20px;
@@ -19,7 +21,7 @@
         }
     }
     h3{
-        color: darkgoldenrod;
+        color: rgb(243, 177, 12);
         font-size: 50px;
         text-align: center;
         font-family: "Great Vibes", cursive;
@@ -28,7 +30,7 @@
         }
     }
     p{
-        color: rgb(64, 64, 64);
+        color: #fff;
         font-size: 17px;
         line-height: 30px;
     }

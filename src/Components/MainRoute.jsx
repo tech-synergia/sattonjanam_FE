@@ -33,6 +33,7 @@ import SecondMarriage from "../Pages/SecondMarriage";
 import ScrollToTop from "./ScrollToTop";
 import SuccessMessage from "../Pages/SuccessMessage";
 import Packages from "../Pages/Packages";
+import MaharastrianServices from "../Pages/MaharastrianServices";
 
 function MainRoute() {
   const context = useContext(GlobalContext);
@@ -71,6 +72,7 @@ function MainRoute() {
         />
         <Route path="/sikh-matrimonial-services" element={<SikhServices />} />
         <Route path="/jain-matrimonial-services" element={<JainServices />} />
+        <Route path="/maharastrian-matrimonial-services" element={<MaharastrianServices/>}/>
         <Route
           path="/agarwal-matrimonial-services"
           element={<AgarwalServices />}

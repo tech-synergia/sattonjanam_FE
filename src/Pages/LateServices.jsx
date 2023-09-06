@@ -3,6 +3,7 @@ import CommonBanner from '../Components/CommonBanner'
 import BreadCrumb from '../Components/BreadCrumb'
 import ServiceComponent from '../Components/ServiceComponent';
 import Footer from '../Components/Footer';
+import Menu from '../Components/Menu';
 
 function LateServices() {
     const breadcrumbPaths = [
@@ -14,6 +15,7 @@ function LateServices() {
   return (
     <div>
        <Navbar/>
+       <Menu/>
       <CommonBanner title="Late Marriage Matrimony"/>
       <div>
         <BreadCrumb paths={breadcrumbPaths} />

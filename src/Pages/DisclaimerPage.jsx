@@ -3,12 +3,14 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import { Typography } from 'antd'
 import ConnectWithUs from '../Components/ConnectWithUs';
+import Menu from '../Components/Menu';
 
 const {Title} = Typography;
 function DisclaimerPage() {
   return (
     <>
       <Navbar/>
+      <Menu/>
           <div className="matrimony">
             <div className="sattojanamAbout">
                 <Title level={2} className="titleStyle">Disclaimers</Title>

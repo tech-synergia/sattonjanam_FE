@@ -3,6 +3,7 @@ import Footer from '../Components/Footer'
 import CommonBanner from '../Components/CommonBanner'
 import BreadCrumb from '../Components/BreadCrumb'
 import ServiceComponent from '../Components/ServiceComponent'
+import Menu from '../Components/Menu'
 
 function HinduServices() {
     const breadcrumbPaths = [
@@ -14,6 +15,7 @@ function HinduServices() {
   return (
     <div>
       <Navbar/>
+      <Menu/>
       <CommonBanner title="Hindu Matrimonial Services"/>
       <div>
         <BreadCrumb paths={breadcrumbPaths} />

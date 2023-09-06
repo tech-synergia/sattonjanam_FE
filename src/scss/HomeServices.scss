@@ -2,12 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Great+Vibes&family=Lato&family=Lobster&display=swap');
 
 .carouselService{
-    background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScSPPUCIswv3cry9qdFpNWXKr43RVVkJcSxJgmwbEra_ds0kk8");
+    background-image: url("https://img.freepik.com/premium-photo/copy-space-text-red-texture-background-concept-chinese-new-year-background_45281-280.jpg");
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 30px 200px;
     .titleService{
             text-align: center;
-            color: darkgoldenrod;
+            color: rgb(248, 184, 21);
             font-size: 50px;
             font-family: "Great Vibes",cursive;
     }
@@ -31,7 +33,7 @@
                 p{
                     font-size: 15px;
                 }
-                background-color: vrs.$prim-color;
+                background-color: rgb(248, 189, 41);
                 width: 280px;
                 // height: 350px;
                 color: #fff;

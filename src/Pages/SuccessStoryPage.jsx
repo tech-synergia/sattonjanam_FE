@@ -6,6 +6,7 @@ import BreadCrumb from "../Components/BreadCrumb";
 import Success from "../Components/Success";
 import ConnectWithUs from "../Components/ConnectWithUs";
 import EnquireForm from "../Components/EnquireForm";
+import Menu from "../Components/Menu";
 
 function SuccessStoryPage() {
   const breadcrumbPaths = [
@@ -15,6 +16,7 @@ function SuccessStoryPage() {
   return (
     <>
       <Navbar />
+      <Menu/>
       <CommonBanner title="Success Stories" />
       <div>
         <BreadCrumb paths={breadcrumbPaths} />

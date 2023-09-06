@@ -67,9 +67,9 @@ const LoginPage = () => {
       wrapperCol={{ span: 16 }}
       style={{
         maxWidth: 600,
-        margin: "20vh auto",
-        border: "1px solid lightgrey",
+        margin: "17vh auto",
         padding: "20px",
+        backgroundColor: "#fff"
       }}
       initialValues={{ remember: false }}
     >
