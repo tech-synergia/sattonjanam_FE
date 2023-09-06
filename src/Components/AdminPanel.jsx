@@ -25,7 +25,7 @@ const AdminPanel = () => {
   const fetchProfile = async () => {
     try {
       // const response = await UserApi.getAll();
-      const response = await axios.get(`https://sattonjanam-be.onrender.com/api/v1/user/all`, {
+      const response = await axios.get(`https://sattonjanam-be.onrender.com/api/v1/all/users`, {
         headers : {
           'Content-Type': 'application/json',
               'Authorization': token

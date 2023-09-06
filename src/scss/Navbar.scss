@@ -2,9 +2,9 @@
 
 #navbar {
   color: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 3;
+  // position: sticky;
+  // top: 0;
+  // z-index: 3;
   .logoContent {
     background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR7z1BdpPrg_rq2kfCbixdD65miYS0zQdUHE3VlbYIZEge2eMaP");
     display: flex;
@@ -19,8 +19,9 @@
       // width: 100px;
       // height: 100px;
       img {
-        width: 150px;
-        height: 100px;
+        width: 160px;
+        object-fit: cover;
+        height: 160px;
       }
     }
       .contact {
@@ -62,6 +63,9 @@
       justify-content: center;
       align-items: center;
       background-color: vrs.$prim-color;
+      position: sticky;
+      top: 0;
+      z-index: 2;
 
       .links {
         display: flex;
@@ -75,11 +79,11 @@
           color: #fff;
           transition: all 0.3s ease-out;
         }
-        &.sticky {
-          position: -webkit-sticky;
-          position: sticky;
-          top: 0;
-        }
+        // &.sticky {
+        //   position: -webkit-sticky;
+        //   position: sticky;
+        //   top: 0;
+        // }
       }
        .nav-btn {
       display: none;
@@ -102,8 +106,8 @@
           width: 200px;
           margin-left: 0;
           img {
-            width: 200px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
           }
         }
         .contact {
@@ -113,6 +117,7 @@
         }
         button {
         margin: 2px;
+     
 
         padding: 5px;
         font-size: 12px;

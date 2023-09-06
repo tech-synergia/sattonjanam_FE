@@ -1,5 +1,6 @@
 import '../scss/Footer.scss'
 import footerLogo from '../assets/sattonjanamLogo.svg'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -12,13 +13,13 @@ function Footer() {
             <div className="impLinks">
                 <h3>Important Links</h3>
                 <div className="Links">
-                    <a href="/about"><span><i className="bi bi-caret-right-fill"></i> About Us</span></a>
+                    <Link to={"/about"}><span><i className="bi bi-caret-right-fill"></i> About Us</span></Link>
                     {/* <span><i className="bi bi-caret-right-fill"></i> Blogs</span>
                     <span><i className="bi bi-caret-right-fill"></i> Why We Stand Out?</span> */}
-                    <a href="/service"><span><i className="bi bi-caret-right-fill"></i> Services</span></a>
+                    <Link to={"/service"}><span><i className="bi bi-caret-right-fill"></i> Services</span></Link>
                     {/* <span><i className="bi bi-caret-right-fill"></i> Packages</span>
                     <span><i className="bi bi-caret-right-fill"></i> Testimonials</span> */}
-                   <a href="/successstories"> <span><i className="bi bi-caret-right-fill"></i> Success Stories</span></a>
+                   <Link to={"/successstories"}> <span><i className="bi bi-caret-right-fill"></i> Success Stories</span></Link>
                 </div>
             </div>
 
@@ -27,10 +28,10 @@ function Footer() {
                 <div className="Links">
                     {/* <span><i className="bi bi-caret-right-fill"></i> Press & Media</span>
                     <span><i className="bi bi-caret-right-fill"></i> Gallery</span> */}
-                    <a href="/terms&privacy"><span><i className="bi bi-caret-right-fill"></i> Terms&Privacy Policy</span></a>
+                    <Link to={"/terms&privacy"}><span><i className="bi bi-caret-right-fill"></i> Terms&Privacy Policy</span></Link>
                   
-                   <a href="/refund"><i className="bi bi-caret-right-fill"></i> Refund&Copyright Policies</a>
-                    <a href="/disclaimer"><span><i className="bi bi-caret-right-fill"></i> Disclaimer</span></a>
+                    <Link to={"/refund"}><i className="bi bi-caret-right-fill"></i> Refund&Copyright Policies</Link>
+                    <Link to={"/disclaimer"}><span><i className="bi bi-caret-right-fill"></i> Disclaimer</span></Link>
                     {/* <span><i className="bi bi-caret-right-fill"></i> Sitemap</span> */}
                 </div>
             </div>
@@ -50,12 +51,12 @@ function Footer() {
                 
                 <div className="Links logos">
                     
-                    <span><a href="whatsapp://send?text=Hi!&phone=9773643677" className="bi bi-whatsapp" > </a></span>
-                    <span><a href="mailto:support@sattonjanam.com" className="bi bi-envelope-fill" > </a></span>
-                    <span><a href="https://www.linkedin.com/company/sattonjanam-matrimonial-services/about/?viewAsMember=true" className='bi bi-linkedin'></a></span>
-                    <span><a href="https://www.facebook.com/profile.php?id=61550954489680&sk=about_contact_and_basic_info" className='bi bi-facebook'></a></span>
-                    <span><a href="https://www.instagram.com/sattonjanam_matrimony/" className='bi bi-instagram'></a></span>
-                    <span><a href="#" className='bi bi-twitter'></a></span>
+                    <span><Link to={"whatsapp://send?text=Hi!&phone=9773643677"} className="bi bi-whatsapp" > </Link></span>
+                    <span><Link to={"mailto:support@sattonjanam.com"} className="bi bi-envelope-fill" > </Link></span>
+                    <span><Link to={"https://www.linkedin.com/company/sattonjanam-matrimonial-services/about/?viewAsMember=true"} className='bi bi-linkedin'></Link></span>
+                    <span><Link to={"https://www.facebook.com/profile.php?id=61550954489680&sk=about_contact_and_basic_info"} className='bi bi-facebook'></Link></span>
+                    <span><Link to={"https://www.instagram.com/sattonjanam_matrimony/"} className='bi bi-instagram'></Link></span>
+                    <span><Link to={"#"} className='bi bi-twitter'></Link></span>
                 </div>
             </div>
         {/* </div> */}
