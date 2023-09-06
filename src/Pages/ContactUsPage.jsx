@@ -6,6 +6,7 @@ import CommonBanner from "../Components/CommonBanner";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import EnquireForm from "../Components/EnquireForm";
+import Menu from "../Components/Menu";
 
 const ContactUsPage = () => {
   const breadcrumbPaths = [
@@ -16,6 +17,7 @@ const ContactUsPage = () => {
   return (
     <>
       <Navbar />
+      <Menu/>
       <CommonBanner title="Contact Us" />
       <div>
         <Breadcrumb paths={breadcrumbPaths} />

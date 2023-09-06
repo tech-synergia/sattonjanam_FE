@@ -67,6 +67,9 @@ function EnquireForm({children}) {
             });
           }
     }
+    const handleCancel = () => {
+      navigate('/');
+    };
     
   return (
     <>
@@ -84,24 +87,24 @@ function EnquireForm({children}) {
           style={{ marginTop: "20px" }}
         />
       )}
-        <img src={logo} alt="no image" width={100} height={100}/>
+        <img src={logo} alt="no image" width={120} height={120}/>
          {/* <button onClick={() => setShow(!show)} className="closeButton">&times;</button> */}
-         <h3>Enquiry form</h3>
+         <h1>Enquiry form</h1>
         {/* <Title>Enquiry form</Title> */}
       <Form className='formContainer'>
       
             <div className="name-container">
                 <Form.Item htmlFor="userName">
                     <Input type="text" name="userName" id="userName" placeholder="Your Name"
-                    onChange={readValue}/>
+                    onChange={readValue} className='inputEnquiry'/>
                 </Form.Item>
                 <Form.Item htmlFor="email">
                     <Input type="email" name="email" id="email" placeholder="Email Id"
-                    onChange={readValue}/>
+                    onChange={readValue} className='inputEnquiry'/>
                 </Form.Item>
                 <Form.Item htmlFor="phoneNumber" className="name">
                     <Input type="number" name="phoneNumber" id="phoneNumber" placeholder="Phone Number"
-                    onChange={readValue}/>
+                    onChange={readValue} className='inputEnquiry'/>
                 </Form.Item>
                 <Form.Item
                     htmlFor="query"
@@ -114,9 +117,13 @@ function EnquireForm({children}) {
                     rows={3}
                     cols={10}
                     onChange={readValue}
+                    className='inputEnquiry'
                     />
                 </Form.Item>
-                <a><Button className="btn" onClick={submitHandler}>Send Message</Button></a>
+                <a><Button className="btn" onClick={submitHandler}>Send Message</Button>
+                    <Button className='btn' onClick={handleCancel}>
+                      Cancel
+                    </Button></a>
             </div>
       </Form>
     </div> : null }

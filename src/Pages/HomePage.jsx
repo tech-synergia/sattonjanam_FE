@@ -13,6 +13,7 @@ import { GlobalContext } from "../GlobalContext";
 import AdminPanel from "../Components/AdminPanel";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Menu from "../Components/Menu";
 
 const HomePage = () => {
   const context = useContext(GlobalContext);
@@ -28,6 +29,7 @@ const HomePage = () => {
   return (
     <>
       <Navbar />
+      <Menu/>
       <div>
         <BreadcrumbComponent paths={breadcrumbPaths} />
       </div>

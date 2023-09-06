@@ -3,6 +3,7 @@ import CommonBanner from '../Components/CommonBanner'
 import BreadCrumb from '../Components/BreadCrumb'
 import ServiceComponent from '../Components/ServiceComponent';
 import Footer from '../Components/Footer';
+import Menu from '../Components/Menu';
 
 function ReMarriageServices() {
     const breadcrumbPaths = [
@@ -15,6 +16,7 @@ function ReMarriageServices() {
   return (
     <div>
        <Navbar/>
+       <Menu/>
       <CommonBanner title="Re-Marriage Services"/>
       <div>
         <BreadCrumb paths={breadcrumbPaths} />

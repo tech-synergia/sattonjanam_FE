@@ -3,7 +3,7 @@
 .success{
     background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScSPPUCIswv3cry9qdFpNWXKr43RVVkJcSxJgmwbEra_ds0kk8");
     background-position: center;
-    padding: 100px 250px;
+    padding: 100px 200px;
     position: relative;
     z-index: 2;
     .custom-image {
@@ -16,10 +16,10 @@
       
       .content {
         position: absolute;
-        background-color: vrs.$prim-color;
+        background-color: rgb(248, 189, 41);
         border-radius: 20px;
         top: -10%;
-        right: -6%;
+        right: 2%;
         bottom: -10%;
         color: #fff;
         padding: 20px;
@@ -29,7 +29,7 @@
       }
       
       .title {
-        background-color: rgb(100, 15, 15);
+        background-color: rgb(210, 39, 39);
         position: absolute;
         font-size: 20px;
         border-radius: 10px;

@@ -1,0 +1,83 @@
+@use "./modules/vrs";
+
+.navbarContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: vrs.$prim-color;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    .links {
+      display: flex;
+      font-size: 13px;
+      color: #fff;
+      list-style: none;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        margin: 15px;
+        color: #fff;
+        transition: all 0.3s ease-out;
+      }
+    }
+     .nav-btn {
+    display: none;
+    }
+    .nav-btn-close {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    
+     
+      .navbarContent {
+        justify-content: space-between;
+        align-items: center;
+       
+      
+      .nav-btn {
+        display: block;
+        color: #fff;
+      }
+      .navbtnclose {
+        display: block;
+      }
+      .links.open {
+        width: 300px;
+        opacity: 1;
+      }
+      .links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: vrs.$prim-color;
+        margin-left: -8%;
+        top: 40%;
+        right: 0;
+        left: 0;
+        width: 0px;
+        height: max-content;
+        justify-content: start;
+
+        gap: 0px;
+        overflow: hidden;
+        transition: width 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        li {
+          width: 100%;
+          display: flex;
+          justify-content: left;
+          align-items: flex-end;
+          a {
+            text-align: right;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+}
+  

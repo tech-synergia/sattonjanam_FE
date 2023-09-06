@@ -107,6 +107,7 @@ const RegisterPage = (props) => {
     "Meghalaya",
     "Mizoram",
     "Nagaland",
+    "New Delhi",
     "Odisha",
     "Punjab",
     "Rajasthan",
@@ -187,11 +188,6 @@ const RegisterPage = (props) => {
     ];
 
     const allFieldsFilled = requiredFields.every((field) => field !== "");
-    // const aboutFamilyWords = familyDetails.aboutFamily.trim().split(/\s+/).filter(Boolean).length;
-
-    // const isAboutFamilyValid = aboutFamilyWords >= 30 && aboutFamilyWords <= 300;
-  
-    // setIsFamilyDetailsFilled(allFieldsFilled && isAboutFamilyValid);
     setIsFamilyDetailsFilled(allFieldsFilled);
   };
 
@@ -652,8 +648,8 @@ const RegisterPage = (props) => {
                 handleInputChange({ target: { name: "country", value } })
               }
             >
-              <Option value="India">India</Option>
-              <Option value="Abroad">Abroad</Option>
+              <Option value="INDIA">India</Option>
+              <Option value="ABROAD">Abroad</Option>
             </Select>
           </Form.Item>
           <Form.Item label="State" htmlFor="state">
@@ -925,14 +921,14 @@ const RegisterPage = (props) => {
                 })
               }
             >
-              <Option value="fatherOcc1">Business/Entrepreneur</Option>
-              <Option value="fatherOcc2">Private Service</Option>
-              <Option value="fatherOcc3">Government Service</Option>
-              <Option value="fatherOcc4">Self Employed</Option>
-              <Option value="fatherOcc5">Expired</Option>
-              <Option value="fatherOcc6">Retired</Option>
-              <Option value="fatherOcc7">Army</Option>
-              <Option value="fatherOcc8">CivilServices</Option>
+              <Option value="Business/Entrepreneur">Business/Entrepreneur</Option>
+              <Option value="Private Service">Private Service</Option>
+              <Option value="Government Service">Government Service</Option>
+              <Option value="Self Employed">Self Employed</Option>
+              <Option value="Expired">Expired</Option>
+              <Option value="Retired">Retired</Option>
+              <Option value="Army">Army</Option>
+              <Option value="CivilServices">CivilServices</Option>
             </Select>
           </Form.Item>
           <Form.Item label="Mother Occupation" htmlFor="motherOccupation">
@@ -947,16 +943,17 @@ const RegisterPage = (props) => {
                 })
               }
             >
-              <Option value="motherOcc1">Business/Entrepreneur</Option>
-              <Option value="motherOcc2">Private Service</Option>
-              <Option value="motherOcc3">Government Service</Option>
-              <Option value="motherOcc4">Self Employed</Option>
-              <Option value="motherOcc5">Expired</Option>
-              <Option value="motherOcc6">Retired</Option>
-              <Option value="motherOcc7">Army</Option>
-              <Option value="motherOcc8">CivilServices</Option>
-              <Option value="motherOcc9">Teacher</Option>
-              <Option value="motherOcc10">House Wife</Option>
+              <Option value="Business/entrepreneur">Business/Entrepreneur</Option>
+              <Option value="Private service">Private Service</Option>
+              <Option value="teacher">Teacher</Option>
+              <Option value="House wife">House Wife</Option>
+              <Option value="Government service">Government Service</Option>
+              <Option value="Self employed">Self Employed</Option>
+              <Option value="expired">Expired</Option>
+              <Option value="retired">Retired</Option>
+              <Option value="army">Army</Option>
+              <Option value="Civil services">CivilServices</Option>
+            
             </Select>
           </Form.Item>
           <Form.Item label="Brother" htmlFor="brother">
@@ -989,8 +986,8 @@ const RegisterPage = (props) => {
                 handleInputChange({ target: { name: "familyLivingIn", value } })
               }
             >
-              <Option value="india">India</Option>
-              <Option value="abroad">Abroad</Option>
+              <Option value="India">India</Option>
+              <Option value="Abroad">Abroad</Option>
             </Select>
           </Form.Item>
           <Form.Item label="Contact Address" htmlFor="contactAddress">
@@ -1077,7 +1074,7 @@ const RegisterPage = (props) => {
                 
             />
           </Form.Item>
-          <Form.Item label="Caste" htmlFor="partnerCast">
+          <Form.Item label="Caste" htmlFor="partnerCaste">
             <Input 
               type="text"
               name="partnerCast"
@@ -1086,7 +1083,7 @@ const RegisterPage = (props) => {
               onChange={handleInputChange} 
             />
           </Form.Item>
-          <Form.Item label="Education" htmlFor="partnerEductation">
+          <Form.Item label="Education" htmlFor="partnerEducation">
             <Select
               name="partnerEductation"
               id="partnerEductation"

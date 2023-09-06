@@ -8,6 +8,7 @@ import React, {useState, useEffect} from 'react';
 import { Typography } from 'antd';
 import logo from '../assets/sattonjanamLogo.svg';
 import { Link } from 'react-router-dom';
+import Menu from '../Components/Menu'
 
 const {Title} = Typography;
 
@@ -47,12 +48,13 @@ function Packages() {
   return (
     <>
       <Navbar/>
+      <Menu/>
         <CommonBanner title="Packages" />
         <div>
             <BreadCrumb paths={breadcrumbPaths} />
         </div>
         <div className='carouselService'>
-      <Title level={1} className='titleService'>Packages</Title>
+      {/* <Title level={1} className='titleService'>Packages</Title> */}
       <div className="carouselSlide">
         {isMobile ? (
           <Carousel dots={true} >
