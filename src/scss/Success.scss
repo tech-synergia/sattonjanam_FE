@@ -1,16 +1,17 @@
 @use "./modules/vrs";
-
+body{
+  // background-color: rgba(251, 185, 19, 0.8);
+  background-image:linear-gradient(rgba(251, 185, 19, 0.2),rgba(251, 185, 19, 0.4),rgba(251, 185, 19, 0.6)), url("https://img.freepik.com/premium-photo/luxury-wedding-concept-wedding-rings-flowers_23-2148652001.jpg?w=2000");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
 .success{
-    background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScSPPUCIswv3cry9qdFpNWXKr43RVVkJcSxJgmwbEra_ds0kk8");
-    background-position: center;
+    // background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR7z1BdpPrg_rq2kfCbixdD65miYS0zQdUHE3VlbYIZEge2eMaP");
+    // background-position: center;
     padding: 100px 200px;
-    // position: relative;
+    position: relative;
     z-index: 2;
-   
-    .even-row{
-      display: flex;
-      flex-direction: row;
-    }
     .custom-image {
         width: 530px;
         height: 300px;
@@ -20,13 +21,13 @@
       }
       
       .content {
-        // position: absolute;
+        position: absolute;
         background-color: rgb(248, 189, 41);
         border-radius: 20px;
-        // top: -10%;
-        // right: 2%;
-        margin-top: -20px;
-        // bottom: -10%;
+        top: -10%;
+        right: 2%;
+        // margin-top: -20px;
+        bottom: -10%;
         color: #fff;
         height: 300px;
         padding: 20px;
@@ -53,6 +54,107 @@
       }
       
 }
+
+@media (min-width: 801px) and (max-width: 1200px) {
+  
+.success{
+  padding: 100px;
+  position: relative;
+  z-index: 2;
+  .custom-image {
+      width: 430px;
+      height: 300px;
+
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    
+    .content {
+      position: absolute;
+      background-color: rgb(248, 189, 41);
+      border-radius: 20px;
+      top: 0%;
+      right: 2%;
+      margin-top: -20px;
+      bottom: -10%;
+      color: #fff;
+      height: 300px;
+      padding: 20px;
+     width: 400px;
+      z-index: 3;
+    }
+    
+    .title {
+      background-color: rgb(210, 39, 39);
+      position: absolute;
+      font-size: 20px;
+      border-radius: 10px;
+      padding: 10px;
+      left: 32%;
+      top: -16%;
+     
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .text {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    
+}
+}
+
+
+@media (min-width: 1201px) and (max-width: 1370px) {
+  
+  .success{
+    padding: 100px 180px;
+    position: relative;
+    z-index: 2;
+    .custom-image {
+        width: 430px;
+        height: 300px;
+  
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      
+      .content {
+        position: absolute;
+        background-color: rgb(248, 189, 41);
+        border-radius: 20px;
+        top: 0%;
+        right: 2%;
+        margin-top: -20px;
+        bottom: -10%;
+        color: #fff;
+        height: 300px;
+        padding: 20px;
+       width: 400px;
+        z-index: 3;
+      }
+      
+      .title {
+        background-color: rgb(210, 39, 39);
+        position: absolute;
+        font-size: 20px;
+        border-radius: 10px;
+        padding: 10px;
+        left: 32%;
+        top: -16%;
+       
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      
+      .text {
+        font-size: 17px;
+        line-height: 1.6;
+      }
+      
+  }
+  }
 
 @media screen and (max-width: 800px){
 

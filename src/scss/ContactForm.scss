@@ -1,7 +1,15 @@
 @use './modules/vrs';
-.contactForm{
-    background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScSPPUCIswv3cry9qdFpNWXKr43RVVkJcSxJgmwbEra_ds0kk8");
+body{
+    // background-color: rgba(251, 185, 19, 0.8);
+    background-image:linear-gradient(rgba(251, 185, 19, 0.2),rgba(251, 185, 19, 0.4),rgba(251, 185, 19, 0.6)), url("https://img.freepik.com/premium-photo/luxury-wedding-concept-wedding-rings-flowers_23-2148652001.jpg?w=2000");
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   }
+
+.contactForm{
+    // background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR7z1BdpPrg_rq2kfCbixdD65miYS0zQdUHE3VlbYIZEge2eMaP");
+    // background-position: center;
     padding: 30px 200px;
     display: flex;
     flex-direction: row;

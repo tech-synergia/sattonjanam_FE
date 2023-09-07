@@ -71,7 +71,7 @@ function Packages() {
              
           </Carousel>
         ) : (
-          <Carousel slidesToShow={4}>
+          <Carousel slidesToShow={3}>
                
                   {packageData.map((card, index) => (
                     <Link to="/enquireform" key={index}>
