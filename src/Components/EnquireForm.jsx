@@ -42,9 +42,9 @@ function EnquireForm({children}) {
             axios.post(`https://sattonjanam-be.onrender.com/api/v1/query/queryCreate`, newQuery)
 
             axios.post(`https://sattonjanam-be.onrender.com/api/v1/query/sendQuery`, {userName: newQuery.userName, email: newQuery.email, phoneNumber: newQuery.phoneNumber, query: newQuery.query})
-
-            .then(res => {
-                setAlertData({
+            
+            .then( res =>  {
+                 setAlertData({
                   type: "success",
                   message: "Message send  successfully!",
                   show: true,
@@ -57,7 +57,7 @@ function EnquireForm({children}) {
                 });
               })
 
-              navigate('/')
+              //  navigate('/')
 
         } catch (error) {
             setAlertData({
@@ -66,6 +66,8 @@ function EnquireForm({children}) {
               show: true,
             });
           }
+
+       
     }
     const handleCancel = () => {
       navigate('/');

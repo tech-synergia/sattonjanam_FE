@@ -155,19 +155,10 @@ function UserDetails() {
     <div>
       
       <Form className="popUpForm">
-      {alertData.show && (
-        <Alert
-          message={alertData.message}
-          type={alertData.type}
-          showIcon
-          closable
-          onClose={() => setAlertData({ ...alertData, show: false })}
-          style={{ marginTop: "20px" }}
-        />
-      )}
+      
           <img src={logo} alt="no image" width={100} height={100}/>
           <Title level={5}>Profile Details</Title>
-            <Form.Item >
+            <Form.Item  label="Update profile Picture">
             {
                             images ? (
                                 <Button onClick={deleteHandler} > 
@@ -213,7 +204,7 @@ function UserDetails() {
               <Input value={profileData.age} readOnly />
             </Form.Item>
             <Form.Item label="Gender" htmlFor="gender" >
-              <Input name="gender" id="gender" value={profileData.gender} onChange={readValue} />
+              <Input name="gender" id="gender" value={profileData.gender} readOnly />
             </Form.Item>
             <Form.Item label="Caste" htmlFor="caste">
               <Input name="caste"
@@ -326,10 +317,10 @@ function UserDetails() {
               <Input  name="contactAddress"
               id="contactAddress" value={profileData.contactAddress} onChange={readValue}/>
             </Form.Item>
-            <Form.Item label="About Family" htmlFor="aboutFamily">
+            {/* <Form.Item label="About Family" htmlFor="aboutFamily">
               <Input  name="aboutFamily"
               id="aboutFamily" value={profileData.aboutFamily} onChange={readValue}/>
-            </Form.Item>
+            </Form.Item> */}
             
 
             <Title level={5}>Partner Preference</Title>
@@ -360,6 +351,16 @@ function UserDetails() {
               <Input name="partnerMaritalStatus"
               id="partnerMaritalStatus" value={profileData.partnerMaritalStatus} onChange={readValue}/>
             </Form.Item>
+            {alertData.show && (
+                <Alert
+                  message={alertData.message}
+                  type={alertData.type}
+                  showIcon
+                  closable
+                  onClose={() => setAlertData({ ...alertData, show: false })}
+                  style={{ marginTop: "20px" }}
+                />
+            )}
             <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
               <Button htmlType='submit' type="primary" onClick={submitHandler}>
             Update
