@@ -9,7 +9,7 @@ const weddingData = [
   {
     _id: 1,
     title: (
-      <NavLink to={"/punjabi-matrimonial-services"}>Punjabi Matrimonial Service</NavLink>
+      <NavLink to={"/punjabi-matrimonial-services"}>Punjabi Matrimonial Services</NavLink>
     ),
     content:
       "As a part of this, the bridegroom is made to wear a turban and a headgear or sehera, which covers his face. The traditional baraat includes the groom, who rides his horse (or rather mare) and reaches the wedding venue where the ceremonies take place, with his close family and friends dancing as a part of the baraat.",
@@ -19,7 +19,7 @@ const weddingData = [
   {
     _id: 2,
     title: (
-      <NavLink to={"/sikh-matrimonial-services"}>Sikh Matrimonial Service</NavLink>
+      <NavLink to={"/sikh-matrimonial-services"}>Sikh Matrimonial Services</NavLink>
     ),
     content:
       "The Sikh marriage is a very colourful and unique ceremony in which two individuals are joined in a partnership of two equals. The couple will marry in front of the Guru Granth Sahib while the guests gather around the couple, usually with men on one side and women on the other.",
@@ -29,7 +29,7 @@ const weddingData = [
   {
     _id: 3,
     title: (
-      <NavLink to={"/hindu-matrimonial-services"}>Hindu Matrimonial Service</NavLink>
+      <NavLink to={"/hindu-matrimonial-services"}>Hindu Matrimonial Services</NavLink>
     ),
     content:
       "It is a religious necessity rather than a mere physical luxury. Hindu Marriage is a tie that can never be broken and it is a relation established from birth to birth.",
@@ -58,7 +58,7 @@ const weddingData = [
   {
     _id: 6,
     title: (
-      <NavLink to={"/elite-matrimonial-services"}>Elite Matrimonial Service</NavLink>
+      <NavLink to={"/elite-matrimonial-services"}>Elite Matrimonial Services</NavLink>
     ),
     content:
       "With India’s fast paced economic development, and the ever expanding upper middle and rich class, the demand for an elite...",
@@ -68,7 +68,7 @@ const weddingData = [
   {
     _id: 7,
     title: (
-      <NavLink to={"/nri-matrimonial-services"}>NRI Matrimonial Service</NavLink>
+      <NavLink to={"/nri-matrimonial-services"}>NRI Matrimonial Services</NavLink>
     ),
     content:
       "NRI marriages', as generally understood, are between an Indian woman from India and an Indian man residing in another country (thus NRI – non-resident Indian), either as Indian citizen (when he would legally be an 'NRI') or as citizen of that other country (when he would legally be a PIO – person of Indian origin).",

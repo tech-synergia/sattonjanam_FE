@@ -2,17 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Great+Vibes&family=Lato&family=Lobster&display=swap');
 
 body{
-    // background-color: rgba(251, 185, 19, 0.8);
     background-image:linear-gradient(rgba(251, 185, 19, 0.2),rgba(251, 185, 19, 0.4),rgba(251, 185, 19, 0.6)), url("https://img.freepik.com/premium-photo/luxury-wedding-concept-wedding-rings-flowers_23-2148652001.jpg?w=2000");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
    }
 .carouselService{
-    // background-image: url("https://img.freepik.com/premium-photo/copy-space-text-red-texture-background-concept-chinese-new-year-background_45281-280.jpg");
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
     padding: 30px 200px;
     .titleService{
             text-align: center;
@@ -21,10 +16,6 @@ body{
             font-family: "Great Vibes",cursive;
     }
     .carouselSlide{
-        // .cardRow{
-        //     display: flex;
-        //     flex-direction: row;
-        //     gap: 20px;
             .cardItem{
                padding: 0px;
                margin: 0px;
@@ -34,7 +25,7 @@ body{
                     height: 150px;
                 }
                 h3{
-                    font-size: 20px;
+                    font-size: 18px;
                     margin-bottom: 0px;
                 }
                 p{
@@ -42,17 +33,16 @@ body{
                 }
                 background-color:burlywood;
                 width: 280px;
-                // height: 350px;
                 color: #000;
                 text-align: center;
-                /* HomeServices.scss */
+              
 
-                    .titleEllipsis {
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        margin-bottom: 10px; 
-                    }
+                    // .titleEllipsis {
+                    //     overflow: hidden;
+                    //     text-overflow: ellipsis;
+                    //     white-space: nowrap;
+                    //     margin-bottom: 10px; 
+                    // }
                     
                     .contentEllipsis {
                         overflow: hidden;
@@ -94,7 +84,7 @@ body{
         //     gap: 20px;
             .cardItem{
                 h3{
-                    font-size: 20px;
+                    font-size: 17px;
                     margin-bottom: 0px;
                 }
                 p{
