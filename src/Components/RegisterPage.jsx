@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
-import { Form, Input, Select, Radio, Button, Steps, Alert, Upload, Checkbox } from "antd";
+import { Form, Input, Select, Radio, Steps, Alert, Checkbox, Button, Space, Upload } from "antd";
 import "../scss/RegisterPage.scss";
+import { UploadOutlined } from '@ant-design/icons';
 import UserApi from './API/UserApi'
 import { useNavigate, Link, NavLink } from 'react-router-dom';
 import { GlobalContext } from '../GlobalContext'
@@ -336,6 +337,7 @@ const RegisterPage = (props) => {
     const words = text.trim().split(/\s+/);
     return words.length;
   }
+  
 
   const steps = [
     {
@@ -394,13 +396,35 @@ const RegisterPage = (props) => {
             </Select>
           </Form.Item>
           <Form.Item label="Gender" htmlFor="gender">
-            <Radio.Group name="gender" id="gender" onChange={handleInputChange}>
+            <Radio.Group name="gender" id="gender" value={profileDetails.gender} onChange={handleInputChange}>
               <Radio value="male">Male</Radio>
               <Radio value="female">Female</Radio>
               <Radio value="other">Other</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item label="Upload Profile Pic">
+          <Form.Item label="Upload Profile Pic" htmlFor="image">
+          <Space
+              direction="horizontal"
+              style={{
+                width: '50%',
+              }}
+              size="medium"
+            >
+              <Upload label="Upload Profile Pic"
+                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                listType="picture"
+                maxCount={5}
+                name="image"
+                id="image"
+                value={profileDetails.image}
+                onChange={uploadHandler}
+                multiple
+              >
+                <Button icon={<UploadOutlined />}>Upload (Max: 5)</Button>
+              </Upload>
+          </Space>
+          </Form.Item>
+          {/* <Form.Item label="Upload Profile Pic">
             
             <Input
               type="file"
@@ -410,7 +434,7 @@ const RegisterPage = (props) => {
               onChange= {uploadHandler}
               
             />
-          </Form.Item>
+          </Form.Item> */}
           <Form.Item label="Email" htmlFor="email">
             <Input
               type="email"
