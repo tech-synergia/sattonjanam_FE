@@ -60,7 +60,7 @@ const RegisterPage = (props) => {
     business: "",
     job: "",
     annualIncome: "",
-    mySelf: "",
+    myself: "",
   });
   const [familyDetails, setFamilyDetails] = useState({
     familyType: "",
@@ -167,7 +167,7 @@ const RegisterPage = (props) => {
       careerDetails.business,
       careerDetails.job,
       careerDetails.annualIncome,
-      careerDetails.mySelf,
+      careerDetails.myself,
     ];
 
     const allFieldsFilled = requiredFields.every((field) => field !== "");
@@ -248,7 +248,7 @@ const RegisterPage = (props) => {
   const handleInputChange = (e) => {
     // uploadHandler()
     const { name, value } = e.target;
-    if (name === "mySelf" || name === "aboutFamily") {
+    if (name === "myself" || name === "aboutFamily") {
       // Calculate the current word count
       const currentWordCount = countWords(value);
   
@@ -293,7 +293,7 @@ const RegisterPage = (props) => {
           }
         }
         console.log(newImage.image.url)
-      const response = await UserApi.create(profileDetails,careerDetails,familyDetails,partnerDetails,profileDetails.image= images.url, {
+      const response = await UserApi.create(profileDetails,careerDetails,familyDetails,partnerDetails,profileDetails.image.url= images.url, {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': token
@@ -402,7 +402,7 @@ const RegisterPage = (props) => {
               <Radio value="other">Other</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item label="Upload Profile Pic" htmlFor="image">
+          {/* <Form.Item label="Upload Profile Pic" htmlFor="image">
           <Space
               direction="horizontal"
               style={{
@@ -423,18 +423,19 @@ const RegisterPage = (props) => {
                 <Button icon={<UploadOutlined />}>Upload (Max: 5)</Button>
               </Upload>
           </Space>
-          </Form.Item>
-          {/* <Form.Item label="Upload Profile Pic">
+          </Form.Item> */}
+          <Form.Item label="Upload Profile Pic">
             
             <Input
               type="file"
               name="image"
               id="image"
               required
+         
               onChange= {uploadHandler}
               
             />
-          </Form.Item> */}
+          </Form.Item>
           <Form.Item label="Email" htmlFor="email">
             <Input
               type="email"
@@ -890,14 +891,14 @@ const RegisterPage = (props) => {
           </Form.Item>
           <Form.Item
             label="About My self"
-            htmlFor="mySelf"
+            htmlFor="myself"
           >
             <TextArea
-              name="mySelf"
-              id="mySelf"
+              name="myself"
+              id="myself"
               rows={3}
               cols={10}
-              value={careerDetails.mySelf}
+              value={careerDetails.myself}
               onChange={handleInputChange}
               maxLength={100}
             />
@@ -1028,7 +1029,7 @@ const RegisterPage = (props) => {
             <TextArea
               name="aboutFamily"
               id="aboutFamily"
-              value={careerDetails.aboutFamily}
+              value={familyDetails.aboutFamily}
               rows={3}
               cols={10}
              
