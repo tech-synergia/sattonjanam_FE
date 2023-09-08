@@ -57,10 +57,10 @@ function Packages() {
       {/* <Title level={1} className='titleService'>Packages</Title> */}
       <div className="carouselSlide">
         {isMobile ? (
-          <Carousel dots={true} >
+          <Carousel autoplay className='carousel'>
              
                 {packageData.map((card, index) => (
-                        <Link to="/enquireform" key={index}>
+                        <Link to="/enquireform" key={index} style={{position:"absolute", zIndex: "0", display: "block"}}>
                             <Card key={index} className='cardItem'>
                             <img src={logo} alt={`Image ${index}`} />
                             <h3 className="titleEllipsis">{card.heading}</h3>
@@ -71,7 +71,7 @@ function Packages() {
              
           </Carousel>
         ) : (
-          <Carousel slidesToShow={3}>
+          <Carousel slidesToShow={3} autoplay>
                
                   {packageData.map((card, index) => (
                     <Link to="/enquireform" key={index}>

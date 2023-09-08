@@ -91,7 +91,7 @@ function ContactForm() {
           </Text>
           <br />
           <Text className="text">
-            <i className="bi bi-envelope-fill"></i> support@sattonjanam.com
+            <i className="bi bi-envelope-fill"></i> info@sattonjanam.com
           </Text>
           
         </div>
