@@ -163,9 +163,6 @@ const AdminPanel = () => {
             <Form.Item label="Caste" >
               <Input value={selectedRecord.caste} readOnly/>
             </Form.Item>
-            <Form.Item label="Sub-caste">
-              <Input value={selectedRecord.subCaste} readOnly />
-            </Form.Item>
             <Form.Item label="Gotra">
               <Input value={selectedRecord.gotra} readOnly/>
             </Form.Item>
@@ -188,7 +185,7 @@ const AdminPanel = () => {
               <Input value={selectedRecord.drinking} readOnly />
             </Form.Item>
 
-              <Title level={5}>Career Details</Title>
+            <Title level={5}>Career Details</Title>
             <Form.Item label="Country">
               <Input value={selectedRecord.country} readOnly/>
             </Form.Item>
@@ -219,9 +216,9 @@ const AdminPanel = () => {
             <Form.Item label="Annual Income">
               <Input value={selectedRecord.annualIncome} readOnly/>
             </Form.Item>
-            <Form.Item label="About Myself">
+            {/* <Form.Item label="About Myself">
               <Input value={selectedRecord.mySelf} readOnly/>
-            </Form.Item>
+            </Form.Item> */}
 
             <Title level={5}>Family Details</Title>
             <Form.Item label="Family Type">
@@ -245,9 +242,9 @@ const AdminPanel = () => {
             <Form.Item label="Contact Details">
               <Input value={selectedRecord.contactAddress} readOnly/>
             </Form.Item>
-            <Form.Item label="About Family">
+            {/* <Form.Item label="About Family">
               <Input value={selectedRecord.aboutFamily} readOnly/>
-            </Form.Item>
+            </Form.Item> */}
           </Form>
         )}
       </Modal>
