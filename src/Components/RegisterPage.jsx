@@ -301,6 +301,9 @@ const RegisterPage = (props) => {
     })
 
     axios.post(`https://sattonjanam-be.onrender.com/api/v1/sendmail`, {email: profileDetails.email, userName: profileDetails.userName})
+
+    axios.post(`https://sattonjanam-be.onrender.com/api/v1/sendmailadmin`, { userName: profileDetails.userName})
+
       .then(res => {
         setAlertData({
           type: "success",
