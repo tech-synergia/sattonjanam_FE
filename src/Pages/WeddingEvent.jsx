@@ -21,9 +21,9 @@ function WeddingEvent() {
         <Navbar/>
         <Menu/>
         <CommonBanner title="Wedding Event Services"/>
-        <div>
+        {/* <div>
             <BreadCrumb paths={breadcrumbPaths} />
-        </div>
+        </div> */}
         <div className="matrimony">
             <div className="sattojanamAbout">
                 <Title level={2} className="titleStyle">Wedding Events Services</Title>

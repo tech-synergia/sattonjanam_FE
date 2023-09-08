@@ -18,9 +18,9 @@ function SuccessStoryPage() {
       <Navbar />
       <Menu/>
       <CommonBanner title="Success Stories" />
-      <div>
+      {/* <div>
         <BreadCrumb paths={breadcrumbPaths} />
-      </div>
+      </div> */}
       <Success />
       <ConnectWithUs />
       <Footer />

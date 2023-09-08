@@ -50,9 +50,9 @@ function Packages() {
       <Navbar/>
       <Menu/>
         <CommonBanner title="Packages" />
-        <div>
+        {/* <div>
             <BreadCrumb paths={breadcrumbPaths} />
-        </div>
+        </div> */}
         <div className='carouselService'>
       {/* <Title level={1} className='titleService'>Packages</Title> */}
       <div className="carouselSlide">
