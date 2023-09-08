@@ -35,7 +35,7 @@ function TermsAndPrivacyPage() {
                             objection in collecting/processing your personal data, we advise you not to register with our Site. If you want to 
                             withdraw this consent or if you have any objection in continuous collection or storage of your personal details, you must
                             discontinue using our Service and delete your account by sending an email from your registered email ID to
-                            support@sattonjanam.com and we shall comply with the same within 30 days unless otherwise the same is prohibited by law. 
+                            info@sattonjanam.com and we shall comply with the same within 30 days unless otherwise the same is prohibited by law. 
                             The site is a serious matchmaking platform to seek life partners for marriage and is not a casual dating site. 
                             The membership and rights of admission are reserved.
                         </p>

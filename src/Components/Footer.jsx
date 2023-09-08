@@ -40,7 +40,7 @@ function Footer() {
                 <h4>SUPPORT</h4>
                 <div className="Links">
                     <span><i className="bi bi-telephone-fill"></i> 9773643677 </span>
-                    <span><i className="bi bi-envelope-fill"></i> support@sattonjanam.com</span>
+                    <span><i className="bi bi-envelope-fill"></i> info@sattonjanam.com</span>
                     {/* <span className='location'><i class="bi bi-geo-alt-fill"></i> Add- 224, Ground floor, IP colony Faridabad, Haryana. Pin- 121009</span>
                     <span><i className="bi bi-geo-fill"></i> Get Direction</span> */}
                 </div>
@@ -58,7 +58,7 @@ function Footer() {
                 <div className="Links logos">
                     
                     <span><Link to={"whatsapp://send?text=Hi!&phone=9773643677"} className="bi bi-whatsapp" > </Link></span>
-                    <span><Link to={"mailto:support@sattonjanam.com"} className="bi bi-envelope-fill" > </Link></span>
+                    <span><Link to={"mailto:info@sattonjanam.com"} className="bi bi-envelope-fill" > </Link></span>
                     <span><Link to={"https://www.linkedin.com/company/sattonjanam-matrimonial-services/about/?viewAsMember=true"} className='bi bi-linkedin'></Link></span>
                     <span><Link to={"https://www.facebook.com/profile.php?id=61550954489680&sk=about_contact_and_basic_info"} className='bi bi-facebook'></Link></span>
                     <span><Link to={"https://www.instagram.com/sattonjanam_matrimony/"} className='bi bi-instagram'></Link></span>

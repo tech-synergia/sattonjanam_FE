@@ -131,7 +131,7 @@ function ConnectWithUs() {
               
             </div>
             <div className="address">
-                <p>support@sattonjanam.com</p>
+                <p>info@sattonjanam.com</p>
             </div>
         </div> */}
     </div>

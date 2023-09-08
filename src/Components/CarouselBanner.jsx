@@ -8,7 +8,7 @@ import "../scss/CarouselBanner.scss";
 
 function CarouselBanner() {
   return (
-    <Carousel autoplay className="carousel">
+    <Carousel dots={window.innerWidth >= 900} autoplay className="carousel">
       <div>
         <img src={wedding1} alt="" />
       </div>

@@ -57,7 +57,7 @@ function Packages() {
       {/* <Title level={1} className='titleService'>Packages</Title> */}
       <div className="carouselSlide">
         {isMobile ? (
-          <Carousel dots={true} >
+          <Carousel dots={window.innerWidth >= 900} autoplay>
              
                 {packageData.map((card, index) => (
                         <Link to="/enquireform" key={index}>
@@ -71,7 +71,7 @@ function Packages() {
              
           </Carousel>
         ) : (
-          <Carousel slidesToShow={3}>
+          <Carousel slidesToShow={3} autoplay>
                
                   {packageData.map((card, index) => (
                     <Link to="/enquireform" key={index}>

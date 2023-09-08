@@ -22,7 +22,7 @@ function MenuPage() {
     };
 
     const serviceDropdown = (
-        <Menu style={{ backgroundColor: "rgb(177, 110, 145)", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }}>
+        <Menu style={{ backgroundColor: "rgb(164, 63, 63)", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }}>
           <Menu.Item key="hindu">
             <NavLink to={"/hindu-matrimonial-services"} onClick={toggleMenu} style={menuStyle}>
               Hindu Matrimonial Services
