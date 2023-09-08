@@ -1,9 +1,9 @@
 import { Carousel } from "antd";
-import wedding1 from "../assets/1-01.jpeg";
-import wedding2 from "../assets/2-01.jpeg";
-import wedding3 from "../assets/3-01.jpeg";
-import wedding4 from "../assets/4-01.jpeg";
-import wedding5 from "../assets/5-01.jpeg";
+import wedding1 from "../assets/banner1.jpg";
+import wedding2 from "../assets/banner2.jpg";
+import wedding3 from "../assets/banner3.jpg";
+import wedding4 from "../assets/banner4.jpg";
+import wedding5 from "../assets/banner5.jpg";
 import "../scss/CarouselBanner.scss";
 
 function CarouselBanner() {

@@ -236,7 +236,7 @@ const RegisterPage = (props) => {
 
     const heightOptions = [];
     for (let feet = 5; feet <= 7; feet++) {
-      for (let inches = 0; inches <= 5; inches++) {
+      for (let inches = 0; inches <= 9; inches++) {
         const height = `${feet} foot ${inches} inches`;
         heightOptions.push(height);
       }
