@@ -11,7 +11,7 @@ function Footer() {
             <p>Marriage is a journey of two individuals who come together to grow, learn, and support each other in every aspect of life.</p>
             </div>
             <div className="impLinks">
-                <h3>Important Links</h3>
+                <h4>IMPORTANT LINKS</h4>
                 <div className="Links">
                     <Link to={"/about"}><span><i className="bi bi-caret-right-fill"></i> About Us</span></Link>
                     {/* <span><i className="bi bi-caret-right-fill"></i> Blogs</span>
@@ -24,7 +24,7 @@ function Footer() {
             </div>
 
             <div className="impLinks">
-                <h3>Other Links</h3>
+                <h4>OTHER LINKS</h4>
                 <div className="Links">
                     {/* <span><i className="bi bi-caret-right-fill"></i> Press & Media</span>
                     <span><i className="bi bi-caret-right-fill"></i> Gallery</span> */}
@@ -37,13 +37,19 @@ function Footer() {
             </div>
 
             <div className="impLinks">
-                <h3>Support</h3>
+                <h4>SUPPORT</h4>
                 <div className="Links">
                     <span><i className="bi bi-telephone-fill"></i> 9773643677 </span>
                     <span><i className="bi bi-envelope-fill"></i> support@sattonjanam.com</span>
                     {/* <span className='location'><i class="bi bi-geo-alt-fill"></i> Add- 224, Ground floor, IP colony Faridabad, Haryana. Pin- 121009</span>
                     <span><i className="bi bi-geo-fill"></i> Get Direction</span> */}
                 </div>
+
+                <h4>OPENING HOURS</h4>
+                    <div className="Links">
+                        <span>Wed-Mon: 10AM to 7PM</span>
+                        <span>Tuesday - Weekly Off</span>
+                    </div>
             </div>
         </div>
         {/* <div className="footerColumns"> */}
