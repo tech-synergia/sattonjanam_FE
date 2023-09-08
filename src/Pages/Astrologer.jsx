@@ -35,7 +35,7 @@ function Astrologer() {
                      a firm believer of destiny and the effect of planets on it. He provides remedies based on personal details 
                      like Date of birth, time, and place of birth as he believes in the planetary movements at the time of one’s 
                      birth. According to him, “Our past karma reflects in the planetary positions at the time of our birth which 
-                     plays a deciding role in our present life”nnnAcharya purohit and jyotish with 20years of experience in the 
+                     plays a deciding role in our present life” Acharya purohit and jyotish with 20years of experience in the 
                      field from Sampurnanand sanskrit vishwavidyalaya,kashi(varanasi).Former astrologer at India news,news express 
                      and jansandesh Jyotish and dharmic anusthan visheshagya, There are hundreds of factors to be considered in any
                       astrological chart, and the astrologer’s work becomes progressively more complex and intricate when looking 
