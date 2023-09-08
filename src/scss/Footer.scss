@@ -35,9 +35,9 @@ footer{
         }
         .impLinks{
             width: 260px;
-            h3{
-                color: #000;
-                font-weight: 100;
+            h4{
+                color: rgb(143, 16, 16);
+                font-weight: 600;
             }
             .Links{
                 display: flex;
@@ -53,6 +53,7 @@ footer{
                 span, .location{
                     font-size: 15px;
                     font-weight: lighter;
+                    // line-height: 30px;
                 }
                 .location{
                     line-height: 30px;
