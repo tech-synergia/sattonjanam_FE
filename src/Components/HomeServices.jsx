@@ -80,7 +80,7 @@ function HomeServices() {
       <Title level={1} className='titleService'>Services</Title>
       <div className="carouselSlide">
         {isMobile ? (
-          <Carousel dots={true} >
+          <Carousel dots={true} className='carousel'>
              
                 {cardData.map((card, index) => (
                   
