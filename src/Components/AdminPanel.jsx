@@ -185,7 +185,7 @@ const AdminPanel = () => {
               <Input value={selectedRecord.drinking} readOnly />
             </Form.Item>
 
-              <Title level={5}>Career Details</Title>
+            <Title level={5}>Career Details</Title>
             <Form.Item label="Country">
               <Input value={selectedRecord.country} readOnly/>
             </Form.Item>
