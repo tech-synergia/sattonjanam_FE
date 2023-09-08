@@ -20,9 +20,9 @@ function Astrologer() {
       <Navbar/>
       <MenuPage/>
       <CommonBanner title="Astrologer"/>
-        <div>
+        {/* <div>
             <BreadCrumb paths={breadcrumbPaths} />
-        </div>
+        </div> */}
         <div className="matrimony">
             <div className="sattojanamAbout">
                 <img src={AstrologerPic} alt="no image"/>

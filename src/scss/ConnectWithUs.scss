@@ -43,17 +43,13 @@
             }
         }
         .btn {
-            background-color: rgb(245, 180, 15);
-            color: rgb(121, 19, 19);
+            background-color: vrs.$prim-color;
+            color: #fff;
             font-size: 22px;
             font-weight: 600;
             border: none;
             padding: 5px 20px;
             height: 50px;
-            &:hover{
-                color: rgb(121, 19, 19);
-                font-weight: 600;
-            }
         }
     }
     .contactAddress{

@@ -69,6 +69,18 @@ function Footer() {
 
         <div className="footerEnd">
             <p>© 2023 sattonjanam.com. All Rights Reserved. | Privacy Policy</p>
+            <span> <a
+            style={{
+            color: "lightblue",
+            textDecoration: "none",
+            textAlign: 'left',
+            marginLeft: '0px'
+            }}
+            href="https://techsynergia.com"
+            target="_blank"
+                >
+                    Powered by Tech Synergia
+                </a></span>
         </div>
     </footer>
   )

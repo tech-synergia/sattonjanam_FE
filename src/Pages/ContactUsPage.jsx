@@ -19,9 +19,9 @@ const ContactUsPage = () => {
       <Navbar />
       <Menu/>
       <CommonBanner title="Contact Us" />
-      <div>
+      {/* <div>
         <Breadcrumb paths={breadcrumbPaths} />
-      </div>
+      </div> */}
       <ContactForm />
       <ConnectWithUs />
       <Footer />

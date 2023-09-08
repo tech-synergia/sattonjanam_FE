@@ -15,9 +15,9 @@ function ServicesPage() {
       <Navbar />
       <Menu/>
       <CommonBanner title="Services" />
-      <div>
+      {/* <div>
         <BreadCrumb paths={breadcrumbPaths} />
-      </div>
+      </div> */}
       <ServiceCard />
       <ConnectWithUs />
       <Footer />

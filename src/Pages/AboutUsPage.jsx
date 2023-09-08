@@ -15,9 +15,9 @@ function AboutUsPage() {
       <Navbar />
       <Menu/>
       <CommonBanner title="About Us" />
-      <div>
+      {/* <div>
         <BreadCrumb paths={breadcrumbPaths} />
-      </div>
+      </div> */}
       <Matrimony />
       <WhyUs />
       <ConnectWithUs />

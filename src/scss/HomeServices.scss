@@ -19,6 +19,7 @@ body{
             .cardItem{
                padding: 0px;
                margin: 0px;
+               height: 370px;
                 img{
                     margin: auto;
                     width: 100%;
@@ -60,7 +61,7 @@ body{
     }
     .buttonService{
         margin: 50px auto;
-        background-color: gray;
+        background-color: rgb(164, 63, 63);
         color: #fff;
         height: 50px;
         padding: 0px 30px;
@@ -98,7 +99,7 @@ body{
         }
         .buttonService{
             margin: 50px auto;
-            background-color: gray;
+            background-color: rgb(164, 63, 63);
             color: #fff;
             height: 50px;
             padding: 0px 30px;

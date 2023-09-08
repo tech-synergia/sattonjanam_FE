@@ -30,9 +30,9 @@ const HomePage = () => {
     <>
       <Navbar />
       <Menu/>
-      <div>
+      {/* <div>
         <BreadcrumbComponent paths={breadcrumbPaths} />
-      </div>
+      </div> */}
       <CarouselBanner />
       <ProfileCard />
       {/* <ProfileCard/> */}

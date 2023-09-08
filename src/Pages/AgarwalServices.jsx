@@ -16,9 +16,9 @@ function AgarwalServices() {
       <Navbar/>
       <Menu/>
       <CommonBanner title="Aggarwal | Gupta | Baniya Matrimonial Services"/>
-      <div>
+      {/* <div>
         <BreadCrumb paths={breadcrumbPaths} />
-      </div>
+      </div> */}
       <div>
         <ServiceComponent
             imageSrc="https://www.saathimere.com/matrimonial-service/img/Agarwal-Matrimonial-Services.jpg"
