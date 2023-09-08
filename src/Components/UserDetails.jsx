@@ -158,7 +158,7 @@ function UserDetails() {
   return (
     <div>
       
-      <Form className="popUpForm">
+      <Form className="popUpUserForm">
       
           <img src={logo} alt="no image" width={100} height={100}/>
           <Title level={5}>Profile Details</Title>
