@@ -164,7 +164,7 @@ body{
   .even-row{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 0px;
   }
 
   .custom-image {
@@ -175,13 +175,13 @@ body{
     position: static;
     padding: 20px;
     width: auto; 
-    height: 420px; 
+    height: max-content; 
   
   }
 
   .title {
     position: absolute; 
-    top: -14%;
+    top: -12%;
     left: 2%;
     width: 90%;
     font-size: 20px;

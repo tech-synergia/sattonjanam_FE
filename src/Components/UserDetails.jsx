@@ -150,6 +150,10 @@ function UserDetails() {
       });
     }
   }
+
+  const handleCancel = () => {
+    navigate('/');
+  };
   
   return (
     <div>
@@ -168,7 +172,7 @@ function UserDetails() {
               }
               {
                             images ? (
-                                <Image src={images ? images.url : ''} alt="no image" height={300} />
+                                <Image src={images ? images.url : ''} alt="no image" height={200} width={200} style={{objectFit:"cover"}}/>
                             ): (
                                 <span style={{ fontSize: '5em'}}>
                                     <i className="bi bi-file-arrow-up"></i>
@@ -362,8 +366,11 @@ function UserDetails() {
                 />
             )}
             <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
-              <Button htmlType='submit' type="primary" onClick={submitHandler}>
-            Update
+              <Button htmlType='submit' className='userBtn' onClick={submitHandler}>
+                Update
+              </Button>
+              <Button className='userBtn' onClick={handleCancel}> 
+                Cancel
               </Button>
             </Form.Item>
             

@@ -51,16 +51,18 @@ body{
 
 @media screen and (max-width: 900px){
     .contactForm{
-        padding: 20px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
         gap: 20px;
         .leftSideAddress{
-            width: 330px;
+            width: 100%;
         }
         .rightForm{
-            padding: 20px;
-            width: 310px;
+            padding: 10px;
+            margin: 0px;
+            width: 320px;
+           
         }
     }
 }
