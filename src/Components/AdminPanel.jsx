@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Table, Button, Modal, Form, Input } from "antd";
+import { Table, Button, Modal, Form, Input, message  } from "antd";
 import { Typography } from 'antd';
 import UserApi from "./API/UserApi";
 import { useNavigate, NavLink } from 'react-router-dom';
@@ -87,6 +87,7 @@ const AdminPanel = () => {
         console.log("Profile data deleted:", record);
         const updatedData = profileData.filter((prof) => prof._id !== record._id);
         setProfileData(updatedData);
+        message.success("User deleted successfully");
       }
     } catch (error) {
       console.error("Error deleting profile:", error);
@@ -94,12 +95,6 @@ const AdminPanel = () => {
   };
   const handleUser = async (record) => {
     try {
-    //   const response = await UserApi.getSingle(record._id,{
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         'Authorization': token
-    //     }
-    // });
 
     const response = await UserApi.update(record._id,{
       headers : {
@@ -114,13 +109,8 @@ const AdminPanel = () => {
           prof._id === record._id ? { ...prof, isVerified: true} : prof
         )
         setProfileData(updatedData)
-        // const res = await UserApi.create(profileData,{
-        //   headers: {
-        //       'Content-Type': 'application/json',
-        //       'Authorization': token
-        //   }})
+        message.success("User accepted successfully");
         navigate(`/profileCard`)
-        //User profile accepted successfully..
       }
     } catch (error) {
       console.error("Error Fetching profile:", error);
