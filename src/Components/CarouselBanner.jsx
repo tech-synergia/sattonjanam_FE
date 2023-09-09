@@ -1,7 +1,7 @@
 import { Carousel } from "antd";
 import wedding1 from "../assets/banner1.jpg";
 import wedding2 from "../assets/banner2.jpg";
-import wedding3 from "../assets/banner3.jpg";
+import wedding3 from "../assets/banner04.jpg";
 import wedding4 from "../assets/banner4.jpg";
 import wedding5 from "../assets/banner5.jpg";
 import "../scss/CarouselBanner.scss";
