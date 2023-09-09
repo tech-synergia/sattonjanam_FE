@@ -44,6 +44,8 @@ function ConnectWithUs() {
 
             axios.post(`https://sattonjanam-be.onrender.com/api/v1/connectus/sendmail`, {lookingFor: connectus.lookingFor, userName: connectus.userName, email: connectus.email, phoneNumber: connectus.phoneNumber,location: connectus.location, query: connectus.query})
 
+            axios.post(`https://sattonjanam-be.onrender.com/api/v1/connectus/sendmailuser`, { email: connectus.email})
+
             .then(res => {
                 setAlertData({
                   type: "success",
