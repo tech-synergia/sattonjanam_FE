@@ -33,14 +33,14 @@ function ProfileCard() {
       <div className="content-container">
         <div className="content">
           <h2>Premium Members</h2>
-
           <div className="pros-grid">
-            {/* <Carousel className="slider"> */}
+          {/* <Carousel autoplay className="carousel"> */}
+         
             {profile &&
               profile.map((profileData) => (
                 <div className="profile" key={profileData._id}>
                   <img
-                    src={profileData.image}
+                    src={profileData.image.url}
                     // src={
                     //   profileData.gender === "male" ? male_avatar : female_avatar
                     // }
@@ -49,8 +49,9 @@ function ProfileCard() {
                   <h3 className="text-center">Id: {profileData.sjId}</h3>
                 </div>
               ))}
-          </div>
+         
           {/* </Carousel> */}
+          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Table, Button, Modal, Form, Input } from "antd";
+import { Table, Button, Modal, Form, Input, message  } from "antd";
 import { Typography } from 'antd';
 import UserApi from "./API/UserApi";
 import { useNavigate, NavLink } from 'react-router-dom';
@@ -87,6 +87,7 @@ const AdminPanel = () => {
         console.log("Profile data deleted:", record);
         const updatedData = profileData.filter((prof) => prof._id !== record._id);
         setProfileData(updatedData);
+        message.success("User deleted successfully");
       }
     } catch (error) {
       console.error("Error deleting profile:", error);
@@ -94,18 +95,13 @@ const AdminPanel = () => {
   };
   const handleUser = async (record) => {
     try {
-    //   const response = await UserApi.getSingle(record._id,{
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         'Authorization': token
-    //     }
-    // });
 
     const response = await UserApi.update(record._id,{
       headers : {
         'Content-Type': 'application/json',
             'Authorization': token
       }
+
     });
       if (response.status === 200) {
         console.log("Profile data :", record);
@@ -113,11 +109,7 @@ const AdminPanel = () => {
           prof._id === record._id ? { ...prof, isVerified: true} : prof
         )
         setProfileData(updatedData)
-        // const res = await UserApi.create(profileData,{
-        //   headers: {
-        //       'Content-Type': 'application/json',
-        //       'Authorization': token
-        //   }})
+        message.success("User accepted successfully");
         navigate(`/profileCard`)
       }
     } catch (error) {
@@ -145,6 +137,9 @@ const AdminPanel = () => {
       >
         {selectedRecord && (
           <Form className="popUpForm">
+            <Form.Item label="Profile Pic">
+              <img src={selectedRecord.image.url} alt="no image" width={100} height={100} style={{objectFit: "cover", borderRadius: "10px"}}/>
+            </Form.Item>
             <Form.Item label="User Name" >
               <Input value={selectedRecord.userName} readOnly/>
             </Form.Item>
@@ -245,6 +240,29 @@ const AdminPanel = () => {
             {/* <Form.Item label="About Family">
               <Input value={selectedRecord.aboutFamily} readOnly/>
             </Form.Item> */}
+
+            <Title level={5}>Partner Preferences</Title>
+            <Form.Item label="Partner Age">
+              <Input value={selectedRecord.partnerAge} readOnly/>
+            </Form.Item>
+            <Form.Item label="Partner Height">
+              <Input value={selectedRecord.partnerHeight} readOnly/>
+            </Form.Item>
+            <Form.Item label="Partner Caste">
+              <Input value={selectedRecord.partnerCast} readOnly/>
+            </Form.Item>
+            {/* <Form.Item label="Partner Gotra">              
+              <Input value={selectedRecord.partnerGotra} readOnly/>
+            </Form.Item> */}
+            <Form.Item label="Partner Education">
+              <Input value={selectedRecord.partnerEductation} readOnly/>
+            </Form.Item>
+            <Form.Item label="Partner Income">
+              <Input value={selectedRecord.partnerIncome} readOnly/>
+            </Form.Item>
+            <Form.Item label="Partner Marital Status">
+              <Input value={selectedRecord.partnerMaritalStatus} readOnly/>
+            </Form.Item>
           </Form>
         )}
       </Modal>
