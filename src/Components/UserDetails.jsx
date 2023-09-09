@@ -6,7 +6,7 @@ import axios from "axios";
 import { GlobalContext } from '../GlobalContext'
 import '../scss/UserDetails.scss'
 import UserApi from "./API/UserApi";
-import logo from '../assets/websiteLogo.svg'
+import logo from '../assets/sattonjanamLogo.svg'
 
 const { Title } = Typography;
 
@@ -150,11 +150,15 @@ function UserDetails() {
       });
     }
   }
+
+  const handleCancel = () => {
+    navigate('/');
+  };
   
   return (
     <div>
       
-      <Form className="popUpForm">
+      <Form className="popUpUserForm">
       
           <img src={logo} alt="no image" width={100} height={100}/>
           <Title level={5}>Profile Details</Title>
@@ -168,7 +172,7 @@ function UserDetails() {
               }
               {
                             images ? (
-                                <Image src={images ? images.url : ''} alt="no image" height={300} />
+                                <Image src={images ? images.url : ''} alt="no image" height={200} width={200} style={{objectFit:"cover"}}/>
                             ): (
                                 <span style={{ fontSize: '5em'}}>
                                     <i className="bi bi-file-arrow-up"></i>
@@ -362,8 +366,11 @@ function UserDetails() {
                 />
             )}
             <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
-              <Button htmlType='submit' type="primary" onClick={submitHandler}>
-            Update
+              <Button htmlType='submit' className='userBtn' onClick={submitHandler}>
+                Update
+              </Button>
+              <Button className='userBtn' onClick={handleCancel}> 
+                Cancel
               </Button>
             </Form.Item>
             
