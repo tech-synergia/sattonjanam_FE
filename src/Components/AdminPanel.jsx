@@ -106,6 +106,7 @@ const AdminPanel = () => {
         'Content-Type': 'application/json',
             'Authorization': token
       }
+
     });
       if (response.status === 200) {
         console.log("Profile data :", record);
@@ -119,6 +120,7 @@ const AdminPanel = () => {
         //       'Authorization': token
         //   }})
         navigate(`/profileCard`)
+        //User profile accepted successfully..
       }
     } catch (error) {
       console.error("Error Fetching profile:", error);
@@ -145,6 +147,9 @@ const AdminPanel = () => {
       >
         {selectedRecord && (
           <Form className="popUpForm">
+            <Form.Item label="Profile Pic">
+              <img src={selectedRecord.image.url} alt="no image" width={100} height={100} style={{objectFit: "cover", borderRadius: "10px"}}/>
+            </Form.Item>
             <Form.Item label="User Name" >
               <Input value={selectedRecord.userName} readOnly/>
             </Form.Item>
@@ -245,6 +250,29 @@ const AdminPanel = () => {
             {/* <Form.Item label="About Family">
               <Input value={selectedRecord.aboutFamily} readOnly/>
             </Form.Item> */}
+
+            <Title level={5}>Partner Preferences</Title>
+            <Form.Item label="Partner Age">
+              <Input value={selectedRecord.partnerAge} readOnly/>
+            </Form.Item>
+            <Form.Item label="Partner Height">
+              <Input value={selectedRecord.partnerHeight} readOnly/>
+            </Form.Item>
+            <Form.Item label="Partner Caste">
+              <Input value={selectedRecord.partnerCast} readOnly/>
+            </Form.Item>
+            {/* <Form.Item label="Partner Gotra">              
+              <Input value={selectedRecord.partnerGotra} readOnly/>
+            </Form.Item> */}
+            <Form.Item label="Partner Education">
+              <Input value={selectedRecord.partnerEductation} readOnly/>
+            </Form.Item>
+            <Form.Item label="Partner Income">
+              <Input value={selectedRecord.partnerIncome} readOnly/>
+            </Form.Item>
+            <Form.Item label="Partner Marital Status">
+              <Input value={selectedRecord.partnerMaritalStatus} readOnly/>
+            </Form.Item>
           </Form>
         )}
       </Modal>

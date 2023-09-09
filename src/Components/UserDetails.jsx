@@ -336,13 +336,14 @@ function UserDetails() {
               <Input name="partnerHeight"
                 id="partnerHeight" value={profileData.partnerHeight} onChange={readValue} />
             </Form.Item>
-            {/* <Form.Item label="Partner Community" >
-              <Input value={profileData.partnerCommunity} readOnly />
-            </Form.Item> */}
             <Form.Item label="Partner Caste" htmlFor="partnerCast">
               <Input  name="partnerCast"
               id="partnerCast" value={profileData.partnerCast} onChange={readValue}/>
             </Form.Item>
+            {/* <Form.Item label="Partner Gotra" htmlFor="partnerGotra">
+              <Input  name="partnerGotra"
+              id="partnerGotra" value={profileData.partnerGotra} onChange={readValue}/>
+            </Form.Item> */}
             <Form.Item label="Partner Education"  htmlFor="partnerEductation">
               <Input name="partnerEductation"
               id="partnerEductation" value={profileData.partnerEductation}  onChange={readValue}/>
