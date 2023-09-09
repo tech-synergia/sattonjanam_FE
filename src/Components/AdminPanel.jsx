@@ -5,7 +5,7 @@ import UserApi from "./API/UserApi";
 import { useNavigate, NavLink } from 'react-router-dom';
 import '../scss/AdminPanel.scss'
 import axios from "axios";
-import logo from '../assets/websiteLogo.svg'
+import logo from '../assets/sattonjanamLogo.svg'
 import { GlobalContext } from '../GlobalContext'
 
 const { Title } = Typography;

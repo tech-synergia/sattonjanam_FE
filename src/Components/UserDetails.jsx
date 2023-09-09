@@ -6,7 +6,7 @@ import axios from "axios";
 import { GlobalContext } from '../GlobalContext'
 import '../scss/UserDetails.scss'
 import UserApi from "./API/UserApi";
-import logo from '../assets/websiteLogo.svg'
+import logo from '../assets/sattonjanamLogo.svg'
 
 const { Title } = Typography;
 
