@@ -36,7 +36,7 @@ function ContactForm() {
     e.preventDefault();
     try {
       axios.post(
-        `https://sattonjanam-be.onrender.com/api/v1/connectus/create`,
+        `https://sattonjanam-be.vercel.app/api/v1/connectus/create`,
         connectus,
         {
           headers: {
@@ -47,7 +47,7 @@ function ContactForm() {
       );
 
       axios
-        .post(`https://sattonjanam-be.onrender.com/api/v1/connectus/sendmail`, {
+        .post(`https://sattonjanam-be.vercel.app/api/v1/connectus/sendmail`, {
           lookingFor: connectus.lookingFor,
           userName: connectus.userName,
           email: connectus.email,
@@ -93,7 +93,6 @@ function ContactForm() {
           <Text className="text">
             <i className="bi bi-envelope-fill"></i> info@sattonjanam.com
           </Text>
-          
         </div>
         <hr />
         {/* <div className="addressContent">

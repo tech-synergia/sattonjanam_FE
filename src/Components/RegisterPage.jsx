@@ -1,20 +1,31 @@
 import React, { useContext, useState } from "react";
-import { Form, Input, Select, Radio, Steps, Alert, Checkbox, Button, Space, Upload } from "antd";
+import {
+  Form,
+  Input,
+  Select,
+  Radio,
+  Steps,
+  Alert,
+  Checkbox,
+  Button,
+  Space,
+  Upload,
+} from "antd";
 import "../scss/RegisterPage.scss";
-import { UploadOutlined } from '@ant-design/icons';
-import UserApi from './API/UserApi'
-import { useNavigate, Link, NavLink } from 'react-router-dom';
-import { GlobalContext } from '../GlobalContext'
-import axios from 'axios'
+import { UploadOutlined } from "@ant-design/icons";
+import UserApi from "./API/UserApi";
+import { useNavigate, Link, NavLink } from "react-router-dom";
+import { GlobalContext } from "../GlobalContext";
+import axios from "axios";
 import { useEffect } from "react";
-import logo from '../assets/sattonjanamLogo.svg'
+import logo from "../assets/sattonjanamLogo.svg";
 
 const { Step } = Steps;
 const { Option } = Select;
-const {TextArea} = Input;
+const { TextArea } = Input;
 
 const RegisterPage = (props) => {
-  const [wordCount, setWordCount] = useState(0); 
+  const [wordCount, setWordCount] = useState(0);
   const [images, setImages] = useState([]);
 
   const [alertData, setAlertData] = useState({
@@ -23,7 +34,7 @@ const RegisterPage = (props) => {
     show: false,
   });
   const [isAllFieldsFilled, setIsAllFieldsFilled] = useState(false);
-  const [isCareerDetailsFilled, setIsCareerDetailsFilled] = useState(false); 
+  const [isCareerDetailsFilled, setIsCareerDetailsFilled] = useState(false);
   const [isFamilyDetailsFilled, setIsFamilyDetailsFilled] = useState(false);
 
   const [currentStep, setCurrentStep] = useState(0);
@@ -33,7 +44,7 @@ const RegisterPage = (props) => {
     religion: "",
     gender: "",
     email: "",
-    image:{},
+    image: {},
     phoneNumber: "",
     password: "",
     age: "",
@@ -75,9 +86,9 @@ const RegisterPage = (props) => {
   const [partnerDetails, setPartnerDetails] = useState({
     partnerAge: "",
     partnerHeight: "",
-    partnerCommunity:"",
-    partnerCast:"",
-    partnerEductation:"",
+    partnerCommunity: "",
+    partnerCast: "",
+    partnerEductation: "",
     partnerGotra: "",
     partnerEducation: "",
     partnerIncome: "",
@@ -85,7 +96,7 @@ const RegisterPage = (props) => {
     partnerMotherOccupation: "",
     partnerLocation: "",
     partnerMaritalStatus: "",
-  })
+  });
 
   const allIndiaStates = [
     "Andhra Pradesh",
@@ -121,11 +132,10 @@ const RegisterPage = (props) => {
     "West Bengal",
   ];
 
-  const navigate = useNavigate()
-  const context = useContext(GlobalContext)
-  const token = context.token
+  const navigate = useNavigate();
+  const context = useContext(GlobalContext);
+  const token = context.token;
 
-  
   const validateFields = () => {
     // Implement your validation logic here
     const requiredFields = [
@@ -202,48 +212,49 @@ const RegisterPage = (props) => {
     // to upload image
     // e.preventDefault();
     try {
-        const file = e.target.files[0];
-        console.log('image data =', file);
+      const file = e.target.files[0];
+      console.log("image data =", file);
 
-        if(!file)
-            return console.log('image not exists.. choose image to upload.')
-        
-        if(file.size > 5 * 1024 * 1024)
-                return console.log('File size must be less than 5Mb')
+      if (!file)
+        return console.log("image not exists.. choose image to upload.");
 
-            let formData = new FormData()
-            formData.append('profile', file)
-            // setLoading(true)
+      if (file.size > 5 * 1024 * 1024)
+        return console.log("File size must be less than 5Mb");
 
-            // post the file content to server
-            const res = await axios.post(`https://sattonjanam-be.onrender.com/api/v1/image/upload`, formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
-            setImages(res.data.result)
-            console.log(res.data.result)
+      let formData = new FormData();
+      formData.append("profile", file);
+      // setLoading(true)
 
-            
+      // post the file content to server
+      const res = await axios.post(
+        `https://sattonjanam-be.vercel.app/api/v1/image/upload`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      setImages(res.data.result);
+      console.log(res.data.result);
     } catch (err) {
-        console.log(err.response.data.msg)
+      console.log(err.response.data.msg);
     }
+  };
 
-  
-}
-
-
-
-    const heightOptions = [];
-    for (let feet = 5; feet <= 7; feet++) {
-      for (let inches = 0; inches <= 9; inches++) {
-        const height = `${feet} foot ${inches} inches`;
-        heightOptions.push(height);
-      }
+  const heightOptions = [];
+  for (let feet = 5; feet <= 7; feet++) {
+    for (let inches = 0; inches <= 9; inches++) {
+      const height = `${feet} foot ${inches} inches`;
+      heightOptions.push(height);
     }
+  }
 
-    // Assuming you have an array of age options from 18 to 60
-    const ageOptions = Array.from({ length: 43 }, (_, index) => ({ value: 18 + index, label: (18 + index).toString() }));
+  // Assuming you have an array of age options from 18 to 60
+  const ageOptions = Array.from({ length: 43 }, (_, index) => ({
+    value: 18 + index,
+    label: (18 + index).toString(),
+  }));
 
   const handleInputChange = (e) => {
     // uploadHandler()
@@ -251,12 +262,15 @@ const RegisterPage = (props) => {
     if (name === "myself" || name === "aboutFamily") {
       // Calculate the current word count
       const currentWordCount = countWords(value);
-  
+
       // Check if the word count exceeds 100
       if (currentWordCount > 100) {
         // If it exceeds, truncate the input to the first 100 words
         const truncatedValue = value.split(/\s+/).slice(0, 100).join(" ");
-        setCareerDetails((prevData) => ({ ...prevData, mySelf: truncatedValue }));
+        setCareerDetails((prevData) => ({
+          ...prevData,
+          mySelf: truncatedValue,
+        }));
       } else {
         // If it doesn't exceed, update the value as usual
         setCareerDetails((prevData) => ({ ...prevData, [name]: value }));
@@ -265,59 +279,74 @@ const RegisterPage = (props) => {
       if (currentWordCount > 50) {
         // If it exceeds, truncate the input to the first 100 words
         const truncatedValue = value.split(/\s+/).slice(0, 100).join(" ");
-        setFamilyDetails((prevData) => ({ ...prevData, aboutFamily: truncatedValue }));
+        setFamilyDetails((prevData) => ({
+          ...prevData,
+          aboutFamily: truncatedValue,
+        }));
       } else {
         // If it doesn't exceed, update the value as usual
         setFamilyDetails((prevData) => ({ ...prevData, [name]: value }));
       }
-  
+
       // Update the word count state
       setWordCount(currentWordCount);
     } else {
-    // setImages({ images, [name]: value})
-    setProfileDetails((prevData) => ({ ...prevData, [name]: value }));
-    setCareerDetails((prevData) => ({ ...prevData, [name]: value }));
-    setFamilyDetails((prevData) => ({ ...prevData, [name]: value }));
-    setPartnerDetails((prevData) => ({ ...prevData, [name]: value }))
+      // setImages({ images, [name]: value})
+      setProfileDetails((prevData) => ({ ...prevData, [name]: value }));
+      setCareerDetails((prevData) => ({ ...prevData, [name]: value }));
+      setFamilyDetails((prevData) => ({ ...prevData, [name]: value }));
+      setPartnerDetails((prevData) => ({ ...prevData, [name]: value }));
+    }
   };
-}
 
-  
   const handleOnSubmit = async (e) => {
     try {
       const newImage = {
-          ...profileDetails,
-          image: {
-              
-              url: images.url
-          }
+        ...profileDetails,
+        image: {
+          url: images.url,
+        },
+      };
+      console.log(newImage.image.url);
+      const response = await UserApi.create(
+        profileDetails,
+        careerDetails,
+        familyDetails,
+        partnerDetails,
+        (profileDetails.image.url = images.url),
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
         }
-        console.log(newImage.image.url)
-      const response = await UserApi.create(profileDetails,careerDetails,familyDetails,partnerDetails,profileDetails.image.url= images.url, {
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': token
-        }
-    })
+      );
 
-    axios.post(`https://sattonjanam-be.onrender.com/api/v1/sendmail`, {email: profileDetails.email, userName: profileDetails.userName})
+      axios.post(`https://sattonjanam-be.vercel.app/api/v1/sendmail`, {
+        email: profileDetails.email,
+        userName: profileDetails.userName,
+      });
 
-    axios.post(`https://sattonjanam-be.onrender.com/api/v1/sendmailadmin`, { userName: profileDetails.userName})
+      axios
+        .post(`https://sattonjanam-be.vercel.app/api/v1/sendmailadmin`, {
+          userName: profileDetails.userName,
+        })
 
-      .then(res => {
-        setAlertData({
-          type: "success",
-          message: "Registration successful!",
-          show: true,
+        .then((res) => {
+          setAlertData({
+            type: "success",
+            message: "Registration successful!",
+            show: true,
+          });
+        })
+        .catch((err) => {
+          setAlertData({
+            type: "error",
+            message: err.response.data.msg,
+            show: true,
+          });
         });
-      }).catch(err => {
-        setAlertData({
-          type: "error",
-          message: err.response.data.msg,
-          show: true,
-        });
-      })
-      navigate('/successMessage')
+      navigate("/successMessage");
     } catch (error) {
       setAlertData({
         type: "error",
@@ -326,7 +355,6 @@ const RegisterPage = (props) => {
       });
     }
   };
-     
 
   const handlePrev = () => {
     setCurrentStep(currentStep - 1);
@@ -340,7 +368,6 @@ const RegisterPage = (props) => {
     const words = text.trim().split(/\s+/);
     return words.length;
   }
-  
 
   const steps = [
     {
@@ -399,7 +426,12 @@ const RegisterPage = (props) => {
             </Select>
           </Form.Item>
           <Form.Item label="Gender" htmlFor="gender">
-            <Radio.Group name="gender" id="gender" value={profileDetails.gender} onChange={handleInputChange}>
+            <Radio.Group
+              name="gender"
+              id="gender"
+              value={profileDetails.gender}
+              onChange={handleInputChange}
+            >
               <Radio value="male">Male</Radio>
               <Radio value="female">Female</Radio>
               <Radio value="other">Other</Radio>
@@ -428,15 +460,12 @@ const RegisterPage = (props) => {
           </Space>
           </Form.Item> */}
           <Form.Item label="Upload Profile Pic">
-            
             <Input
               type="file"
               name="image"
               id="image"
               required
-         
-              onChange= {uploadHandler}
-              
+              onChange={uploadHandler}
             />
           </Form.Item>
           <Form.Item label="Email" htmlFor="email">
@@ -465,52 +494,52 @@ const RegisterPage = (props) => {
               name="password"
               id="password"
               value={profileDetails.password}
-              rules={[{ required: true, message: "Please input your password!" }]}
+              rules={[
+                { required: true, message: "Please input your password!" },
+              ]}
               onChange={handleInputChange}
             />
           </Form.Item>
           <Form.Item label="Age" htmlFor="age">
-            <Select 
-               
-                name="age"
-                id="age"
-                value={profileDetails.age}
-                onChange={(value) =>
-                  handleInputChange({ target: { name: "age", value } })
-                }
+            <Select
+              name="age"
+              id="age"
+              value={profileDetails.age}
+              onChange={(value) =>
+                handleInputChange({ target: { name: "age", value } })
+              }
             >
               {ageOptions.map((option) => (
-                      <Select.Option key={option.value} value={option.value}>
-                        {option.label}
-                      </Select.Option>
-                ))}
-
+                <Select.Option key={option.value} value={option.value}>
+                  {option.label}
+                </Select.Option>
+              ))}
             </Select>
-            </Form.Item>
-            <Form.Item label="Height" htmlFor="height">
-              <Select
-                name="height"
-                id="height"
-                value={profileDetails.height}
-                onChange={(value) =>
-                  handleInputChange({ target: { name: "height", value } })
-                }
-                placeholder="Select height"
-              >
-                {heightOptions.map(option => (
-                  <Option key={option} value={option}>
-                    {option}
-                  </Option>
-                ))}
-              </Select>
+          </Form.Item>
+          <Form.Item label="Height" htmlFor="height">
+            <Select
+              name="height"
+              id="height"
+              value={profileDetails.height}
+              onChange={(value) =>
+                handleInputChange({ target: { name: "height", value } })
+              }
+              placeholder="Select height"
+            >
+              {heightOptions.map((option) => (
+                <Option key={option} value={option}>
+                  {option}
+                </Option>
+              ))}
+            </Select>
           </Form.Item>
           <Form.Item label="Caste" htmlFor="caste">
-            <Input 
+            <Input
               type="text"
               name="caste"
               value={profileDetails.caste}
               id="caste"
-              onChange={handleInputChange} 
+              onChange={handleInputChange}
             />
           </Form.Item>
           <Form.Item label="Gotra" htmlFor="gotra">
@@ -533,7 +562,7 @@ const RegisterPage = (props) => {
               onChange={handleInputChange}
             />
           </Form.Item>
-         
+
           <Form.Item label="Color" htmlFor="color">
             <Select
               name="color"
@@ -592,7 +621,7 @@ const RegisterPage = (props) => {
             <Select
               name="maritalStatus"
               id="maritalStatus"
-              value= {partnerDetails.maritalStatus}
+              value={partnerDetails.maritalStatus}
               placeholder="Select Your Status"
               onChange={(value) =>
                 handleInputChange({ target: { name: "maritalStatus", value } })
@@ -649,13 +678,17 @@ const RegisterPage = (props) => {
               <Option value="No">No</Option>
             </Select>
           </Form.Item>
-          <Form.Item  htmlFor="termsCondition" style={{marginLeft: "0px"}}>
+          <Form.Item htmlFor="termsCondition" style={{ marginLeft: "0px" }}>
             <Checkbox>I am ready to marry people of all castes</Checkbox>
           </Form.Item>
-          <Button type="primary" onClick={handleNext} disabled={!isAllFieldsFilled} >
+          <Button
+            type="primary"
+            onClick={handleNext}
+            disabled={!isAllFieldsFilled}
+          >
             Next
           </Button>
-          <p style={{textAlign: "center"}}>
+          <p style={{ textAlign: "center" }}>
             Already Have an Account? <Link to={"/login"}>Login</Link>
           </p>
         </Form>
@@ -666,7 +699,7 @@ const RegisterPage = (props) => {
       content: (
         <Form>
           <Form.Item label="Country" htmlFor="country">
-            <Select 
+            <Select
               name="country"
               id="country"
               value={careerDetails.country}
@@ -713,21 +746,24 @@ const RegisterPage = (props) => {
               onChange={handleInputChange}
             />
           </Form.Item>
-             <Form.Item label="Pin Code" htmlFor="pinCode">
-              <Input
-                type="number"
-                name="pinCode"
-                id="pinCode"
-                value={careerDetails.pinCode}
-                required
-                onChange={(e) => {
-                  const inputPinCode = e.target.value;
-                  if (/^\d{0,6}$/.test(inputPinCode)) { // Limit input to 6 digits
-                    handleInputChange({ target: { name: "pinCode", value: inputPinCode } });
-                  }
-                }}
-              />
-            </Form.Item>
+          <Form.Item label="Pin Code" htmlFor="pinCode">
+            <Input
+              type="number"
+              name="pinCode"
+              id="pinCode"
+              value={careerDetails.pinCode}
+              required
+              onChange={(e) => {
+                const inputPinCode = e.target.value;
+                if (/^\d{0,6}$/.test(inputPinCode)) {
+                  // Limit input to 6 digits
+                  handleInputChange({
+                    target: { name: "pinCode", value: inputPinCode },
+                  });
+                }
+              }}
+            />
+          </Form.Item>
           <Form.Item label="Highest Degree" htmlFor="highestDegree">
             <Select
               name="highestDegree"
@@ -739,14 +775,14 @@ const RegisterPage = (props) => {
               }
             >
               <Option value="engineering">Engineering/Technology/Design</Option>
-                  <Option value="be">B.E/B.Tech</Option>
-                  <Option value="bPharmacy">B.Pharmacy</Option>
-                  <Option value="me">M.E</Option>
-                  <Option value="mtech">M.Tech</Option>
-                  <Option value="mPharmacy">M.Pharmacy</Option>
-                  <Option value="ms">
-                    M.S(Engineering,B.Arch,M.Arch,B.Des,M.Des)
-                  </Option>
+              <Option value="be">B.E/B.Tech</Option>
+              <Option value="bPharmacy">B.Pharmacy</Option>
+              <Option value="me">M.E</Option>
+              <Option value="mtech">M.Tech</Option>
+              <Option value="mPharmacy">M.Pharmacy</Option>
+              <Option value="ms">
+                M.S(Engineering,B.Arch,M.Arch,B.Des,M.Des)
+              </Option>
               <Option value="computers">Computers(MCA,BCA,B.IT)</Option>
               <Option value="finance">Finance/Commerce/Economics</Option>
               <Option value="bcom">B.Com</Option>
@@ -796,7 +832,6 @@ const RegisterPage = (props) => {
               <Option value="TradeSchool">TRADE SCHOOL</Option>
               <Option value="OTHERDEGREE">OTHER</Option>
             </Select>
-         
           </Form.Item>
           <Form.Item label="Employed In" htmlFor="employedIn">
             <Select
@@ -871,31 +906,29 @@ const RegisterPage = (props) => {
             </Select>
           </Form.Item>
           <Form.Item label="Actual Income Per Annum" htmlFor="annualIncome">
-            <Select 
+            <Select
               name="annualIncome"
               id="annualIncome"
               value={careerDetails.annualIncome}
               required
               onChange={(value) =>
                 handleInputChange({ target: { name: "annualIncome", value } })
-              }>
-                  <Option value="5lakhs-10lakhs">5lakhs - 10lakhs</Option>
-                  <Option value="10lakhs-20lakhs">10lakhs - 20lakhs</Option>
-                  <Option value="20lakhs-30lakhs">20lakhs - 30lakhs</Option>
-                  <Option value="30lakhs-40lakhs">30lakhs - 40lakhs</Option>
-                  <Option value="40lakhs-50lakhs">40lakhs - 50lakhs</Option>
-                  <Option value="50lakhs-60lakhs">50lakhs - 60lakhs</Option>
-                  <Option value=">60lakhs-70lakhs">60lakhs - 70lakhs</Option>
-                  <Option value="70lakhs-80lakhs">70lakhs - 80lakhs</Option>
-                  <Option value="80lakhs-90lakhs">80lakhs - 90lakhs</Option>
-                  <Option value="90lakhs-1crore">90lakhs - 1crore</Option>
-                  <Option value="More than 1crore">More than 1crore</Option>
+              }
+            >
+              <Option value="5lakhs-10lakhs">5lakhs - 10lakhs</Option>
+              <Option value="10lakhs-20lakhs">10lakhs - 20lakhs</Option>
+              <Option value="20lakhs-30lakhs">20lakhs - 30lakhs</Option>
+              <Option value="30lakhs-40lakhs">30lakhs - 40lakhs</Option>
+              <Option value="40lakhs-50lakhs">40lakhs - 50lakhs</Option>
+              <Option value="50lakhs-60lakhs">50lakhs - 60lakhs</Option>
+              <Option value=">60lakhs-70lakhs">60lakhs - 70lakhs</Option>
+              <Option value="70lakhs-80lakhs">70lakhs - 80lakhs</Option>
+              <Option value="80lakhs-90lakhs">80lakhs - 90lakhs</Option>
+              <Option value="90lakhs-1crore">90lakhs - 1crore</Option>
+              <Option value="More than 1crore">More than 1crore</Option>
             </Select>
           </Form.Item>
-          <Form.Item
-            label="About My self"
-            htmlFor="myself"
-          >
+          <Form.Item label="About My self" htmlFor="myself">
             <TextArea
               name="myself"
               id="myself"
@@ -905,11 +938,13 @@ const RegisterPage = (props) => {
               onChange={handleInputChange}
               maxLength={100}
             />
-              <div style={{ marginTop: "8px" }}>
-                Word Count: {wordCount}/100
-              </div>
+            <div style={{ marginTop: "8px" }}>Word Count: {wordCount}/100</div>
           </Form.Item>
-          <Button type="primary" onClick={handleNext} disabled={!isCareerDetailsFilled}>
+          <Button
+            type="primary"
+            onClick={handleNext}
+            disabled={!isCareerDetailsFilled}
+          >
             Next
           </Button>
           <Button style={{ margin: "0 8px" }} onClick={handlePrev}>
@@ -949,7 +984,9 @@ const RegisterPage = (props) => {
                 })
               }
             >
-              <Option value="Business/Entrepreneur">Business/Entrepreneur</Option>
+              <Option value="Business/Entrepreneur">
+                Business/Entrepreneur
+              </Option>
               <Option value="Private Service">Private Service</Option>
               <Option value="Government Service">Government Service</Option>
               <Option value="Self Employed">Self Employed</Option>
@@ -971,7 +1008,9 @@ const RegisterPage = (props) => {
                 })
               }
             >
-              <Option value="Business/entrepreneur">Business/Entrepreneur</Option>
+              <Option value="Business/entrepreneur">
+                Business/Entrepreneur
+              </Option>
               <Option value="Private service">Private Service</Option>
               <Option value="teacher">Teacher</Option>
               <Option value="House wife">House Wife</Option>
@@ -981,7 +1020,6 @@ const RegisterPage = (props) => {
               <Option value="retired">Retired</Option>
               <Option value="army">Army</Option>
               <Option value="Civil services">CivilServices</Option>
-            
             </Select>
           </Form.Item>
           <Form.Item label="Brother" htmlFor="brother">
@@ -1035,20 +1073,22 @@ const RegisterPage = (props) => {
               value={familyDetails.aboutFamily}
               rows={3}
               cols={10}
-             
               onChange={handleInputChange}
             />
-           <div style={{ marginTop: "8px" }}>
-                Word Count: {wordCount}/300(Min. 50 words)
-              </div>
+            <div style={{ marginTop: "8px" }}>
+              Word Count: {wordCount}/300(Min. 50 words)
+            </div>
           </Form.Item>
-          <Button type="primary" onClick={handleNext} disabled={!isFamilyDetailsFilled}>
+          <Button
+            type="primary"
+            onClick={handleNext}
+            disabled={!isFamilyDetailsFilled}
+          >
             Next
           </Button>
           <Button style={{ margin: "0 8px" }} onClick={handlePrev}>
             Previous
           </Button>
-          
         </Form>
       ),
     },
@@ -1056,62 +1096,61 @@ const RegisterPage = (props) => {
       title: "Partner Preference",
       content: (
         <Form>
-            <Form.Item label="Age" htmlFor="partnerAge">
-              <Select
-               type="number"
-               name="partnerAge"
-               id="partnerAge"
-               value={partnerDetails.partnerAge}
-               onChange={(value) =>
+          <Form.Item label="Age" htmlFor="partnerAge">
+            <Select
+              type="number"
+              name="partnerAge"
+              id="partnerAge"
+              value={partnerDetails.partnerAge}
+              onChange={(value) =>
                 handleInputChange({ target: { name: "partnerAge", value } })
               }
-              >
-                {ageOptions.map((option) => (
-                      <Select.Option key={option.value} value={option.value}>
-                        {option.label}
-                      </Select.Option>
-                ))}
-              </Select>
-              {/* <Input
+            >
+              {ageOptions.map((option) => (
+                <Select.Option key={option.value} value={option.value}>
+                  {option.label}
+                </Select.Option>
+              ))}
+            </Select>
+            {/* <Input
                
               /> */}
-            </Form.Item>
-            <Form.Item label="Height" htmlFor="partnerHeight">
-              <Select
-                name="partnerHeight"
-                id="partnerHeight"
-                value={partnerDetails.partnerHeight}
-                onChange={(value) =>
-                  handleInputChange({ target: { name: "partnerHeight", value } })
-                }
-                placeholder="Select height"
-              >
-                {heightOptions.map(option => (
-                  <Option key={option} value={option}>
-                    {option}
-                  </Option>
-                ))}
-              </Select>
+          </Form.Item>
+          <Form.Item label="Height" htmlFor="partnerHeight">
+            <Select
+              name="partnerHeight"
+              id="partnerHeight"
+              value={partnerDetails.partnerHeight}
+              onChange={(value) =>
+                handleInputChange({ target: { name: "partnerHeight", value } })
+              }
+              placeholder="Select height"
+            >
+              {heightOptions.map((option) => (
+                <Option key={option} value={option}>
+                  {option}
+                </Option>
+              ))}
+            </Select>
           </Form.Item>
           <Form.Item label="Caste" htmlFor="partnerCaste">
-            <Input 
+            <Input
               type="text"
               name="partnerCast"
               id="partnerCast"
               value={partnerDetails.partnerCast}
-              onChange={handleInputChange} 
+              onChange={handleInputChange}
             />
           </Form.Item>
           <Form.Item label="Gotra" htmlFor="partnerGotra">
-            <Input 
-                name="partnerGotra"
-                id="partnerGotra"
-                value={partnerDetails.partnerGotra}
-                onChange={handleInputChange}
-                
+            <Input
+              name="partnerGotra"
+              id="partnerGotra"
+              value={partnerDetails.partnerGotra}
+              onChange={handleInputChange}
             />
           </Form.Item>
-          
+
           <Form.Item label="Education" htmlFor="partnerEducation">
             <Select
               name="partnerEductation"
@@ -1119,18 +1158,20 @@ const RegisterPage = (props) => {
               value={partnerDetails.partnerEductation}
               placeholder="Select"
               onChange={(value) =>
-                handleInputChange({ target: { name: "partnerEductation", value } })
+                handleInputChange({
+                  target: { name: "partnerEductation", value },
+                })
               }
             >
               <Option value="Engineering">Engineering/Technology/Design</Option>
-                  <Option value="Be">B.E/B.Tech</Option>
-                  <Option value="BPharmacy">B.Pharmacy</Option>
-                  <Option value="Me">M.E</Option>
-                  <Option value="Mtech">M.Tech</Option>
-                  <Option value="MPharmacy">M.Pharmacy</Option>
-                  <Option value="Ms">
-                    M.S(Engineering,B.Arch,M.Arch,B.Des,M.Des)
-                  </Option>
+              <Option value="Be">B.E/B.Tech</Option>
+              <Option value="BPharmacy">B.Pharmacy</Option>
+              <Option value="Me">M.E</Option>
+              <Option value="Mtech">M.Tech</Option>
+              <Option value="MPharmacy">M.Pharmacy</Option>
+              <Option value="Ms">
+                M.S(Engineering,B.Arch,M.Arch,B.Des,M.Des)
+              </Option>
               <Option value="Computers">Computers(MCA,BCA,B.IT)</Option>
               <Option value="Finance">Finance/Commerce/Economics</Option>
               <Option value="Bcom">B.Com</Option>
@@ -1180,9 +1221,11 @@ const RegisterPage = (props) => {
               <Option value="TRADE">TRADE SCHOOL</Option>
               <Option value="OtherDeg">OTHER</Option>
             </Select>
-         
           </Form.Item>
-          <Form.Item label="Father Occupation" htmlFor="partnerFatherOccupation">
+          <Form.Item
+            label="Father Occupation"
+            htmlFor="partnerFatherOccupation"
+          >
             <Select
               name="partnerFatherOccupation"
               id="partnerFatherOccupation"
@@ -1204,7 +1247,10 @@ const RegisterPage = (props) => {
               <Option value="civil  ervices">CivilServices</Option>
             </Select>
           </Form.Item>
-          <Form.Item label="Mother Occupation" htmlFor="partnerMotherOccupation">
+          <Form.Item
+            label="Mother Occupation"
+            htmlFor="partnerMotherOccupation"
+          >
             <Select
               name="partnerMotherOccupation"
               id="partnerMotherOccupation"
@@ -1216,7 +1262,9 @@ const RegisterPage = (props) => {
                 })
               }
             >
-              <Option value="Business/Entrepreneur">Business/Entrepreneur</Option>
+              <Option value="Business/Entrepreneur">
+                Business/Entrepreneur
+              </Option>
               <Option value="tEACHER">Teacher</Option>
               <Option value="house wife">House Wife</Option>
               <Option value=">privateservice">Private Service</Option>
@@ -1226,30 +1274,29 @@ const RegisterPage = (props) => {
               <Option value="retired">Retired</Option>
               <Option value="army officer">Army</Option>
               <Option value="Civil Service">CivilServices</Option>
-             
             </Select>
           </Form.Item>
           <Form.Item label="Annual Income" htmlFor="partnerIncome">
-            <Select 
+            <Select
               name="partnerIncome"
               id="partnerIncome"
               value={partnerDetails.partnerIncome}
               required
               onChange={(value) =>
                 handleInputChange({ target: { name: "partnerIncome", value } })
-              }>
-                 
-                  <Option value="5lakh-10lakh">5lakhs - 10lakhs</Option>
-                  <Option value="10lakh-20lakh">10lakhs - 20lakhs</Option>
-                  <Option value="20lakh-30lakh">20lakhs - 30lakhs</Option>
-                  <Option value="30lakh-40lakh">30lakhs - 40lakhs</Option>
-                  <Option value="40lakh-50lakh">40lakhs - 50lakhs</Option>
-                  <Option value="50lakh-60lakh">50lakhs - 60lakhs</Option>
-                  <Option value="60lakh-70lakh">60lakhs - 70lakhs</Option>
-                  <Option value="70lakh-80lakh">70lakhs - 80lakhs</Option>
-                  <Option value="80lakh-90lakh">80lakhs - 90lakhs</Option>
-                  <Option value="90lakh-1crore">90lakhs - 1crore</Option>
-                  <Option value="more than 1crore">More than 1crore</Option>
+              }
+            >
+              <Option value="5lakh-10lakh">5lakhs - 10lakhs</Option>
+              <Option value="10lakh-20lakh">10lakhs - 20lakhs</Option>
+              <Option value="20lakh-30lakh">20lakhs - 30lakhs</Option>
+              <Option value="30lakh-40lakh">30lakhs - 40lakhs</Option>
+              <Option value="40lakh-50lakh">40lakhs - 50lakhs</Option>
+              <Option value="50lakh-60lakh">50lakhs - 60lakhs</Option>
+              <Option value="60lakh-70lakh">60lakhs - 70lakhs</Option>
+              <Option value="70lakh-80lakh">70lakhs - 80lakhs</Option>
+              <Option value="80lakh-90lakh">80lakhs - 90lakhs</Option>
+              <Option value="90lakh-1crore">90lakhs - 1crore</Option>
+              <Option value="more than 1crore">More than 1crore</Option>
             </Select>
           </Form.Item>
           <Form.Item label="Location" htmlFor="partnerLocation">
@@ -1279,10 +1326,12 @@ const RegisterPage = (props) => {
             <Select
               name="partnerMaritalStatus"
               id="partnerMaritalStatus"
-              value= {partnerDetails.partnerMaritalStatus}
+              value={partnerDetails.partnerMaritalStatus}
               placeholder="Select Your Status"
               onChange={(value) =>
-                handleInputChange({ target: { name: "partnerMaritalStatus", value } })
+                handleInputChange({
+                  target: { name: "partnerMaritalStatus", value },
+                })
               }
             >
               <Option value="UNMARRRIED">Unmarried</Option>
@@ -1293,14 +1342,19 @@ const RegisterPage = (props) => {
               <Option value="ANNULLED">Annulled</Option>
             </Select>
           </Form.Item>
-          <Form.Item  htmlFor="termsCondition">
-            <Checkbox checked={partnerDetails.termsCondition}
+          <Form.Item htmlFor="termsCondition">
+            <Checkbox
+              checked={partnerDetails.termsCondition}
               onChange={(e) =>
                 handleInputChange({
                   target: { name: "termsCondition", value: e.target.checked },
                 })
-              }> 
-              <a href="/terms&privacy"> I have agreed to the Terms & conditions & have read & understood the privacy policy
+              }
+            >
+              <a href="/terms&privacy">
+                {" "}
+                I have agreed to the Terms & conditions & have read & understood
+                the privacy policy
               </a>
             </Checkbox>
           </Form.Item>
@@ -1311,13 +1365,13 @@ const RegisterPage = (props) => {
             Previous
           </Button>
         </Form>
-      )
-    }
+      ),
+    },
   ];
 
   return (
     <div className="form-container">
-      <img src={logo} alt="no image" width={100} height={100}/>
+      <img src={logo} alt="no image" width={100} height={100} />
       <h2>Register Form</h2>
       {alertData.show && (
         <Alert
@@ -1335,7 +1389,6 @@ const RegisterPage = (props) => {
         ))}
       </Steps>
       <div className="steps-content">{steps[currentStep].content}</div>
-      
     </div>
   );
 };
