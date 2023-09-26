@@ -52,6 +52,12 @@ function EnquireForm({ children }) {
           query: newQuery.query,
         })
 
+        axios
+        .post(
+          `https://sattonjanam-be.vercel.app/api/v1/query/sendQueryuser`,
+          { email: newQuery.email }
+        )
+
         .then((res) => {
           setAlertData({
             type: "success",

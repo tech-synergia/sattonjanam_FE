@@ -36,7 +36,7 @@ function ContactForm() {
     e.preventDefault();
     try {
       axios.post(
-        `https://sattonjanam-be.vercel.app/api/v1/connectus/create`,
+        `https://sattonjanam-be.vercel.app/api/v1/contactus/create`,
         connectus,
         {
           headers: {
@@ -47,14 +47,19 @@ function ContactForm() {
       );
 
       axios
-        .post(`https://sattonjanam-be.vercel.app/api/v1/connectus/sendmail`, {
+        .post(`https://sattonjanam-be.vercel.app/api/v1/contactus/sendmail`, {
           lookingFor: connectus.lookingFor,
           userName: connectus.userName,
           email: connectus.email,
           phoneNumber: connectus.phoneNumber,
-          location: connectus.location,
-          query: connectus.query,
+          location: connectus.location
         })
+
+        axios
+        .post(
+          `https://sattonjanam-be.vercel.app/api/v1/contactus/sendmailuser`,
+          { email: connectus.email }
+        )
 
         .then((res) => {
           setAlertData({
