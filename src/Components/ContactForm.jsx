@@ -47,19 +47,19 @@ function ContactForm() {
       );
 
       await axios
+        .post(
+          `https://sattonjanam-be.vercel.app/api/v1/connectus/sendmailuser`,
+          { email: connectus.email }
+        )
+
+      await axios
         .post(`https://sattonjanam-be.vercel.app/api/v1/contactus/sendmail`, {
           lookingFor: connectus.lookingFor,
           userName: connectus.userName,
           email: connectus.email,
           phoneNumber: connectus.phoneNumber,
           location: connectus.location
-        });
-
-        await axios
-        .post(
-          `https://sattonjanam-be.vercel.app/api/v1/connectus/sendmailuser`,
-          { email: connectus.email }
-        )
+        })
 
         .then((res) => {
           setAlertData({
