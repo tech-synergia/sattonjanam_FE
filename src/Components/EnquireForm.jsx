@@ -39,12 +39,12 @@ function EnquireForm({ children }) {
     try {
       const newQuery = { ...enquery };
 
-      axios.post(
+      await axios.post(
         `https://sattonjanam-be.vercel.app/api/v1/query/queryCreate`,
         newQuery
       );
 
-      axios
+      await axios
         .post(`https://sattonjanam-be.vercel.app/api/v1/query/sendQuery`, {
           userName: newQuery.userName,
           email: newQuery.email,
@@ -52,7 +52,7 @@ function EnquireForm({ children }) {
           query: newQuery.query,
         })
 
-        axios
+        await axios
         .post(
           `https://sattonjanam-be.vercel.app/api/v1/query/sendQueryuser`,
           { email: newQuery.email }
