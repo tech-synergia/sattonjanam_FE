@@ -50,11 +50,11 @@ function EnquireForm({ children }) {
           email: newQuery.email,
           phoneNumber: newQuery.phoneNumber,
           query: newQuery.query,
-        })
+        });
 
         await axios
         .post(
-          `https://sattonjanam-be.vercel.app/api/v1/query/sendQueryuser`,
+          `https://sattonjanam-be.vercel.app/api/v1/connectus/sendmailuser`,
           { email: newQuery.email }
         )
 
