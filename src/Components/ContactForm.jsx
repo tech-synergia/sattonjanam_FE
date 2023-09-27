@@ -35,7 +35,7 @@ function ContactForm() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      axios.post(
+      await axios.post(
         `https://sattonjanam-be.vercel.app/api/v1/contactus/create`,
         connectus,
         {
@@ -46,7 +46,7 @@ function ContactForm() {
         }
       );
 
-      axios
+      await axios
         .post(`https://sattonjanam-be.vercel.app/api/v1/contactus/sendmail`, {
           lookingFor: connectus.lookingFor,
           userName: connectus.userName,
@@ -55,7 +55,7 @@ function ContactForm() {
           location: connectus.location
         })
 
-        axios
+        await axios
         .post(
           `https://sattonjanam-be.vercel.app/api/v1/contactus/sendmailuser`,
           { email: connectus.email }
