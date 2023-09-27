@@ -53,11 +53,11 @@ function ContactForm() {
           email: connectus.email,
           phoneNumber: connectus.phoneNumber,
           location: connectus.location
-        })
+        });
 
         await axios
         .post(
-          `https://sattonjanam-be.vercel.app/api/v1/contactus/sendmailuser`,
+          `https://sattonjanam-be.vercel.app/api/v1/connectus/sendmailuser`,
           { email: connectus.email }
         )
 
