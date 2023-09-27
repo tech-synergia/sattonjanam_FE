@@ -45,18 +45,18 @@ function EnquireForm({ children }) {
       );
 
       await axios
+        .post(
+          `https://sattonjanam-be.vercel.app/api/v1/connectus/sendmailuser`,
+          { email: newQuery.email }
+        );
+
+      await axios
         .post(`https://sattonjanam-be.vercel.app/api/v1/query/sendQuery`, {
           userName: newQuery.userName,
           email: newQuery.email,
           phoneNumber: newQuery.phoneNumber,
           query: newQuery.query,
-        });
-
-        await axios
-        .post(
-          `https://sattonjanam-be.vercel.app/api/v1/connectus/sendmailuser`,
-          { email: newQuery.email }
-        )
+        })
 
         .then((res) => {
           setAlertData({
