@@ -40,7 +40,8 @@ function ProfileCard() {
               profile.map((profileData) => (
                 <div className="profile" key={profileData._id}>
                   <img
-                    src={profileData.image.url}
+                    src={profileData.image ? profileData.image.url : profileData.image}
+                    // src={profileData.image.url}
                     // src={
                     //   profileData.gender === "male" ? male_avatar : female_avatar
                     // }
