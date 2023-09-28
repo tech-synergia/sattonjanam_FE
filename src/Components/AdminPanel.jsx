@@ -145,7 +145,8 @@ const AdminPanel = () => {
           <Form className="popUpForm">
             <Form.Item label="Profile Pic">
               <img
-                src={selectedRecord.image.url}
+                src={selectedRecord.image ? selectedRecord.image.url : selectedRecord.image}
+                // src={selectedRecord.image.url}
                 alt="no image"
                 width={100}
                 height={100}
