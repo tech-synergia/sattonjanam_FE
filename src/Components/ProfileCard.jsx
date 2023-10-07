@@ -34,24 +34,56 @@ function ProfileCard() {
         <div className="content">
           <h2>Premium Members</h2>
           <div className="pros-grid">
-          {/* <Carousel autoplay className="carousel"> */}
-         
-            {profile &&
-              profile.map((profileData) => (
-                <div className="profile" key={profileData._id}>
-                  <img
-                    src={profileData.image ? profileData.image.url : profileData.image}
-                    // src={profileData.image.url}
-                    // src={
-                    //   profileData.gender === "male" ? male_avatar : female_avatar
-                    // }
-                    alt=""
-                  />
-                  <h3 className="text-center">Id: {profileData.sjId}</h3>
-                </div>
-              ))}
-         
-          {/* </Carousel> */}
+            <Carousel
+              autoplay
+              className="carousel"
+              slidesToShow={5}
+              responsive={[
+                {
+                  breakpoint: 1200,
+                  settings: {
+                    slidesToShow: 3,
+                  },
+                },
+                {
+                  breakpoint: 992,
+                  settings: {
+                    slidesToShow: 2,
+                  },
+                },
+                {
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 2,
+                  },
+                },
+                {
+                  breakpoint: 576,
+                  settings: {
+                    slidesToShow: 2,
+                  },
+                },
+              ]}
+            >
+              {profile &&
+                profile.map((profileData) => (
+                  <div className="profile" key={profileData._id}>
+                    <img
+                      src={
+                        profileData.image
+                          ? profileData.image.url
+                          : profileData.image
+                      }
+                      // src={profileData.image.url}
+                      // src={
+                      //   profileData.gender === "male" ? male_avatar : female_avatar
+                      // }
+                      alt=""
+                    />
+                    <h3 className="text-center">Id: {profileData.sjId}</h3>
+                  </div>
+                ))}
+            </Carousel>
           </div>
         </div>
       </div>
