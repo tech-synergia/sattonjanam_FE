@@ -46,11 +46,10 @@ function ContactForm() {
         }
       );
 
-      await axios
-        .post(
-          `https://sattonjanam-be.vercel.app/api/v1/connectus/sendmailuser`,
-          { email: connectus.email }
-        )
+      await axios.post(
+        `https://sattonjanam-be.vercel.app/api/v1/connectus/sendmailuser`,
+        { email: connectus.email }
+      );
 
       await axios
         .post(`https://sattonjanam-be.vercel.app/api/v1/contactus/sendmail`, {
@@ -58,7 +57,7 @@ function ContactForm() {
           userName: connectus.userName,
           email: connectus.email,
           phoneNumber: connectus.phoneNumber,
-          location: connectus.location
+          location: connectus.location,
         })
 
         .then((res) => {
@@ -91,12 +90,21 @@ function ContactForm() {
       <div className="leftSideAddress">
         <div className="addressContent">
           <Title level={3}>For Matrimonial / Matchmaking Requirements:</Title>
+          <br />
           <Text className="text">
             <i className="bi bi-telephone-fill"></i> 9773643677
           </Text>
           <br />
+          <br />
           <Text className="text">
             <i className="bi bi-envelope-fill"></i> info@sattonjanam.com
+          </Text>
+          <br />
+          <br />
+          <Text className="text">
+            <i className="bi bi-geo-alt-fill"></i> 65, spring field colony
+            market, sector-32, Faridabad, Near NHPC metro station, Haryana,
+            121003
           </Text>
         </div>
         <hr />
