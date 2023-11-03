@@ -4,7 +4,7 @@ import wedding2 from "../assets/banner2.jpg";
 import wedding3 from "../assets/banner04.jpg";
 import wedding4 from "../assets/banner4.jpg";
 import wedding5 from "../assets/banner5.jpg";
-import wedding6 from '../assets/banner6.jpg'
+// import wedding6 from '../assets/banner6.jpg';
 import "../scss/CarouselBanner.scss";
 
 function CarouselBanner() {
@@ -25,9 +25,9 @@ function CarouselBanner() {
       <div>
         <img src={wedding5} alt="" />
       </div>
-      <div>
+      {/* <div>
         <img src={wedding6} alt="" />
-      </div>
+      </div> */}
     </Carousel>
   );
 }

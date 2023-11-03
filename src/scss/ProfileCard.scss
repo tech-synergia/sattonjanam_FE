@@ -57,10 +57,11 @@
         img {
           width: 125px;
           height: 130px;
-          object-fit: cover;
+          object-fit: contain;
           border-radius: 50%;
           border: 8px solid rgba($color: #000000, $alpha: 0);
           transition: all 0.3s ease-out;
+          background-color: wheat;
         }
 
         &:hover img {

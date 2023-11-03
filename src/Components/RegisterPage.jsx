@@ -575,6 +575,7 @@ const RegisterPage = (props) => {
             >
               <Option value="fair">Fair</Option>
               <Option value="veryFair">Very Fair</Option>
+              <Option value="whitish">Whitish</Option>
             </Select>
           </Form.Item>
           <Form.Item label="Mother Tongue" htmlFor="motherTongue">
@@ -1163,6 +1164,7 @@ const RegisterPage = (props) => {
                 })
               }
             >
+              <Option value="doesNotMatter">Does Not Matter</Option>
               <Option value="Engineering">Engineering/Technology/Design</Option>
               <Option value="Be">B.E/B.Tech</Option>
               <Option value="BPharmacy">B.Pharmacy</Option>
@@ -1237,6 +1239,7 @@ const RegisterPage = (props) => {
                 })
               }
             >
+              <Option value="doesNotMatter">Does Not Matter</Option>
               <Option value="Business">Business/Entrepreneur</Option>
               <Option value="private service">Private Service</Option>
               <Option value="government service">Government Service</Option>
@@ -1262,6 +1265,7 @@ const RegisterPage = (props) => {
                 })
               }
             >
+              <Option value="doesNotMatter">Does Not Matter</Option>
               <Option value="Business/Entrepreneur">
                 Business/Entrepreneur
               </Option>

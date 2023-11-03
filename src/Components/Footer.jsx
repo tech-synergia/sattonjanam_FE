@@ -16,26 +16,26 @@ function Footer() {
         <div className="impLinks">
           <h4>IMPORTANT LINKS</h4>
           <div className="Links">
-            <Link to={"/about"}>
+            <a href={"/about"}>
               <span>
                 <i className="bi bi-caret-right-fill"></i> About Us
               </span>
-            </Link>
+            </a>
             {/* <span><i className="bi bi-caret-right-fill"></i> Blogs</span>
                     <span><i className="bi bi-caret-right-fill"></i> Why We Stand Out?</span> */}
-            <Link to={"/service"}>
+            <a href={"/service"}>
               <span>
                 <i className="bi bi-caret-right-fill"></i> Services
               </span>
-            </Link>
+            </a>
             {/* <span><i className="bi bi-caret-right-fill"></i> Packages</span>
                     <span><i className="bi bi-caret-right-fill"></i> Testimonials</span> */}
-            <Link to={"/successstories"}>
+            <a href={"/successstories"}>
               {" "}
               <span>
                 <i className="bi bi-caret-right-fill"></i> Success Stories
               </span>
-            </Link>
+            </a>
           </div>
           <div>
             <h4>ADDRESS</h4>
@@ -51,21 +51,22 @@ function Footer() {
           <div className="Links">
             {/* <span><i className="bi bi-caret-right-fill"></i> Press & Media</span>
                     <span><i className="bi bi-caret-right-fill"></i> Gallery</span> */}
-            <Link to={"/terms&privacy"}>
+            <a href={"/terms&privacy"}>
               <span>
-                <i className="bi bi-caret-right-fill"></i> Terms&Privacy Policy
+                <i className="bi bi-caret-right-fill"></i> Terms & Privacy
+                Policy
               </span>
-            </Link>
+            </a>
 
-            <Link to={"/refund"}>
-              <i className="bi bi-caret-right-fill"></i> Refund&Copyright
+            <a href={"/refund"}>
+              <i className="bi bi-caret-right-fill"></i> Refund & Copyright
               Policies
-            </Link>
-            <Link to={"/disclaimer"}>
+            </a>
+            <a href={"/disclaimer"}>
               <span>
                 <i className="bi bi-caret-right-fill"></i> Disclaimer
               </span>
-            </Link>
+            </a>
             {/* <span><i className="bi bi-caret-right-fill"></i> Sitemap</span> */}
           </div>
         </div>
